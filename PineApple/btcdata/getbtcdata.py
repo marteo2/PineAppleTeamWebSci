@@ -1,11 +1,17 @@
-from django.shortcuts import render
+
+# pprint.pprint(jsonData)
+# for channel in jsonData..values():
+#     print(
+#     channel ) # prints the entire channel
+#     print(
+#     channel['name'] )# prints name
+# print(jsonData.allowance)
+import json
+import time
+import requests
 
 
-# Create your views here.
-def saveBTC(request):
-    import json
-    import time
-    import requests
+def savebtc:
     jsonData = requests.get('https://api.cryptowat.ch/markets/summaries').text
 
     parsed_json = json.loads(jsonData)
@@ -19,27 +25,22 @@ def saveBTC(request):
 
     max = 0
     min = 9999999999999999999999999999
-    # Go through our json to find btcusd pairs
+    #Go through our json to find btcusd pairs
     for item in parsed_json['result'].keys():
-        if (item[-6:] == "btcusd"):
-            # If we find a pair, snag its last price
+        if(item[-6:]=="btcusd"):
+            #If we find a pair, snag its last price
             price = parsed_json['result'][item]['price']['last']
             print(item + " " + str(price))
             exchanges[item] = price
-            # Change max or min if found
-            if (price > max):
+            #Change max or min if found
+            if(price > max):
                 max = price
-            if (price < min):
+            if(price < min):
                 min = price
 
-    print("Maximum price " + str(max) + " USD/BTC. Minimum Price " + str(min) + "USD/BTC")
+    print("Maximum price "+ str(max)+ " USD/BTC. Minimum Price " +str( min) + "USD/BTC")
 
-    # Write data to json
+    #Write data to json
     with open('historicaldata/parsedusdbtcdata' + str(taco) + '.json', 'w') as outfile:
         json.dump(exchanges, outfile)
     print("Saved btc data to file")
-
-
-def index(request):
-    saveBTC(request)
-    return render(request, 'btcdata/index.html')
