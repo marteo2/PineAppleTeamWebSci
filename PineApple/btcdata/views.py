@@ -1,3 +1,5 @@
+import glob
+
 from django.shortcuts import render
 
 
@@ -10,9 +12,9 @@ def saveBTC(request):
 
     parsed_json = json.loads(jsonData)
 
-    # print(
-    # parsed_json['result']['bitfinex:btcusd']
-    # )
+    print(
+    parsed_json['result']['bitfinex:btcusd']
+    )
     exchanges = {}
     taco = time.time();
     exchanges['time'] = taco
@@ -40,6 +42,21 @@ def saveBTC(request):
     print("Saved btc data to file")
 
 
+def readDATA(request):
+    directory = 'historicaldata/'
+    import os
+    i = 0
+    list_of_files = glob.glob('historicadata/*')
+    # latest_file = max(list(os.walk(directory)), key=os.path.getctime)
+    # print("Lastest File: " + latest_file)
+    # for root, dirs, files in reversed(list(os.walk(directory))):
+    #     print(root, dirs, files)
+    #     # print(files[0:5])
+    #
+    # pass
+
+
 def index(request):
     saveBTC(request)
+    readDATA(request)
     return render(request, 'btcdata/index.html')
