@@ -1,20 +1,19 @@
 import glob
 
 from django.shortcuts import render
+import json
+import time
+import requests
 
 
 # Create your views here.
 def saveBTC(request):
-    import json
-    import time
-    import requests
     jsonData = requests.get('https://api.cryptowat.ch/markets/summaries').text
 
     parsed_json = json.loads(jsonData)
 
-    print(
-    parsed_json['result']['bitfinex:btcusd']
-    )
+    print(parsed_json['result']['bitfinex:btcusd'])
+
     exchanges = {}
     taco = time.time();
     exchanges['time'] = taco

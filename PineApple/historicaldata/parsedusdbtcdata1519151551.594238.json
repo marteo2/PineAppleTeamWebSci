@@ -1,1 +1,15 @@
-{"time": 1519151551.594238, "bitfinex:btcusd": 11674, "bitflyer:btcusd": 11665, "bitsquare:btcusd": 11383.77, "bitstamp:btcusd": 11678.7, "btce:btcusd": 11658, "cexio:btcusd": 11939.9, "gdax:btcusd": 11684.13, "gemini:btcusd": 11677.21, "kraken:btcusd": 11685, "okcoin:btcusd": 12354.36, "quadriga:btcusd": 11600.01, "quoine:btcusd": 11676}
+{
+  "time": 1519151551.594238,
+  "bitfinex:btcusd": 11674,
+  "bitflyer:btcusd": 11665,
+  "bitsquare:btcusd": 11383.77,
+  "bitstamp:btcusd": 11678.7,
+  "btce:btcusd": 11658,
+  "cexio:btcusd": 11939.9,
+  "gdax:btcusd": 11684.13,
+  "gemini:btcusd": 11677.21,
+  "kraken:btcusd": 11685,
+  "okcoin:btcusd": 12354.36,
+  "quadriga:btcusd": 11600.01,
+  "quoine:btcusd": 11676
+}
