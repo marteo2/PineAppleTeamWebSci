@@ -10,7 +10,7 @@ import time
 import requests
 
 
-def savebtc():
+def save_btc():
     jsonData = requests.get('https://api.cryptowat.ch/markets/summaries').text
 
     parsed_json = json.loads(jsonData)
@@ -26,15 +26,15 @@ def savebtc():
     min = 9999999999999999999999999999
     # Go through our json to find btcusd pairs
     for item in parsed_json['result'].keys():
-        if (item[-6:] == "btcusd"):
+        if item[-6:] == "btcusd":
             # If we find a pair, snag its last price
             price = parsed_json['result'][item]['price']['last']
             print(item + " " + str(price))
             exchanges[item] = price
             # Change max or min if found
-            if (price > max):
+            if price > max:
                 max = price
-            if (price < min):
+            if price < min:
                 min = price
 
     print("Maximum price " + str(max) + " USD/BTC. Minimum Price " + str(min) + "USD/BTC")
