@@ -1,0 +1,26 @@
+html, body{
+	margin: 0;
+	padding: 0;
+}
+div.container-fluid{
+	padding: 0;
+	margin: 0;
+}
+div#title-bar{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	display: flex;
+	align-content: center;
+	justify-content: left;
+	background-color: #80ff80;
+}
+
+div#left-first{
+	background-color: teal;
+	height: 400px;
+}
+div#right-second{
+	background-color: orange;
+	height: 400px;
+}
