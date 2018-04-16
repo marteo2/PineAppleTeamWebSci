@@ -68,7 +68,7 @@ body {
   padding-bottom: .75rem;
   font-size: 1rem;
   background-color: #ff9900;
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 #ff9900;
 }
 
 .navbar .form-control {
@@ -77,9 +77,13 @@ body {
   border-radius: 0;
 }
 
+.navbar .bg-dark {
+  background-color: #45d4eb
+}
+
 .form-control-dark {
   color: #;
-  background-color: #ffcc80;
+  background-color: #45d4eb;
   border-color: #ffcc80;
 }
 
