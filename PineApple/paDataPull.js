@@ -141,7 +141,42 @@ var historicalJSON = [{
 //d.setUTCSeconds(utcSeconds);
 //d is now a date (in my time zone) set to Fri Feb 13 2009 18:31:30 GMT-0500 (EST)
 function aggregateFunction(){
-	alert("in function");	
+	var data = {}
+	var latestTime = 0;
+	var averagePrice = 0;
+	var totalPrice = 0;
+	var marketCount = 0;
+	
+	for (var i=0; i<historicalJSON.length; i++){
+		if (historicalJSON[i].time > latestTime){
+			data = historicalJSON[i];
+			latestTime = historicalJSON[i].time;
+		}
+	}
+	var marketsTable = document.getElementById("marketsTableBody");
+	console.log(data);
+	dataObjects = Object.entries(data);
+	for (var j=1; j<dataObjects.length; j++){
+		totalPrice+=dataObjects[j][1];
+		var newName = dataObjects[j][0];
+		var loc = newName.search(":btcusd");
+		newName = newName.slice(0,loc);
+		dataObjects[j][0] = newName;
+	}
+	marketCount = (dataObjects.length) - 1;
+	averagePrice = totalPrice/marketCount;
+	console.log(averagePrice);
+	
+	for (var l= 1; l<dataObjects.length; l++){
+		var compare = "below avg";
+		if (dataObjects[l][1] > averagePrice){
+			compare = "above avg";
+		}
+		var newelement1 = document.createElement("tr");
+		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>"+String(dataObjects[l][1]) + "</td><td>"+ compare + "</td>";
+		marketsTable.appendChild(newelement1);
+		console.log(newelement1);
+	}
 }
 
 function populateChart(form){
