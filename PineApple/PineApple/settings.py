@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'PineApple.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'AUTH_SOURCE': 'websci2018',
+        # 'AUTH_SOURCE': 'websci2018',
         'NAME': 'websci2018',
-        'USER': 'websci',
-        'PASSWORD': 'websci2018',
+        # 'USER': 'websci',
+        # 'PASSWORD': 'websci2018',
     }
 }
 
