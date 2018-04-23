@@ -1,0 +1,6 @@
+@media(max-width: 480px){
+  .btn-group {
+    display: block !important;
+    width: auto !important;
+  }
+}
