@@ -136,6 +136,14 @@ var historicalJSON = [{
 ];
 
 
+//var utcSeconds = 1234567890;
+//var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+//d.setUTCSeconds(utcSeconds);
+//d is now a date (in my time zone) set to Fri Feb 13 2009 18:31:30 GMT-0500 (EST)
 function aggregateFunction(){
 	alert("in function");	
+}
+
+function populateChart(form){
+	alert("populate chart function running");
 }

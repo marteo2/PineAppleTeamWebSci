@@ -85,11 +85,45 @@
             </div>
           </div>
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-8">
 							<canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 						</div>
-						<div class="col-md-6">
-							<h2>Section title</h2>
+						<div class="col-md-4">
+							<form action="" method="get" id="chartInputForm">
+								<select name="market1">
+									<option value="bitfinex:btcusd">Bitfinex</option>
+									<option value="bitflyer:btcusd">Bitflyer</option>
+									<option value="bitsquare:btcusd">Bitsquare</option>
+									<option value="bitstamp:btcusd">Bitstamp</option>
+									<option value="btce:btcusd">BTCE</option>
+									<option value="cexio:btcusd">Cexio</option>
+									<option value="gdax:btcusd">GDAX</option>
+									<option value="gemini:btcusd">Gemini</option>
+									<option value="kraken:btcusd">Kraken</option>
+									<option value="okcoin:btcusd">OkCoin</option>
+									<option value="quadriga:btcusd">Quadriga</option>
+									<option value="quoine:btcusd">Quoine</option>
+								</select>
+								<select name="market2">
+									<option value="bitfinex:btcusd">Bitfinex</option>
+									<option value="bitflyer:btcusd">Bitflyer</option>
+									<option value="bitsquare:btcusd">Bitsquare</option>
+									<option value="bitstamp:btcusd">Bitstamp</option>
+									<option value="btce:btcusd">BTCE</option>
+									<option value="cexio:btcusd">Cexio</option>
+									<option value="gdax:btcusd">GDAX</option>
+									<option value="gemini:btcusd">Gemini</option>
+									<option value="kraken:btcusd">Kraken</option>
+									<option value="okcoin:btcusd">OkCoin</option>
+									<option value="quadriga:btcusd">Quadriga</option>
+									<option value="quoine:btcusd">Quoine</option>
+								</select>
+								<input type="button" name="button" value="Go" onclick="populateChart(this.form)">
+							</form>
+						</div>
+					</div>
+					<div class="row">
+						<h2>Section title</h2>
 						<div class="table-responsive">
 							<table class="table table-striped table-sm">
 								<thead>
@@ -104,8 +138,6 @@
 
 							</table>
 						</div>
-					</div>
-					
 						
 					</div>
 
