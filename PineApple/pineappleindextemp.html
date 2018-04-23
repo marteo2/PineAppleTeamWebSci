@@ -90,10 +90,10 @@
 						<div class="col-md-8">
 							<canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 						</div>
-						<div class="col-md-4" align='center' >
+						<div class="col-md-4 col-sm-12" align='center' id="flexButtons">
 							<form action="" method="get" id="chartInputForm">
-              <div class="col-md-4 form-group" > <br><br><br><br><br> <!-- TODO figure out how to center this vertically the right way -->
-              <label for="market1">Select Coin 1 (Red)</label>
+              <div class="col-md-4 col-sm-12 form-group" >
+              <label for="market1">Select Market 1 (Red)</label>
               <br>
                <select class="form-control" id="exampleSelect1">
 									<option value="bitfinex:btcusd">Bitfinex</option>
@@ -111,7 +111,7 @@
                 </div>
 
                 <div class="col-md-4 form-group" >
-              <label for="market2">Select Coin 2 (Blue)</label>
+              <label for="market2">Select Market 2 (Blue)</label>
               <br>
                <select class="form-control" id="exampleSelect1">
                   <option value="bitfinex:btcusd">Bitfinex</option>
@@ -128,7 +128,7 @@
                   <option value="quoine:btcusd">Quoine</option></select>
                 </div>
                 <div >
-								<input type="button" name="button" value="Update Chart" class = 'col-md-4 btn-warning btn-lg ' onclick="populateChart(this.form)"></div>
+								<input id="chartButton" type="button" name="button" value="Update Chart" class = 'col-md-4 btn-warning btn-lg ' onclick="populateChart(this.form)"></div>
 							</form>
 						</div>
 					</div>
