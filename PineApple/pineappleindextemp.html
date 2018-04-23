@@ -92,7 +92,7 @@
 						</div>
 						<div class="col-md-4" align='center' >
 							<form action="" method="get" id="chartInputForm">
-              <div class="col-md-4 form-group" > <br><br><br><br><br> <!-- TODO figure out how to center this vertically the right way -->
+              <div class="form-group" > <br><br><br><br><br> <!-- TODO figure out how to center this vertically the right way -->
               <label for="market1">Select Coin 1 (Red)</label>
               <br>
                <select class="form-control" id="exampleSelect1">
@@ -110,7 +110,7 @@
                   <option value="quoine:btcusd">Quoine</option></select>
                 </div>
 
-                <div class="col-md-4 form-group" >
+                <div class="form-group" >
               <label for="market2">Select Coin 2 (Blue)</label>
               <br>
                <select class="form-control" id="exampleSelect1">
@@ -128,7 +128,7 @@
                   <option value="quoine:btcusd">Quoine</option></select>
                 </div>
                 <div >
-								<input type="button" name="button" value="Update Chart" class = 'col-md-4 btn-warning btn-lg ' onclick="populateChart(this.form)"></div>
+								<input type="button" name="button" value="Update Chart" class = 'btn-warning ' onclick="populateChart(this.form)"></div>
 							</form>
 						</div>
 					</div>
@@ -144,7 +144,7 @@
 									</tr>
 								</thead>
 								<tbody id="marketsTableBody"  onload="aggregateFunction()">
-									
+
 								</tbody>
 							</table>
 						</div>
