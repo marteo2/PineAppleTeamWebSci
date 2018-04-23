@@ -1,6 +1,3 @@
-@media(max-width: 480px){
-  .btn-group {
-    display: block !important;
-    width: auto !important;
-  }
+.btn-group > button {
+    font-size: 1.5vw;
 }
