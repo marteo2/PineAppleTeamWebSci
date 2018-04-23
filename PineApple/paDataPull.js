@@ -1,0 +1,5 @@
+var jsonFileNames = ["parsedusdbtcdata1519320470.224996.json","parsedusdbtcdata1519512115.416004.json","parsedusdbtcdata1519151517.2418811.json","parsedusdbtcdata1519151518.274397.json","parsedusdbtcdata1519151537.124332.json","parsedusdbtcdata1519151551.594238.json","parsedusdbtcdata1519151912.206002.json","parsedusdbtcdata1519152669.048627.json","parsedusdbtcdata1519152881.957901.json","parsedusdbtcdata1519152895.836216.json","parsedusdbtcdata1519152939.631706.json","parsedusdbtcdata1519152944.231408.json","parsedusdbtcdata1519153002.767909.json","parsedusdbtcdata1519153005.672537.json","parsedusdbtcdata1519153008.2082071.json","parsedusdbtcdata1519153019.840377.json","parsedusdbtcdata1519153053.9101639.json","parsedusdbtcdata1519153055.49937.json","parsedusdbtcdata1519153136.231906.json","parsedusdbtcdata1519153136.2894871.json","parsedusdbtcdata1519175293.2648902.json","parsedusdbtcdata1519175305.928298.json","parsedusdbtcdata1519175441.817842.json","parsedusdbtcdata1519175483.6735628.json"]; //array of all the historical json files of btc data, to be used to read json info for frontend display
+
+function aggregateFunction(){
+	alert("in function");	
+}
