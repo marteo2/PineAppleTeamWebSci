@@ -14,7 +14,12 @@
   
   function Findcoin(){
     var find = document.getElementById('search1').value; 
-    window.location = 'pineappleindextemp.html#'+find;
+    var val = document.getElementById(find);
+    //alert(val);
+    if (val == null){
+      alert('no bitcoins by this meme');
+    }
+    else window.location = 'pineappleindextemp.html#'+find;
 
   }
 
@@ -30,7 +35,7 @@
   <body onload="aggregateFunction()">
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
       <a class="navbar-brand col-sm-3 img-responsive col-md-2 mr-0" href="#"><img src="pineapple2.png" style="height:100px"></a>
-      <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input type='submit' onclick="Findcoin();">
+      <input class="form-control form-control-dark w-100 btn" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input type='submit' onclick="Findcoin();">
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <a class="nav-link" href="#">Sign out</a>
