@@ -168,12 +168,20 @@ function aggregateFunction(){
 	console.log(averagePrice);
 	
 	for (var l= 1; l<dataObjects.length; l++){
-		var compare = "below avg";
-		if (dataObjects[l][1] > averagePrice){
-			compare = "above avg";
+		var difference = (dataObjects[l][1]/averagePrice) - 1.00;
+		var compare = "";
+		var compareID = ""
+		
+		if (difference > 0){
+			compare = "above (+" + difference.toFixed(3)+")";
+			compareID = "above";
+		}
+		else{
+			compare = "below (" + difference.toFixed(3)+")";
+			compareID = "below";
 		}
 		var newelement1 = document.createElement("tr");
-		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>"+String(dataObjects[l][1]) + "</td><td>"+ compare + "</td>";
+		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
 		marketsTable.appendChild(newelement1);
 		console.log(newelement1);
 	}
