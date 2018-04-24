@@ -188,5 +188,14 @@ function aggregateFunction(){
 }
 
 function populateChart(form){
-	alert("populate chart function running");
+	var market1 = document.getElementById("exampleSelect1").value;
+	var market2 = document.getElementById("exampleSelect2").value;
+	
+	var market1Data = [];
+	var market2Data = [];
+	
+	for (var i=0; i<historicalJSON.length; i++){
+		
+	}
+	
 }
