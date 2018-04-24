@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
     'btcdata',
     'celery',
     'django_celery_results',
@@ -131,3 +132,8 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+CRONJOBS = (
+    ('*/5 * * * *', 'btcdata.management.commands.get_btcdata','>/tmp/stdout.log 2>/tmp/stderr.log'),
+)
+

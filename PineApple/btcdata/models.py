@@ -13,8 +13,8 @@ class Choice(models.Model):
 
 
 class PriceData(models.Model):
-    time = models.DateTimeField("date get", )
+    time = models.DateTimeField()
     price = models.TextField(default="")
 
     def __str__(self):
-        return self.time
+        return self.price

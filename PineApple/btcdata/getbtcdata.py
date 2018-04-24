@@ -1,15 +1,14 @@
-# pprint.pprint(jsonData)
-# for channel in jsonData..values():
-#     print(
-#     channel ) # prints the entire channel
-#     print(
-#     channel['name'] )# prints name
-# print(jsonData.allowance)
 import json
 import time
+
+import django
 import requests
 
 import os
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'PineApple.PineApple.settings'  # 设置项目的配置文件
+django.setup()
+
 
 os.environ['DJANGO_SETTING_MODULE'] = 'PineApple.settings'
 
