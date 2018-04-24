@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         # 'AUTH_SOURCE': 'websci2018',
         'NAME': 'websci2018',
-        'PORT': 15000,
+        'PORT': 27017,
         # 'USER': 'websci',
         # 'PASSWORD': 'websci2018',
     }
