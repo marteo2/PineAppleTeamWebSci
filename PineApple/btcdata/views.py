@@ -1,12 +1,17 @@
+import datetime
 import glob
+from xmlrpc.client import DateTime
 
 from django.shortcuts import render
 import json
 import time
 import requests
 
-
 # Create your views here.
+from btcdata.getbtcdata import save_btc
+from btcdata.models import PriceData
+
+
 def saveBTC(request):
     jsonData = requests.get('https://api.cryptowat.ch/markets/summaries').text
 
@@ -56,6 +61,10 @@ def readDATA(request):
 
 
 def index(request):
-    saveBTC(request)
+    btc_data = save_btc()
+    p = PriceData()
+    p.time = datetime.datetime.fromtimestamp(btc_data["time"]).strftime('%Y-%m-%d %H:%M:%S.%f')
+    p.price = btc_data
+    p.save()
     readDATA(request)
     return render(request, 'btcdata/index.html')
