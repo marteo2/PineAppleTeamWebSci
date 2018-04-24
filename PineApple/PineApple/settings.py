@@ -134,6 +134,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CRONJOBS = (
-    ('*/5 * * * *', 'btcdata.management.commands.get_btcdata','>/tmp/stdout.log 2>/tmp/stderr.log'),
+    ('*/5 * * * *', 'django.core.management.call_command', ['get_btcdata'],
+     {}, '>> /tmp/btcData.log 2>&1'),
 )
-

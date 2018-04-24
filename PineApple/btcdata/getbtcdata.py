@@ -6,11 +6,8 @@ import requests
 
 import os
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'PineApple.PineApple.settings'  # 设置项目的配置文件
+os.environ['DJANGO_SETTINGS_MODULE'] = 'PineApple.PineApple.settings'
 django.setup()
-
-
-os.environ['DJANGO_SETTING_MODULE'] = 'PineApple.settings'
 
 
 def save_btc():
@@ -29,7 +26,6 @@ def save_btc():
         if item[-6:] == "btcusd":
             # If we find a pair, snag its last price
             price = parsed_json['result'][item]['price']['last']
-            print(item + " " + str(price))
             exchanges[item] = price
             # Change max or min if found
             if price > max_price:
