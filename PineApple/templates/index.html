@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Your solution for bitcoin market comparisons">
+    <meta name="author" content="PineappleTeamGroup">
+    <link rel="icon" href="Bitcoin.jpg">
+
+    <title>Pineapple Coin Project</title>
+
+
+  <!-- jQuery -->
+<script type="text/javascript">
+  function Findcoin(){
+    var find = document.getElementById('search1').value;
+    var val = document.getElementById(find);
+    //alert(val);
+    if (val == null){
+      alert('no bitcoins by this meme');
+    }
+    else window.location = 'pineappleindextemp.html#'+find;
+  }
+</script>
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="pineapplecss.css" rel="stylesheet ">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+
+  <body onload="aggregateFunction()">
+    <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
+      <a class="navbar-brand img-responsive" href="#"><img src="pineapple2.png" style="height:100px"></a>
+      <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();">
+      <ul class="navbar-nav px-3">
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+            <br><br><br>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  Coins
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  About Us
+                </a>
+              </li>
+            </ul>
+
+
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>
+					<div class="row">
+						<div class="col-md-8">
+							<canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+						</div>
+						<div class="col-md-4" align='center' >
+							<form action="" method="get" id="chartInputForm">
+              <div class="col-md-4 form-group" > <br><br><br><br><br> <!-- TODO figure out how to center this vertically the right way -->
+              <label for="market1">Select Coin 1 (Red)</label>
+              <br>
+               <select class="form-control" id="exampleSelect1">
+									<option value="bitfinex:btcusd">Bitfinex</option>
+                  <option value="bitflyer:btcusd">Bitflyer</option>
+                  <option value="bitsquare:btcusd">Bitsquare</option>
+                  <option value="bitstamp:btcusd">Bitstamp</option>
+                  <option value="btce:btcusd">BTCE</option>
+                  <option value="cexio:btcusd">Cexio</option>
+                  <option value="gdax:btcusd">GDAX</option>
+                  <option value="gemini:btcusd">Gemini</option>
+                  <option value="kraken:btcusd">Kraken</option>
+                  <option value="okcoin:btcusd">OkCoin</option>
+                  <option value="quadriga:btcusd">Quadriga</option>
+                  <option value="quoine:btcusd">Quoine</option></select>
+                </div>
+
+                <div class="col-md-4 form-group" >
+              <label for="market2">Select Coin 2 (Blue)</label>
+              <br>
+               <select class="form-control" id="exampleSelect2">
+                  <option value="bitfinex:btcusd">Bitfinex</option>
+                  <option value="bitflyer:btcusd">Bitflyer</option>
+                  <option value="bitsquare:btcusd">Bitsquare</option>
+                  <option value="bitstamp:btcusd">Bitstamp</option>
+                  <option value="btce:btcusd">BTCE</option>
+                  <option value="cexio:btcusd">Cexio</option>
+                  <option value="gdax:btcusd">GDAX</option>
+                  <option value="gemini:btcusd">Gemini</option>
+                  <option value="kraken:btcusd">Kraken</option>
+                  <option value="okcoin:btcusd">OkCoin</option>
+                  <option value="quadriga:btcusd">Quadriga</option>
+                  <option value="quoine:btcusd">Quoine</option></select>
+                </div>
+                <div >
+								<input type="button" name="button" id="chartButton" value="Update Chart" class = 'col-md-4 btn-warning btn-lg ' onclick="populateChart(this.form)"></div>
+							</form>
+						</div>
+					</div>
+					<div class="row">
+						<h2>Section title</h2>
+						<div class="table-responsive">
+							<table class="table table-striped table-sm">
+								<thead>
+									<tr>
+										<th>Market</th>
+										<th>Last Price</th>
+										<th>Comparison to average</th>
+									</tr>
+								</thead>
+								<tbody id="marketsTableBody">
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+		<script type = "text/javascript" src="paDataPull.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+		<script src="../../../../dist/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+
+    </script>
+
+  </body>
+</html>

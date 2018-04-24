@@ -66,4 +66,4 @@ def index(request):
     p.price = btc_data
     p.save()
     readDATA(request)
-    return render(request, 'btcdata/index.html')
+    return render(request, 'index.html')
