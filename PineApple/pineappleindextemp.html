@@ -11,20 +11,19 @@
 
 
   <!-- jQuery -->
-		<script type="text/javascript">
+<script type="text/javascript">
+  function Findcoin(){
+    var find = document.getElementById('search1').value;
+    var val = document.getElementById(find);
+    //alert(val);
+    if (val == null){
+      alert('no bitcoins by this meme');
+    }
+    else window.location = 'pineappleindextemp.html#'+find;
+  }
+</script>
+			
 
-			function Findcoin(){
-				var find = document.getElementById('search1').value;
-				var val = document.getElementById(find);
-				//alert(val);
-				if (val == null){
-					alert('no bitcoins by this meme');
-				}
-				else window.location = 'pineappleindextemp.html#'+find;
-
-			}
-
-		</script>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
@@ -34,15 +33,16 @@
     <link href="dashboard.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body onload="aggregateFunction()">
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
-      <a class="navbar-brand img-responsive" href="pineappleindextemp.html"><img src="pineapple2.png" style="height:100px"></a>
+      <a class="navbar-brand img-responsive" href="#"><img src="pineapple2.png" style="height:100px"></a>
       <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();">
       <ul class="navbar-nav px-3">
       </ul>
     </nav>
 
     <div class="container-fluid">
+      <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
@@ -89,29 +89,30 @@
 						<div class="col-md-8">
 							<canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 						</div>
-						<div class="col-md-4 col-sm-12" align='center' id="flexButtons">
+						<div class="col-md-4" align='center' >
 							<form action="" method="get" id="chartInputForm">
-              <div class="col-md-4 col-sm-12 form-group" >
-								<label for="market1">Select Coin 1 (Red)</label>
+              <div class="col-md-4 form-group" > <br><br><br><br><br> <!-- TODO figure out how to center this vertically the right way -->
+              <label for="market1">Select Coin 1 (Red)</label>
+              <br>
+               <select class="form-control" id="exampleSelect1">
+									<option value="bitfinex:btcusd">Bitfinex</option>
+                  <option value="bitflyer:btcusd">Bitflyer</option>
+                  <option value="bitsquare:btcusd">Bitsquare</option>
+                  <option value="bitstamp:btcusd">Bitstamp</option>
+                  <option value="btce:btcusd">BTCE</option>
+                  <option value="cexio:btcusd">Cexio</option>
+                  <option value="gdax:btcusd">GDAX</option>
+                  <option value="gemini:btcusd">Gemini</option>
+                  <option value="kraken:btcusd">Kraken</option>
+                  <option value="okcoin:btcusd">OkCoin</option>
+                  <option value="quadriga:btcusd">Quadriga</option>
+                  <option value="quoine:btcusd">Quoine</option></select>
+                </div>
 
-								 <select class="form-control" id="exampleSelect1">
-										<option value="bitfinex:btcusd">Bitfinex</option>
-										<option value="bitflyer:btcusd">Bitflyer</option>
-										<option value="bitsquare:btcusd">Bitsquare</option>
-										<option value="bitstamp:btcusd">Bitstamp</option>
-										<option value="btce:btcusd">BTCE</option>
-										<option value="cexio:btcusd">Cexio</option>
-										<option value="gdax:btcusd">GDAX</option>
-										<option value="gemini:btcusd">Gemini</option>
-										<option value="kraken:btcusd">Kraken</option>
-										<option value="okcoin:btcusd">OkCoin</option>
-										<option value="quadriga:btcusd">Quadriga</option>
-										<option value="quoine:btcusd">Quoine</option>
-								</select>
-              </div>
-              <div class="col-md-4 form-group" >
-              	<label for="market2">Select Coin 2 (Blue)</label>
-               	<select class="form-control" id="exampleSelect2">
+                <div class="col-md-4 form-group" >
+              <label for="market2">Select Coin 2 (Blue)</label>
+              <br>
+               <select class="form-control" id="exampleSelect2">
                   <option value="bitfinex:btcusd">Bitfinex</option>
                   <option value="bitflyer:btcusd">Bitflyer</option>
                   <option value="bitsquare:btcusd">Bitsquare</option>
@@ -123,11 +124,10 @@
                   <option value="kraken:btcusd">Kraken</option>
                   <option value="okcoin:btcusd">OkCoin</option>
                   <option value="quadriga:btcusd">Quadriga</option>
-                  <option value="quoine:btcusd">Quoine</option>
-								</select>
-               </div>
-               <div >
-								<input id="chartButton" type="button" name="button" value="Update Chart" class = 'col-md-4 btn-warning btn-lg ' onclick="populateChart(this.form)"></div>
+                  <option value="quoine:btcusd">Quoine</option></select>
+                </div>
+                <div >
+								<input type="button" name="button" id="chartButton" value="Update Chart" class = 'col-md-4 btn-warning btn-lg ' onclick="populateChart(this.form)"></div>
 							</form>
 						</div>
 					</div>
@@ -142,8 +142,8 @@
 										<th>Comparison to average</th>
 									</tr>
 								</thead>
-								<tbody id="marketsTableBody"  onload="aggregateFunction()">
-
+								<tbody id="marketsTableBody">
+									
 								</tbody>
 							</table>
 						</div>
@@ -151,58 +151,29 @@
 					</div>
 
         </main>
-      
+      </div>
     </div>
 
-  </body>
-	
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
+		<script type = "text/javascript" src="paDataPull.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-		<script src="paDataPull.js"></script>
+		<script src="../../../../dist/js/bootstrap.min.js"></script>
 
-    <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
     </script>
+		
 
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Time1", "Time2", "Time3", "Time4", "Time5", "Time6", "Time7", "Time8", "Time9", "Time10"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034, 11111, 24510, 15339	],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
+      
     </script>
-		
 
+  </body>
 </html>

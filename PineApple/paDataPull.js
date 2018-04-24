@@ -136,10 +136,7 @@ var historicalJSON = [{
 ];
 
 
-//var utcSeconds = 1234567890;
-//var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
-//d.setUTCSeconds(utcSeconds);
-//d is now a date (in my time zone) set to Fri Feb 13 2009 18:31:30 GMT-0500 (EST)
+
 function aggregateFunction(){
 	var data = {}
 	var latestTime = 0;
@@ -183,19 +180,67 @@ function aggregateFunction(){
 		var newelement1 = document.createElement("tr");
 		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
 		marketsTable.appendChild(newelement1);
-		console.log(newelement1);
+		//console.log(newelement1);
 	}
 }
 
 function populateChart(form){
 	var market1 = document.getElementById("exampleSelect1").value;
 	var market2 = document.getElementById("exampleSelect2").value;
-	
+	var times = [];
 	var market1Data = [];
 	var market2Data = [];
 	
-	for (var i=0; i<historicalJSON.length; i++){
-		
-	}
+	//var utcSeconds = 1234567890;
+	//var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+	//d.setUTCSeconds(utcSeconds);
+	//d is now a date (in my time zone) set to Fri Feb 13 2009 18:31:30 GMT-0500 (EST)
 	
+	for (var i=0; i < historicalJSON.length; i++){
+		var itime = historicalJSON[i].time;
+		var market1point = historicalJSON[i][market1];
+		var market2point = historicalJSON[i][market2];
+		var date = new Date(0);
+		date.setUTCSeconds(itime);
+		var datestring = String(date.getHours())+":"+String(date.getMinutes());
+		times.push(datestring);
+		market1Data.push(market1point);
+		market2Data.push(market2point);
+	}
+	console.log(market1Data);
+	
+	var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: times,
+          datasets: [{
+            data: market1Data,
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#ff0000',
+            borderWidth: 4,
+            pointBackgroundColor: '#ff0000'
+          },{
+            data: market2Data,
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
 }
