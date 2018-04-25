@@ -60,4 +60,4 @@ def index(request):
     print("end")
     print(data_points)
 
-    return render(request, 'index.html', {"datas" : data_points } )
+    return render(request, 'index.html', {"datas": data_points})

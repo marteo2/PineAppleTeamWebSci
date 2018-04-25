@@ -1,3 +1,4 @@
+import ast
 import datetime
 import json
 import time
@@ -6,6 +7,8 @@ import django
 import requests
 
 import os
+
+from bson import json_util
 from pymongo import *
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'PineApple.PineApple.settings'
@@ -28,12 +31,30 @@ def find_data(start_date, end_date):
     data = btc_collection.find({"time": {"$gte": start_date, "$lt": end_date}})
 
     exchanges = {}
+
     for i in data:
         # print(i["time"])
         # exchanges[i["time"]] = i["time"]
-        exchanges[i["time"]]=i["price"]
+        exchanges[i["time"]] = i["price"]
 
-    return exchanges;
+    return exchanges
+
+
+def find_data_json(start_date, end_date):
+    client = MongoClient()
+
+    db = client.websci2018
+    btc_collection = db.btcdata_pricedata
+
+    start_date = datetime.datetime.fromtimestamp(start_date)
+    end_date = datetime.datetime.fromtimestamp(end_date)
+    data = btc_collection.find({"time": {"$gte": start_date, "$lt": end_date}})
+    output = []
+    for i in data:
+        output.append(ast.literal_eval(i["price"]))
+    # output = json.dumps(output)
+
+    return output
 
 
 def save_btc():
@@ -69,5 +90,5 @@ def save_btc():
 
 
 if __name__ == "__main__":
-    find_data(1524618302.9650571, 1524619502.552002)
-    save_btc()
+    btc_data = find_data_json(152461830296 / 1000.0, 1524693509569 / 1000.0)
+    print("WOW")

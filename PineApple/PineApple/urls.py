@@ -21,7 +21,8 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('btcdata/', include('btcdata.urls', namespace='btcdata'))
+    path('btcdata/', include('btcdata.urls', namespace='btcdata')),
+    path('api/', include('api.urls', namespace='api'))
 ]
 
 if settings.DEBUG:

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'btcdata',
     'celery',
     'django_celery_results',
+    'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [
