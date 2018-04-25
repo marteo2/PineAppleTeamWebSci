@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Your solution for bitcoin market comparisons">
     <meta name="author" content="PineappleTeamGroup">
-    <link rel="icon" href="Bitcoin.jpg">
+
+
+
+    <link rel="icon" href="/static/Bitcoin.jpg">
 
     <title>Pineapple Coin Project</title>
 
@@ -33,9 +36,14 @@
     <link href="dashboard.css" rel="stylesheet">
   </head>
 
+
+  {% load static %}
+
+
+
   <body onload="aggregateFunction()">
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
-      <a class="navbar-brand img-responsive" href="#"><img src="pineapple2.png" style="height:100px"></a>
+      <a class="navbar-brand img-responsive" href="#"><img src="{% static "pineapple2.png" %}" style="height:100px"></a>
       <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();">
       <ul class="navbar-nav px-3">
       </ul>
