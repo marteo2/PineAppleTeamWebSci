@@ -1,0 +1,27 @@
+.btn-group > button {
+    font-size: 1.5vw;
+}
+
+td#above{
+	color: #ff6600;
+}
+td#below{
+	color: #00cc99;
+}
+input#chartButton{
+	width: auto;
+	font-size: 15px;
+}
+.row{
+	align-content: center;
+}
+div#flexButtons{
+	display: flex;
+	justify-content: center;
+	width: auto;
+	align-items: center;
+}
+form#chartInputForm{
+	width: 100% !important;
+	align-content: center;
+}
