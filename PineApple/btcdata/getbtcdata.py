@@ -29,8 +29,9 @@ def find_data(start_date, end_date):
 
     exchanges = {}
     for i in data:
-        print(i["time"])
-        exchanges[i["time"]] = i["price"]
+        # print(i["time"])
+        # exchanges[i["time"]] = i["time"]
+        exchanges[i["time"]]=i["price"]
 
     return exchanges;
 

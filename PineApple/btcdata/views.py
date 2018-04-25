@@ -46,16 +46,18 @@ def saveBTC(request):
 
 
 def index(request):
-    btc_data = save_btc()
-    p = PriceData()
-    p.time = datetime.datetime.fromtimestamp(btc_data["time"]).strftime('%Y-%m-%d %H:%M:%S.%f')
-    p.price = btc_data
-    p.save()
+    # btc_data = save_btc()
+    # p = PriceData()
+    # p.time = datetime.datetime.fromtimestamp(btc_data["time"]).strftime('%Y-%m-%d %H:%M:%S.%f')
+    # p.price = btc_data
+    # p.save()
 
-    # btc_data = find_data(1524618302.9650571, 1994618302.9650571)
-    # for i in btc_data:
-    #     print(i["price"])
-    #     print("here")
-    # print("end")
+    btc_data = find_data(1524618302.9650571, 1994618302.9650571)
+    data_points = []
+    for i in btc_data.values():
+        # print(i)
+        data_points.append(i)
+    print("end")
+    print(data_points)
 
-    return render(request, 'index.html')
+    return render(request, 'index.html', {"datas" : data_points } )
