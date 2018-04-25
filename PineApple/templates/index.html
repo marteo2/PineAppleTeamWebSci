@@ -7,8 +7,9 @@
     <meta name="author" content="PineappleTeamGroup">
 
 
+    {% load static %}
 
-    <link rel="icon" href="/static/Bitcoin.jpg">
+    <link rel="icon" href="{% static "Bitcoin.jpg" %}">
 
     <title>Pineapple Coin Project</title>
 
@@ -29,15 +30,14 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="pineapplecss.css" rel="stylesheet ">
+    <link href="{% static "bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "pineapplecss.css" %}" rel="stylesheet ">
 
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="{% static "dashboard.css" %}" rel="stylesheet">
   </head>
 
 
-  {% load static %}
 
 
 
@@ -164,7 +164,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-		<script type = "text/javascript" src="paDataPull.js"></script>
+		<script type = "text/javascript" src="{% static "paDataPull.js" %} "></script>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
