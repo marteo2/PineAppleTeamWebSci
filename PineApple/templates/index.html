@@ -37,7 +37,7 @@
 
 
 
-  <body onload="aggregateFunction()">
+  <body onload="aggregateFunction();">
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
       <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:100px"></a>
       <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();">
@@ -92,8 +92,9 @@
             </div>
           </div>
 					<div class="row">
-						<div class="col-md-8">
-							<canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+						<div class="col-md-8" id="myChart">
+              <canvas class="my-4" id="meChart" width="900" height="380"></canvas>
+
 						</div>
 						<div class="col-md-4" align='center' >
 							<form action="" method="get" id="chartInputForm">
@@ -101,7 +102,7 @@
               <label for="market1">Select Coin 1 (Red)</label>
                <select class="form-control" id="exampleSelect1">
 									<option value="bitfinex:btcusd">Bitfinex</option>
-                  <option value="bitflyer:btcusd">Bitflyer</option>
+                  <option value="bitflyer:btcusd"  selected="selected">Bitflyer</option>
                   <option value="bitsquare:btcusd">Bitsquare</option>
                   <option value="bitstamp:btcusd">Bitstamp</option>
                   <option value="btce:btcusd">BTCE</option>
@@ -122,7 +123,7 @@
                   <option value="bitflyer:btcusd">Bitflyer</option>
                   <option value="bitsquare:btcusd">Bitsquare</option>
                   <option value="bitstamp:btcusd">Bitstamp</option>
-                  <option value="btce:btcusd">BTCE</option>
+                  <option value="btce:btcusd"  selected="selected">BTCE</option>
                   <option value="cexio:btcusd">Cexio</option>
                   <option value="gdax:btcusd">GDAX</option>
                   <option value="gemini:btcusd">Gemini</option>
@@ -131,11 +132,8 @@
                   <option value="quadriga:btcusd">Quadriga</option>
                   <option value="quoine:btcusd">Quoine</option></select>
                 </div>
-                <div id="buttons">
-
-                </div>
-                <div >
-								<input type="button" name="button" id="chartButton" value="Update Chart" class = 'col-md-5 btn-warning btn-lg ' onclick="populateChart(this.form)"></div>
+                <div>
+								<input type="button" name="button" id="chartButton" value="Update Chart" class ='col-md-5 btn-warning btn-lg' onclick="populateChart(this.form)"></div>
 							</form>
 						</div>
 					</div>
@@ -407,8 +405,11 @@
       		market2Data.push(market2point);
       	}
       	console.log(market1Data);
+        $("#meChart").remove();
+        $("#myChart").append('<canvas class="my-4" id="meChart" width="900" height="380"></canvas>');
+        // var ctx = document.getElementById("chartreport").getContext("2d");
+      	var ctx = document.getElementById("meChart");
 
-      	var ctx = document.getElementById("myChart");
             var myChart = new Chart(ctx, {
               type: 'line',
               data: {
@@ -420,7 +421,8 @@
                   borderColor: '#ff0000',
                   borderWidth: 4,
                   pointBackgroundColor: '#ff0000',
-                  fill: '-1'
+                  fill: '-1',
+                  pointRadius: 1
                 },{
                   data: market2Data,
                   lineTension: 0,
@@ -428,7 +430,8 @@
                   borderColor: '#007bff',
                   borderWidth: 4,
                   pointBackgroundColor: '#007bff',
-                  fill: '0',
+                  fill: '-1',
+                  pointRadius: 1
                 }]
               },
               options: {
@@ -446,6 +449,7 @@
             });
       }
 
+
     </script>
 
 
@@ -458,7 +462,7 @@
 
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
-      feather.replace()
+      feather.replace();
     </script>
 
 
