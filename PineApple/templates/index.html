@@ -316,7 +316,6 @@
       	var averagePrice = 0;
       	var totalPrice = 0;
       	var marketCount = 0;
-        alert(historicalJSON[0]);
 
       	for (var i=0; i<historicalJSON.length; i++){
       		if (historicalJSON[i].time > latestTime){
@@ -364,18 +363,15 @@
       	var times = [];
       	var market1Data = [];
       	var market2Data = [];
-        alert(myjson.length);
       	//var utcSeconds = 1234567890;
       	//var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
       	//d.setUTCSeconds(utcSeconds);
       	//d is now a date (in my time zone) set to Fri Feb 13 2009 18:31:30 GMT-0500 (EST)
-        alert(JSON.parse(myjson[0]));
-        alert(JSON.parse(myjson[0]).time);
 
-      	for (var i=0; i < myjson.length; i++){
-      		var itime = myjson[i].time;
-      		var market1point = myjson[i][market1];
-      		var market2point = myjson[i][market2];
+      	for (var i=0; i < historicalJSON.length; i++){
+      		var itime = historicalJSON[i].time;
+      		var market1point = historicalJSON[i][market1];
+      		var market2point = historicalJSON[i][market2];
       		var date = new Date(0);
       		date.setUTCSeconds(itime);
       		var datestring = String(date.getHours())+":"+String(date.getMinutes());
