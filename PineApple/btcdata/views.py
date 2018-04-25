@@ -45,25 +45,6 @@ def saveBTC(request):
     print("Saved btc data to file")
 
 
-def readDATA(request):
-    directory = 'historicaldata/'
-    import os
-    i = 0
-    list_of_files = glob.glob('historicadata/*')
-    # latest_file = max(list(os.walk(directory)), key=os.path.getctime)
-    # print("Lastest File: " + latest_file)
-    # for root, dirs, files in reversed(list(os.walk(directory))):
-    #     print(root, dirs, files)
-    #     # print(files[0:5])
-    #
-    # pass
-
-
 def index(request):
     btc_data = save_btc()
-    p = PriceData()
-    p.time = datetime.datetime.fromtimestamp(btc_data["time"]).strftime('%Y-%m-%d %H:%M:%S.%f')
-    p.price = btc_data
-    p.save()
-    readDATA(request)
     return render(request, 'index.html')
