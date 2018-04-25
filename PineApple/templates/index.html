@@ -131,6 +131,9 @@
                   <option value="quadriga:btcusd">Quadriga</option>
                   <option value="quoine:btcusd">Quoine</option></select>
                 </div>
+                <div id="buttons">
+
+                </div>
                 <div >
 								<input type="button" name="button" id="chartButton" value="Update Chart" class = 'col-md-5 btn-warning btn-lg ' onclick="populateChart(this.form)"></div>
 							</form>
@@ -324,6 +327,9 @@
       		}
       	}
       	var marketsTable = document.getElementById("marketsTableBody");
+
+        var buttons = document.getElementById("buttons");
+
       	console.log(data);
       	dataObjects = Object.entries(data);
       	for (var j=1; j<dataObjects.length; j++){
@@ -353,6 +359,10 @@
       		var newelement1 = document.createElement("tr");
       		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
       		marketsTable.appendChild(newelement1);
+
+          // var newelement2 = document.createElement("div");
+          // newelement2.innerHTML = "<div class='form-check'> <input class='form-check-input' type='checkbox' value='' id='"+String(dataObjects[l][0]).toUpperCase()+"'> <label class='form-check-label' for='" + String(dataObjects[l][0]).toUpperCase() +"'>" + String(dataObjects[l][0]).toUpperCase()  + "</label> </div>"
+          // buttons.append(newelement2);
       		//console.log(newelement1);
       	}
       }
@@ -363,6 +373,23 @@
       	var times = [];
       	var market1Data = [];
       	var market2Data = [];
+        //
+        // var    BITBAY     = document.getElementById("BITBAY").checked;
+        // var    BITFINEX   = document.getElementById("BITFINEX").checked;
+        // var    BITFLYER   = document.getElementById("BITFLYER").checked;
+        // var    BITSQUARE  = document.getElementById("BITSQUARE").checked;
+        // var    BITSTAMP   = document.getElementById("BITSTAMP").checked;
+        // var    BTCE       = document.getElementById("BTCE").checked;
+        // var    CEXIO      = document.getElementById("CEXIO").checked;
+        // var    GDAX       = document.getElementById("GDAX").checked;
+        // var    GEMINI     = document.getElementById("GEMINI").checked;
+        // var    KRAKEN     = document.getElementById("KRAKEN").checked;
+        // var    OKCOIN     = document.getElementById("OKCOIN").checked;
+        // var    QUADRIGA   = document.getElementById("QUADRIGA").checked;
+        // var    QUOINE     = document.getElementById("QUOINE").checked;
+        // alert(QUOINE);
+
+
       	//var utcSeconds = 1234567890;
       	//var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
       	//d.setUTCSeconds(utcSeconds);
