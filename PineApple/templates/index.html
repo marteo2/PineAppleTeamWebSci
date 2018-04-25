@@ -9,7 +9,7 @@
 
     {% load static %}
 
-    <link rel="icon" href="{% static "Bitcoin.jpg" %}">
+    <link rel="icon" href="{% static "btcdata/Bitcoin.jpg" %}">
 
     <title>Pineapple Coin Project</title>
 
@@ -30,11 +30,11 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static "bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static "pineapplecss.css" %}" rel="stylesheet ">
+    <link href="{% static "btcdata/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "btcdata/pineapplecss.css" %}" rel="stylesheet ">
 
     <!-- Custom styles for this template -->
-    <link href="{% static "dashboard.css" %}" rel="stylesheet">
+    <link href="{% static "btcdata/dashboard.css" %}" rel="stylesheet">
   </head>
 
 
@@ -43,7 +43,7 @@
 
   <body onload="aggregateFunction()">
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
-      <a class="navbar-brand img-responsive" href="#"><img src="{% static "pineapple2.png" %}" style="height:100px"></a>
+      <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:100px"></a>
       <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();">
       <ul class="navbar-nav px-3">
       </ul>
@@ -164,7 +164,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-		<script type = "text/javascript" src="{% static "paDataPull.js" %} "></script>
+		<script type = "text/javascript" src="{% static "btcdata/paDataPull.js" %} "></script>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
