@@ -7,7 +7,7 @@ import time
 import requests
 
 # Create your views here.
-from btcdata.getbtcdata import save_btc
+from btcdata.getbtcdata import save_btc, find_data
 from btcdata.models import PriceData
 
 
@@ -47,4 +47,9 @@ def saveBTC(request):
 
 def index(request):
     btc_data = save_btc()
+    btc_data = find_data(1524618302.9650571, 1994618302.9650571)
+    for i in btc_data:
+        print(i["price"])
+        print("here")
+    print("end")
     return render(request, 'index.html')

@@ -27,11 +27,16 @@ def find_data(start_date, end_date):
     end_date = datetime.datetime.fromtimestamp(end_date)
     data = btc_collection.find({"time": {"$gte": start_date, "$lt": end_date}})
 
+    exchanges = {}
     for i in data:
         print(i["time"])
+        exchanges[i["time"]] = i["price"]
+
+    return exchanges;
 
 
 def save_btc():
+    print("Saving BTC price from cryptowatch")
     jsonData = requests.get('https://api.cryptowat.ch/markets/summaries').text
 
     parsed_json = json.loads(jsonData)
