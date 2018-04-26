@@ -162,8 +162,7 @@
 						<h2>Quick Market Comparison</h2>
             <div class="form-group">
               <label for="sel1">Select list:</label>
-              <select class="form-control" id="sel1">
-
+              <select class="form-control" id="sel1" onchange="aggregateFunction()">
               </select>
             </div>
 
@@ -405,43 +404,42 @@
     document.getElementById('diffdiv').innerHTML = fix;
 
   }
+  var data = {};
+  var latestTime = 0;
+  var averagePrice = 0;
+  var totalPrice = 0;
+  var marketCount = 0;
 
+
+  for (var i=0; i<historicalJSON.length; i++){
+    if (historicalJSON[i].time > latestTime){
+      data = historicalJSON[i];
+      latestTime = historicalJSON[i].time;
+    }
+  }
+  var marketsTable = document.getElementById("marketsTableBody");
+
+  var buttons = document.getElementById("sel1");
+  // alert("here");
+  keys = [];
+  for (var key in data.price){
+    keys.push(key);
+    var optiona = document.createElement("option");
+    optiona.innerHTML = "<option>" + key + "</option>"
+    buttons.append(optiona);
+  }
 
 
       function aggregateFunction(){
-      	var data = {};
-      	var latestTime = 0;
-      	var averagePrice = 0;
-      	var totalPrice = 0;
-      	var marketCount = 0;
-
-
-      	for (var i=0; i<historicalJSON.length; i++){
-      		if (historicalJSON[i].time > latestTime){
-      			data = historicalJSON[i];
-      			latestTime = historicalJSON[i].time;
-      		}
-      	}
-      	var marketsTable = document.getElementById("marketsTableBody");
-
-        var buttons = document.getElementById("sel1");
-        // alert("here");
-        keys = [];
-        for (var key in data.price){
-          keys.push(key);
-          var optiona = document.createElement("option");
-          optiona.innerHTML = "<option>" + key + "</option>"
-          buttons.append(optiona);
-        }
 
         // alert("Coin types: \n " + keys);
-        buttons.value = "btcusd";
+        // buttons.value = "ltcusd";
 
         var coin_type = buttons.value;
 
       	console.log(data.price[coin_type]);
       	dataObjects = Object.entries(data.price[coin_type]);
-      	for (var j=1; j<dataObjects.length; j++){
+      	for (var j=0; j<dataObjects.length; j++){
       		totalPrice+=dataObjects[j][1];
       		var newName = dataObjects[j][0];
           var hollder = ":"+coin_type;
