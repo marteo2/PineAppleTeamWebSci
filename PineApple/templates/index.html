@@ -61,11 +61,9 @@
 
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-<<<<<<< HEAD
 
-=======
             <br><br><br>
->>>>>>> fd244c47117fc65dd5377eacfc8139beb78ac335
+
               <li class="nav-item">
                 <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
@@ -145,6 +143,7 @@
                 <div>
 								<input type="button" name="button" id="chartButton" value="Update Chart" class ='col-md-5 btn-warning btn-lg' onclick="populateChart(this.form)"></div>
 							</form>
+              <div id='diffdiv'></div>
 						</div>
 					</div>
 					<div class="row">
@@ -379,7 +378,16 @@
       // ];
   
       var topdiff = 0;
+      var topmin = 0;
+      var topminname = '';
+      var tophigh = 0;
+      var tophighname= '';
+      
   function updatetopdiff(){
+
+    var fix= "<p style='font-size:40px'>"+topdiff+" </p><p>is the top market difference between "+topminname+" and "+tophighname+"</p>";
+
+    document.getElementById('diffdiv').innerHTML = fix;
 
   }
 
