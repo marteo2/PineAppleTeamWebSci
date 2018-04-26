@@ -462,12 +462,12 @@
       		newName = newName.slice(0,loc);
       		dataObjects[j][0] = newName;
       	}
-      	marketCount = (dataObjects.length) - 1;
+      	marketCount = (dataObjects.length);
       	averagePrice = totalPrice/marketCount;
       	console.log(averagePrice);
 
       	for (var l= 0; l<dataObjects.length; l++){
-      		var difference = (dataObjects[l][1]/averagePrice) - .5;
+      		var difference = (dataObjects[l][1]/averagePrice) - 1;
       		var compare = "";
       		var compareID = ""
 
