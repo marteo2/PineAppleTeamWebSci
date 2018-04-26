@@ -8,8 +8,8 @@
     <meta name="author" content="PineappleTeamGroup">
 
 
-    <link rel="icon" href="{% static "btcdata/Bitcoin.jpg" %}" >
-		<link rel="stylesheet" href="{%static 'main.css' %}">
+    <link rel="icon" href="{% static 'btcdata/Bitcoin.jpg' %}" >
+		<link rel="stylesheet" href="{%static 'btcdata/main.css' %}">
 		<link rel="stylesheet" href="main.css">
 
     <title>Pineapple Coin Project</title>
@@ -196,7 +196,7 @@
 					<p><i>Pineapple</i> helps you keep track of cryptocurrency without hurting your brain!</p>
           <p>We're four ITWS majors from RPI, this webpage is our final project for the ITWS4300 Class <i>Web Systems Science Development</i></p>
 				</div>
-				
+
         <div class="modal-image">
 					<img src="{% static 'btcdata/pineappleSwag.jpg' %}">
 				</div>
@@ -322,11 +322,11 @@
       		var compareID = ""
 
       		if (difference > 0){
-      			compare = "above (+" + difference.toFixed(3)+")";
+      			compare = "above (+" + difference.toFixed(3)+")%";
       			compareID = "above";
       		}
       		else{
-      			compare = "below (" + difference.toFixed(3)+")";
+      			compare = "below (" + difference.toFixed(3)+")%";
       			compareID = "below";
       		}
 
