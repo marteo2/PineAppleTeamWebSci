@@ -160,6 +160,13 @@
 					</div>
 					<div class="row">
 						<h2>Quick Market Comparison</h2>
+            <div class="form-group">
+              <label for="sel1">Select list:</label>
+              <select class="form-control" id="sel1">
+
+              </select>
+            </div>
+
 						<div class="table-responsive">
 							<table class="table table-striped table-sm">
 								<thead>
@@ -417,20 +424,28 @@
       	}
       	var marketsTable = document.getElementById("marketsTableBody");
 
-        var buttons = document.getElementById("buttons");
+        var buttons = document.getElementById("sel1");
         // alert("here");
         keys = [];
         for (var key in data.price){
           keys.push(key);
+          var optiona = document.createElement("option");
+          optiona.innerHTML = "<option>" + key + "</option>"
+          buttons.append(optiona);
         }
-        //alert("Coin types: \n " + keys);
 
-      	console.log(data.price["btcusd"]);
-      	dataObjects = Object.entries(data.price["btcusd"]);
+        // alert("Coin types: \n " + keys);
+        buttons.value = "btcusd";
+
+        var coin_type = buttons.value;
+
+      	console.log(data.price[coin_type]);
+      	dataObjects = Object.entries(data.price[coin_type]);
       	for (var j=1; j<dataObjects.length; j++){
       		totalPrice+=dataObjects[j][1];
       		var newName = dataObjects[j][0];
-      		var loc = newName.search(":btcusd");
+          var hollder = ":"+coin_type;
+      		var loc = newName.search(hollder);
       		newName = newName.slice(0,loc);
       		dataObjects[j][0] = newName;
       	}
@@ -438,7 +453,7 @@
       	averagePrice = totalPrice/marketCount;
       	console.log(averagePrice);
 
-      	for (var l= 1; l<dataObjects.length; l++){
+      	for (var l= 0; l<dataObjects.length; l++){
       		var difference = (dataObjects[l][1]/averagePrice) - 1.00;
       		var compare = "";
       		var compareID = ""
@@ -456,7 +471,7 @@
             min = dataObjects[l][1];
             minName = "<td> Minimum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
           }
-          else if (dataObjects[l][1]  > max ){
+          if (dataObjects[l][1] > max ){
             max = dataObjects[l][1];
             maxName ="<td> Maximum Market: " +String(dataObjects[l][0]).toUpperCase() + "</td><td " + "id='"+compareID + "'> $"+ (max - min) + "</td>";
             maxNameJ = "<td> Maximum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
