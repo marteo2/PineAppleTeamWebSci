@@ -75,20 +75,26 @@
                    <span data-feather="disc"></span>
                   Coins
                 </a>
-                  <li class="nav-item">
-                <a class="nav-link" href="#">
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span data-feather="circle"></span>
-                 Bitcoin
-                </a>
+                  
+                    <div class="dropdown">
+                        <button class="btn-sm btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                          <span class="caret"></span>
+                        </button>
+                          <ul class="dropdown-menu">
+                                <li><a href="#">HTML</a></li>
+                                <li><a href="#">CSS</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                          </ul>
+                    </div>
 
-              </li>
-                                <li class="nav-item">
-                <a class="nav-link" href="#">
-                   &nbsp;&nbsp;&nbsp;&nbsp;<span data-feather="circle"></span>
-                  Etherium
-                </a>
+            <div class="form-group">
+              <label for="sel1">Select list:</label>
+              <select class="form-control" id="sel1">
 
-              </li>
+              </select>
+            </div>
+
+
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#aboutusmodal" data-toggle="modal">
@@ -160,11 +166,13 @@
 					</div>
 					<div class="row">
 						<h2>Quick Market Comparison</h2>
+
             <div class="form-group">
               <label for="sel1">Select list:</label>
               <select class="form-control" id="sel1" onchange="aggregateFunction()">
               </select>
             </div>
+
 
 						<div class="table-responsive">
 							<table class="table table-striped table-sm">
