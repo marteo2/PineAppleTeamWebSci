@@ -78,7 +78,7 @@
                   Coins
                 </a>
             <div class="form-group">
-              <label for="sel1">Select list:</label>
+              <label for="sel1"></label>
               <select class="form-control" id="sel1"  onchange="aggregateFunction(); populateChart();">
 
               </select>
@@ -201,6 +201,7 @@
       <div class="modal-body modal-image-block">
          <div class="modal-text-white">
 					 <p>Our coin data is pulled from the Cryptowatch API system. The coins are compared across various markets, such as Bitfinex, Cexio, and OkCoin.</p>
+           <p>Each coin is in the format of CurrencyACurrencyB. Therefore, markets trading United States Dollars to Bitcoin would be represented as usdbtc.</p>
 					 <p>To view our full selection of comparable markets, use the dropdown menus to the right of the graph! </p>
 				</div>
       </div>
@@ -320,7 +321,7 @@
           if (dataObjects[l][1] > max ){
             max = dataObjects[l][1];
             maxName ="<td> Maximum Market: " +String(dataObjects[l][0]).toUpperCase() + "</td>";
-            // maxNameJ = "<td> Maximum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
+             maxNameJ = "<td> Maximum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
           }
 
       		var newelement1 = document.createElement("tr");
