@@ -21,7 +21,7 @@
     var val = document.getElementById(find);
     //alert(val);
     if (val == null){
-      alert('no bitcoins by this meme');
+      alert('no bitcoins by this name');
     }
     else window.location = 'pineappleindextemp.html#'+find;
   }
@@ -59,15 +59,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
+                <a class="nav-link" href="#coinsmodal" data-toggle="modal">
+                   <span data-feather="disc"></span>
                   Coins
                 </a>
 
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
+                <a class="nav-link" href="#aboutusmodal" data-toggle="modal">
+                  <span data-feather="users"></span>
                   About Us
                 </a>
               </li>
@@ -160,11 +160,70 @@
       </div>
     </div>
 
+
+
+ <!-- about us modal -->
+
+  <div class="modal fade" id="aboutusmodal" tabindex="-1" role="dialog" aria-labelledby="aboutModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">About Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-8">
+          <div class="col-md-4">
+            <p>Hello! We, PineappleTeamGroup, are excited to bring our newest creation to you!</p>
+            <br>
+            <p>Consisting of four ITWS majors from RPI, this webpage is the final project for the ITWS4300 Class <i>Web Systems Science Development</i></p>
+          </div>
+         <div class="col-md-4">Maybe put an image here idk</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Back to Pineapple!</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Coins MOdal -->
+
+<div class="modal fade" id="coinsmodal" tabindex="-1" role="dialog" aria-labelledby="coinsModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">About Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-8">
+          <div class="col-md-4">
+            img?
+          </div>
+         <div class="col-md-4">Here's a bit of information about where we got our coins from</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Back to Pineapple!</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 		<!-- <script type = "text/javascript" src="{% static "btcdata/paDataPull.js" %} "></script> -->
-
 
     <script type="text/javascript">
 
