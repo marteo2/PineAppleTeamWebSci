@@ -9,8 +9,8 @@
 
 
     <link rel="icon" href="{% static 'btcdata/Bitcoin.jpg' %}" >
-		<link rel="stylesheet" href="{%static 'btcdata/main.css' %}">
-		<link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="{%static 'btcdata/main.css' %}"> 
+    <link rel="stylesheet" href="main.css">
 
     <title>Pineapple Coin Project</title>
 
@@ -47,7 +47,7 @@
 
 
 
-  <body onload="aggregateFunction(); populateChart(this.form); updatetopdiff();">
+  <body onload="aggregateFunction(); populateChart(this.form); updatetopdiff();"> <!-- runs javascript functions on load to populate the chart and table-->
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
       <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:130px"></a>
       <!-- <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();"> -->
@@ -359,7 +359,7 @@
 
       }
 
-      function populateChart(form){
+      function populateChart(form){ //creates chartjs object and populates it with data
       	var market1 = document.getElementById("exampleSelect1").value;
       	var market2 = document.getElementById("exampleSelect2").value;
       	var times = [];
