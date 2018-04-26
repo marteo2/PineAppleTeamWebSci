@@ -75,7 +75,20 @@
                    <span data-feather="disc"></span>
                   Coins
                 </a>
+                  <li class="nav-item">
+                <a class="nav-link" href="#">
+                   <span data-feather="circle"></span>
+                  Bitcoin
+                </a>
 
+              </li>
+                                <li class="nav-item">
+                <a class="nav-link" href="#">
+                   <span data-feather="circle"></span>
+                  Etherium
+                </a>
+
+              </li>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#aboutusmodal" data-toggle="modal">
@@ -381,6 +394,7 @@
 
   function updatetopdiff(){
     topdiff = max-min;
+    topdiff = num.tofixed(topdiff);
     var fix= "<br><br><p style='font-size:40px'; 'color:green';>"+topdiff+" </p><p>is the top market difference between "+maxName+" and "+minName+"</p>";
     document.getElementById('diffdiv').innerHTML = fix;
 
