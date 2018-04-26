@@ -8,7 +8,6 @@ import requests
 
 # Create your views here.
 from btcdata.getbtcdata import save_btc, find_data
-from btcdata.models import PriceData
 
 
 def saveBTC(request):

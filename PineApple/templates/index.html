@@ -8,7 +8,7 @@
     <meta name="author" content="PineappleTeamGroup">
 
 
-    <link rel="icon" href="{% static "btcdata/Bitcoin.jpg" %}">
+    <link rel="icon" href="{% static "btcdata/Bitcoin.jpg" %}" >
 
     <title>Pineapple Coin Project</title>
 
@@ -47,8 +47,8 @@
 
   <body onload="aggregateFunction(); populateChart(this.form); updatetopdiff();">
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
-      <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:100px"></a>
-      <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();">
+      <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:200px"></a>
+      <!-- <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();"> -->
       <ul class="navbar-nav px-3">
       </ul>
     </nav>
@@ -77,14 +77,14 @@
                 </a>
                   <li class="nav-item">
                 <a class="nav-link" href="#">
-                   <span data-feather="circle"></span>
-                  Bitcoin
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span data-feather="circle"></span>
+                 Bitcoin
                 </a>
 
               </li>
                                 <li class="nav-item">
                 <a class="nav-link" href="#">
-                   <span data-feather="circle"></span>
+                   &nbsp;&nbsp;&nbsp;&nbsp;<span data-feather="circle"></span>
                   Etherium
                 </a>
 
@@ -107,9 +107,8 @@
             <h1 class="h2">Dashboard</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">Get Email Alerts</button>
+                <button class="btn-lg btn-warning">Get Email Alerts</button>
               </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
             </div>
           </div>
 					<div class="row">
@@ -396,12 +395,13 @@
       var topdiff = 0;
         var max = 0;
         var min = 999999999999;
-        var maxName = "";
+        var maxNameJ = "";
         var minName = "";
 
   function updatetopdiff(){
     topdiff = max-min;
-    var fix= "<br><br><p style='font-size:40px'; 'color:green';>"+topdiff+" </p><p>is the top market difference between "+maxName+" and "+minName+"</p>";
+    topdiff = topdiff.toFixed(3);
+    var fix= "<br><br><p style='font-size:40px'; 'color:green';>$"+topdiff+" </p><p>is the top market difference between "+maxNameJ+" and "+minName+"</p>";
     document.getElementById('diffdiv').innerHTML = fix;
 
   }
@@ -474,6 +474,7 @@
           if (dataObjects[l][1] > max ){
             max = dataObjects[l][1];
             maxName ="<td> Maximum Market: " +String(dataObjects[l][0]).toUpperCase() + "</td><td " + "id='"+compareID + "'> $"+ (max - min) + "</td>";
+            maxNameJ = "<td> Maximum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
           }
 
       		var newelement1 = document.createElement("tr");
