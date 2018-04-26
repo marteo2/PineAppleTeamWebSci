@@ -24,18 +24,18 @@
      -->
 
 
-  <!-- jQuery -->
-<script type="text/javascript">
-  function Findcoin(){
-    var find = document.getElementById('search1').value;
-    var val = document.getElementById(find);
-    //alert(val);
-    if (val == null){
-      alert('no bitcoins by this name');
-    }
-    else window.location = 'pineappleindextemp.html#'+find;
-  }
-</script>
+    <!-- jQuery -->
+      <script type="text/javascript">
+        function Findcoin(){
+          var find = document.getElementById('search1').value;
+          var val = document.getElementById(find);
+          //alert(val);
+          if (val == null){
+            alert('no bitcoins by this name');
+          }
+          else window.location = 'pineappleindextemp.html#'+find;
+        }
+      </script>
 
     <!-- Bootstrap core CSS -->
     <link href="{% static "btcdata/bootstrap.min.css" %}" rel="stylesheet">
@@ -45,9 +45,7 @@
     <link href="{% static "btcdata/dashboard.css" %}" rel="stylesheet">
   </head>
 
-
-
-  <body onload="aggregateFunction(); populateChart(this.form); updatetopdiff();">
+  <body onload="aggregateFuction(); populateChart(this.form); updatetopdiff();">
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
       <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:130px"></a>
       <!-- <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();"> -->
@@ -58,14 +56,15 @@
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <br>
 
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-
-
-            <br><br><br>
-
-
+            <div class="form-group">
+              <label for="sel1">Select list:</label>
+              <select class="form-control" id="sel1"  onchange="aggregateFunction(); populateChart();">
+              </select>
+            </div>
               <li class="nav-item">
                 <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
@@ -77,14 +76,6 @@
                    <span data-feather="disc"></span>
                   Coins
                 </a>
-            <div class="form-group">
-              <label for="sel1">Select list:</label>
-              <select class="form-control" id="sel1"  onchange="aggregateFunction(); populateChart();">
-
-              </select>
-            </div>
-
-
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#aboutusmodal" data-toggle="modal">
@@ -92,6 +83,7 @@
                   About Us
                 </a>
               </li>
+
             </ul>
 
 
@@ -166,18 +158,13 @@
 									</tr>
 								</thead>
 								<tbody id="marketsTableBody">
-
 								</tbody>
 							</table>
 						</div>
-
 					</div>
-
         </main>
       </div>
     </div>
-
-
 
  <!-- about us modal -->
 
@@ -203,7 +190,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Back to Pineapple!</button>
-
       </div>
     </div>
   </div>
@@ -228,13 +214,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Back to Pineapple!</button>
-
       </div>
     </div>
   </div>
 </div>
-
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -243,42 +226,44 @@
 
     <script type="text/javascript">
 
-      var jsonFileNames = ["parsedusdbtcdata1519320470.224996.json","parsedusdbtcdata1519512115.416004.json","parsedusdbtcdata1519151517.2418811.json","parsedusdbtcdata1519151518.274397.json","parsedusdbtcdata1519151537.124332.json","parsedusdbtcdata1519151551.594238.json","parsedusdbtcdata1519151912.206002.json","parsedusdbtcdata1519152669.048627.json","parsedusdbtcdata1519152881.957901.json","parsedusdbtcdata1519152895.836216.json","parsedusdbtcdata1519152939.631706.json","parsedusdbtcdata1519152944.231408.json","parsedusdbtcdata1519153002.767909.json","parsedusdbtcdata1519153005.672537.json","parsedusdbtcdata1519153008.2082071.json","parsedusdbtcdata1519153019.840377.json","parsedusdbtcdata1519153053.9101639.json","parsedusdbtcdata1519153055.49937.json","parsedusdbtcdata1519153136.231906.json","parsedusdbtcdata1519153136.2894871.json","parsedusdbtcdata1519175293.2648902.json","parsedusdbtcdata1519175305.928298.json","parsedusdbtcdata1519175441.817842.json","parsedusdbtcdata1519175483.6735628.json"]; //array of all the historical json files of btc data, to be used to read json info for frontend display
+    //Get data into charts
 
+      // var jsonFileNames = ["parsedusdbtcdata1519320470.224996.json","parsedusdbtcdata1519512115.416004.json","parsedusdbtcdata1519151517.2418811.json","parsedusdbtcdata1519151518.274397.json","parsedusdbtcdata1519151537.124332.json","parsedusdbtcdata1519151551.594238.json","parsedusdbtcdata1519151912.206002.json","parsedusdbtcdata1519152669.048627.json","parsedusdbtcdata1519152881.957901.json","parsedusdbtcdata1519152895.836216.json","parsedusdbtcdata1519152939.631706.json","parsedusdbtcdata1519152944.231408.json","parsedusdbtcdata1519153002.767909.json","parsedusdbtcdata1519153005.672537.json","parsedusdbtcdata1519153008.2082071.json","parsedusdbtcdata1519153019.840377.json","parsedusdbtcdata1519153053.9101639.json","parsedusdbtcdata1519153055.49937.json","parsedusdbtcdata1519153136.231906.json","parsedusdbtcdata1519153136.2894871.json","parsedusdbtcdata1519175293.2648902.json","parsedusdbtcdata1519175305.928298.json","parsedusdbtcdata1519175441.817842.json","parsedusdbtcdata1519175483.6735628.json"]; //array of all the historical json files of btc data, to be used to read json info for frontend display
+    //Parse dJango request into json
       var historicalJSON = "{{datas}}".replace(/&quot;/g,"");
       historicalJSON =  historicalJSON.replace(/&#39;/g,"\"");
       historicalJSON = JSON.parse(historicalJSON);
-
+    // Setup inital vars once
       var topdiff = 0;
       var max = 0;
       var min = 999999999999;
       var maxNameJ = "";
       var minName = "";
-
+    // Function to change the top diff displayed
       function updatetopdiff(){
         topdiff = max-min;
         topdiff = topdiff.toFixed(3);
         var fix= "<br><br><p style='font-size:40px'; 'color:green';>$"+topdiff+" </p><p>is the top market difference between "+maxNameJ+" and "+minName+"</p>";
         document.getElementById('diffdiv').innerHTML = fix;
-
       }
+      //More init vars.
       var data = {};
       var latestTime = 0;
       var averagePrice = 0;
       var totalPrice = 0;
       var marketCount = 0;
 
-
+      //Parse data for each time
       for (var i=0; i<historicalJSON.length; i++){
         if (historicalJSON[i].time > latestTime){
           data = historicalJSON[i];
           latestTime = historicalJSON[i].time;
         }
       }
+      //Find the table / button
       var marketsTable = document.getElementById("marketsTableBody");
-
       var buttons = document.getElementById("sel1");
-      // alert("here");
+      //Get keys to popullate options with
       keys = [];
       for (var key in data.price){
         keys.push(key);
@@ -287,22 +272,18 @@
         buttons.append(optiona);
       }
       buttons.value = "btcusd";
-
-
-
+      //Function to generate the quick market comparison
       function aggregateFunction(){
         totalPrice = 0;
         marketCount = 0;
         min = 9999999999999;
         max = 0;
         marketsTable.innerHTML = "";
-
-        // alert("Coin types: \n " + keys);
-        // buttons.value = "ltcusd";
-
+        //Get type of coin to display info for.
         var coin_type = buttons.value;
 
       	console.log(data.price[coin_type]);
+        //Start getting data points that are of coin_type currency pair
       	dataObjects = Object.entries(data.price[coin_type]);
       	for (var j=0; j<dataObjects.length; j++){
       		totalPrice+=dataObjects[j][1];
@@ -312,10 +293,11 @@
       		newName = newName.slice(0,loc);
       		dataObjects[j][0] = newName;
       	}
+
       	marketCount = (dataObjects.length);
       	averagePrice = totalPrice/marketCount;
       	console.log(averagePrice);
-
+        //Generate objects for each market data point
       	for (var l= 0; l<dataObjects.length; l++){
       		var difference = (dataObjects[l][1]/averagePrice) - 1;
       		var compare = "";
@@ -339,7 +321,7 @@
             maxName ="<td> Maximum Market: " +String(dataObjects[l][0]).toUpperCase() + "</td>";
             // maxNameJ = "<td> Maximum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
           }
-
+          //Add item to element
       		var newelement1 = document.createElement("tr");
       		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
       		marketsTable.appendChild(newelement1);
@@ -355,36 +337,22 @@
         marketsTable.appendChild(newelement2);
 
       }
-
+      //Used to create the chart
       function populateChart(form){
+        //Get the two markets we want to use
       	var market1 = document.getElementById("exampleSelect1").value;
       	var market2 = document.getElementById("exampleSelect2").value;
+        //Get the coin_type currency pair we want.
+        var coin_type = buttons.value;
+        //Setup some vars to hodl data
       	var times = [];
       	var market1Data = [];
       	var market2Data = [];
-        //
-        // var    BITBAY     = document.getElementById("BITBAY").checked;
-        // var    BITFINEX   = document.getElementById("BITFINEX").checked;
-        // var    BITFLYER   = document.getElementById("BITFLYER").checked;
-        // var    BITSQUARE  = document.getElementById("BITSQUARE").checked;
-        // var    BITSTAMP   = document.getElementById("BITSTAMP").checked;
-        // var    BTCE       = document.getElementById("BTCE").checked;
-        // var    CEXIO      = document.getElementById("CEXIO").checked;
-        // var    GDAX       = document.getElementById("GDAX").checked;
-        // var    GEMINI     = document.getElementById("GEMINI").checked;
-        // var    KRAKEN     = document.getElementById("KRAKEN").checked;
-        // var    OKCOIN     = document.getElementById("OKCOIN").checked;
-        // var    QUADRIGA   = document.getElementById("QUADRIGA").checked;
-        // var    QUOINE     = document.getElementById("QUOINE").checked;
-        // alert(QUOINE);
-
-
       	//var utcSeconds = 1234567890;
       	//var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
       	//d.setUTCSeconds(utcSeconds);
       	//d is now a date (in my time zone) set to Fri Feb 13 2009 18:31:30 GMT-0500 (EST)
-        var coin_type = buttons.value;
-
+        //Go through ourdataset, pick out datapoints from (coin_type pair)(market1 and market2)
       	for (var i=0; i < historicalJSON.length; i++){
       		var itime = historicalJSON[i].time;
           console.log(historicalJSON[i]);
@@ -403,9 +371,10 @@
 
       	}
       	console.log(market1Data);
+        //Reset and build chart
+
         $("#meChart").remove();
         $("#myChart").append('<canvas class="my-4" id="meChart" width="900" height="380"></canvas>');
-        // var ctx = document.getElementById("chartreport").getContext("2d");
       	var ctx = document.getElementById("meChart");
 
             var myChart = new Chart(ctx, {
