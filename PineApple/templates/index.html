@@ -45,7 +45,7 @@
 
 
 
-  <body onload="aggregateFunction(); populateChart(this.form);">
+  <body onload="aggregateFunction(); populateChart(this.form); updatetopdiff();">
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
       <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:100px"></a>
       <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();">
@@ -373,17 +373,18 @@
       // 	 "quoine:btcusd": 11669.852}
       // ];
 
-  //     var topdiff = 0;
-  //     var topmin = 0;
-  //     var topminname = '';
-  //     var tophigh = 0;
-  //     var tophighname= '';
+      var topdiff = 0;
+        var max = 0;
+        var min = 999999999999;
+        var maxName = "";
+        var minName = "";
       
-  // function updatetopdiff(){
-  //   var fix= "<p style='font-size:40px'>"+topdiff+" </p><p>is the top market difference between "+topminname+" and "+tophighname+"</p>";
-  //   document.getElementById('diffdiv').innerHTML = fix;
+  function updatetopdiff(){
+    topdiff = max-min;
+    var fix= "<p style='font-size:40px'>"+topdiff+" </p><p>is the top market difference between "+maxName+" and "+minName+"</p>";
+    document.getElementById('diffdiv').innerHTML = fix;
 
-  // }
+  }
 
 
 
@@ -393,10 +394,7 @@
       	var averagePrice = 0;
       	var totalPrice = 0;
       	var marketCount = 0;
-        var max = 0;
-        var min = 999999999999;
-        var maxName = "";
-        var minName = "";
+
 
       	for (var i=0; i<historicalJSON.length; i++){
       		if (historicalJSON[i].time > latestTime){
