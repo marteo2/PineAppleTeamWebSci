@@ -51,7 +51,7 @@ def index(request):
     # p.price = btc_data
     # p.save()
 
-    btc_data = find_data(1524618302.9650571, 1524717699.548168)
+    btc_data = find_data(1524707699.548168, 1994618302.9650571)
     data_points = []
     for i in btc_data.values():
         # print(i)
