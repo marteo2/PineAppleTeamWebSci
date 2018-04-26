@@ -436,10 +436,11 @@
     optiona.innerHTML = "<option>" + key + "</option>"
     buttons.append(optiona);
   }
+  buttons.value = "btcusd";
+
 
 
       function aggregateFunction(){
-        averagePrice = 0;
         totalPrice = 0;
         marketCount = 0;
         min = 9999999999999;
@@ -485,8 +486,8 @@
           }
           if (dataObjects[l][1] > max ){
             max = dataObjects[l][1];
-            maxName ="<td> Maximum Market: " +String(dataObjects[l][0]).toUpperCase() + "</td><td " + "id='"+compareID + "'> $"+ (max - min) + "</td>";
-            maxNameJ = "<td> Maximum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
+            maxName ="<td> Maximum Market: " +String(dataObjects[l][0]).toUpperCase() + "</td>";
+            // maxNameJ = "<td> Maximum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
           }
 
       		var newelement1 = document.createElement("tr");
@@ -500,7 +501,7 @@
       	}
         // newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
         var newelement2 = document.createElement("tr");
-        newelement2.innerHTML = minName + maxName;
+        newelement2.innerHTML = minName + maxName + "<td " + "id='"+compareID + "'> $"+ (max - min) + "</td>";
         marketsTable.appendChild(newelement2);
 
       }
