@@ -143,7 +143,7 @@
                 <div>
 								<input type="button" name="button" id="chartButton" value="Update Chart" class ='col-md-5 btn-warning btn-lg' onclick="populateChart(this.form)"></div>
 							</form>
-              <div id='diffdiv'></div>
+              <div id='diffdiv'>tbd later in functions</div>
 						</div>
 					</div>
 					<div class="row">
@@ -381,7 +381,7 @@
       
   function updatetopdiff(){
     topdiff = max-min;
-    var fix= "<p style='font-size:40px'>"+topdiff+" </p><p>is the top market difference between "+maxName+" and "+minName+"</p>";
+    var fix= "<br><br><p style='font-size:40px'>"+topdiff+" </p><p>is the top market difference between "+maxName+" and "+minName+"</p>";
     document.getElementById('diffdiv').innerHTML = fix;
 
   }
