@@ -141,8 +141,8 @@ CRONJOBS = (
 )
 
 EMAIL_USE_SSL = True
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.mail.yahoo.com'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'cmappcmkmarketing@gmail.com'
-EMAIL_HOST_PASSWORD = 'mitr2017'
-DEFAULT_FROM_EMAIL = 'PineAppleTeam <cmappcmkmarketing@gmail.com>'
+EMAIL_HOST_USER = 'pineapplewebsci@yahoo.com'
+EMAIL_HOST_PASSWORD = 'websci2018'
+DEFAULT_FROM_EMAIL = 'PineAppleTeam <pineapplewebsci@yahoo.>'

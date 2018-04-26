@@ -20,7 +20,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         content = render_to_string("email/index.html")
         msg = EmailMultiAlternatives("User Email", "wow",
-                                     'cmappcmkmarketing@gmail.com', ['chinqrw@gmail.com'])
+                                     'pineapplewebsci@yahoo.com', ['chinqrw@gmail.com'])
         msg.attach_alternative(content, "text/html")
         msg.mixed_subtype = 'related'
         for f in ['img-01.png']:
