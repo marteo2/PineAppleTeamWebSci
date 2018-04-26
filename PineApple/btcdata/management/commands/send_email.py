@@ -1,3 +1,5 @@
+from django.core.mail import EmailMessage
+from django.template.loader import get_template
 from django.utils import timezone
 
 from django.core.management.base import BaseCommand
@@ -12,4 +14,8 @@ class Command(BaseCommand):
         pass
 
     def handle(self, *args, **options):
-        all_address = Email.objects.all()
+        t = get_template("email/index.html")
+        content = t.render()
+        msg = EmailMessage('User Email', content, 'cmappcmkmarketing@gmail.com', ['chinqrw@gmail.com'])
+        msg.content_subtype = "html"
+        msg.send()
