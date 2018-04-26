@@ -9,6 +9,7 @@
 
 
     <link rel="icon" href="{% static "btcdata/Bitcoin.jpg" %}">
+		<link rel="stylesheet" href="main.css">
 
     <title>Pineapple Coin Project</title>
 
@@ -45,7 +46,7 @@
 
 
 
-  <body onload="aggregateFunction(); populateChart(this.form); updatetopdiff();">
+  <body onload="aggregateFunction(); populateChart(this.form);">
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
       <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:100px"></a>
       <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();">
@@ -59,11 +60,7 @@
 
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-
-
-            <br><br><br>
-
-
+            
               <li class="nav-item">
                 <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
@@ -143,7 +140,6 @@
                 <div>
 								<input type="button" name="button" id="chartButton" value="Update Chart" class ='col-md-5 btn-warning btn-lg' onclick="populateChart(this.form)"></div>
 							</form>
-              <div id='diffdiv'>tbd later in functions</div>
 						</div>
 					</div>
 					<div class="row">
@@ -183,10 +179,14 @@
         </button>
       </div>
       <div class="modal-body">
+				<div class="modal-text">
           <p>Hello! We, PineappleTeamGroup, are excited to bring our newest creation to you!</p>
-          <br>
-          <p>Consisting of four ITWS majors from RPI, this webpage is the final project for the ITWS4300 Class <i>Web Systems Science Development</i></p>
-         <div class="col-md-4">Maybe put an image here idk</div>
+					<p><i>Pineapple</i> helps you see what's going on with cryptocurrency! </p>
+          <p>We are four ITWS majors from RPI, this webpage is the final project for the ITWS4300 Class <i>Web Systems Science Development</i></p>
+				</div>
+        <div class="modal-image">
+					<img src="pineapple.jpg">
+				</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Back to Pineapple!</button>
@@ -373,19 +373,6 @@
       // 	 "quoine:btcusd": 11669.852}
       // ];
 
-      var topdiff = 0;
-        var max = 0;
-        var min = 999999999999;
-        var maxName = "";
-        var minName = "";
-
-  function updatetopdiff(){
-    topdiff = max-min;
-    var fix= "<br><br><p style='font-size:40px'; 'color:green';>"+topdiff+" </p><p>is the top market difference between "+maxName+" and "+minName+"</p>";
-    document.getElementById('diffdiv').innerHTML = fix;
-
-  }
-
 
 
       function aggregateFunction(){
@@ -394,7 +381,6 @@
       	var averagePrice = 0;
       	var totalPrice = 0;
       	var marketCount = 0;
-
 
       	for (var i=0; i<historicalJSON.length; i++){
       		if (historicalJSON[i].time > latestTime){
@@ -406,8 +392,8 @@
 
         var buttons = document.getElementById("buttons");
 
-      	console.log(data.price["btcusd"]);
-      	dataObjects = Object.entries(data.price["btcusd"]);
+      	console.log(data);
+      	dataObjects = Object.entries(data);
       	for (var j=1; j<dataObjects.length; j++){
       		totalPrice+=dataObjects[j][1];
       		var newName = dataObjects[j][0];
@@ -432,29 +418,15 @@
       			compare = "below (" + difference.toFixed(3)+")";
       			compareID = "below";
       		}
-
-          if(dataObjects[l][1] < min){
-            min = dataObjects[l][1];
-            minName = "<td> Minimum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
-          }
-          else if (dataObjects[l][1]  > max ){
-            max = dataObjects[l][1];
-            maxName ="<td> Maximum Market: " +String(dataObjects[l][0]).toUpperCase() + "</td><td " + "id='"+compareID + "'> $"+ (max - min) + "</td>";
-          }
-
       		var newelement1 = document.createElement("tr");
       		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
       		marketsTable.appendChild(newelement1);
+
           // var newelement2 = document.createElement("div");
           // newelement2.innerHTML = "<div class='form-check'> <input class='form-check-input' type='checkbox' value='' id='"+String(dataObjects[l][0]).toUpperCase()+"'> <label class='form-check-label' for='" + String(dataObjects[l][0]).toUpperCase() +"'>" + String(dataObjects[l][0]).toUpperCase()  + "</label> </div>"
           // buttons.append(newelement2);
       		//console.log(newelement1);
       	}
-        // newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
-        var newelement2 = document.createElement("tr");
-        newelement2.innerHTML = minName + maxName;
-        marketsTable.appendChild(newelement2);
-
       }
 
       function populateChart(form){
