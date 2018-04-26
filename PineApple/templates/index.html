@@ -1,175 +1,178 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Your solution for bitcoin market comparisons">
-    <meta name="author" content="PineappleTeamGroup">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Your solution for bitcoin market comparisons">
+  <meta name="author" content="PineappleTeamGroup">
 
 
-    <link rel="icon" href="{% static "btcdata/Bitcoin.jpg" %}">
-		<link rel="stylesheet" href="main.css">
+  <link rel="icon" href="{% static "btcdata/Bitcoin.jpg" %}">
+  <link rel="stylesheet" href="{% static "btcdata/main.css" %}">
 
-    <title>Pineapple Coin Project</title>
+  <title>Pineapple Coin Project</title>
 
-    <!-- TODO
-    Get quick comparison for highest difference
-    Email setup
-    Fix formatting on about/coins pages
-    Etherium?
+  <!-- TODO
+  Get quick comparison for highest difference
+  Email setup
+  Fix formatting on about/coins pages
+  Etherium?
 
 
-     -->
+   -->
 
 
   <!-- jQuery -->
-<script type="text/javascript">
-  function Findcoin(){
-    var find = document.getElementById('search1').value;
-    var val = document.getElementById(find);
-    //alert(val);
-    if (val == null){
-      alert('no bitcoins by this name');
+  <script type="text/javascript">
+    function Findcoin() {
+      var find = document.getElementById('search1').value;
+      var val = document.getElementById(find);
+      //alert(val);
+      if (val == null) {
+        alert('no bitcoins by this name');
+      }
+      else window.location = 'pineappleindextemp.html#' + find;
     }
-    else window.location = 'pineappleindextemp.html#'+find;
-  }
-</script>
+  </script>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static "btcdata/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static "btcdata/pineapplecss.css" %}" rel="stylesheet ">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static "btcdata/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "btcdata/pineapplecss.css" %}" rel="stylesheet ">
 
-    <!-- Custom styles for this template -->
-    <link href="{% static "btcdata/dashboard.css" %}" rel="stylesheet">
-  </head>
+  <!-- Custom styles for this template -->
+  <link href="{% static "btcdata/dashboard.css" %}" rel="stylesheet">
+</head>
 
 
+<body onload="aggregateFunction(); populateChart(this.form);">
+<nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
+  <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:100px"></a>
+  <input class="form-control form-control-dark w-100" id='search1' type="text" placeholder="Search" aria-label="Search"><input
+        class="btn-warning btn-lg" type='submit' onclick="Findcoin();">
+  <ul class="navbar-nav px-3">
+  </ul>
+</nav>
 
-  <body onload="aggregateFunction(); populateChart(this.form);">
-    <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
-      <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:100px"></a>
-      <input class="form-control form-control-dark w-100" id = 'search1' type="text" placeholder="Search" aria-label="Search"><input class = "btn-warning btn-lg" type='submit' onclick="Findcoin();">
-      <ul class="navbar-nav px-3">
-      </ul>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#coinsmodal" data-toggle="modal">
+              <span data-feather="disc"></span>
+              Coins
+            </a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutusmodal" data-toggle="modal">
+              <span data-feather="users"></span>
+              About Us
+            </a>
+          </li>
+        </ul>
+
+
+      </div>
     </nav>
 
-    <div class="container-fluid">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button class="btn btn-sm btn-outline-secondary">Get Email Alerts</button>
+          </div>
+          <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        </div>
+      </div>
       <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="col-md-8" id="myChart">
+          <canvas class="my-4" id="meChart" width="900" height="380"></canvas>
 
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-            
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#coinsmodal" data-toggle="modal">
-                   <span data-feather="disc"></span>
-                  Coins
-                </a>
-
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#aboutusmodal" data-toggle="modal">
-                  <span data-feather="users"></span>
-                  About Us
-                </a>
-              </li>
-            </ul>
-
-
-          </div>
-        </nav>
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">Get Email Alerts</button>
-              </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            </div>
-          </div>
-					<div class="row">
-						<div class="col-md-8" id="myChart">
-              <canvas class="my-4" id="meChart" width="900" height="380"></canvas>
-
-						</div>
-						<div class="col-md-4" align='center' >
-							<form action="" method="get" id="chartInputForm">
-              <div class="col-md-5 form-group" >  <!-- TODO figure out how to center this vertically the right way -->
+        </div>
+        <div class="col-md-4" align='center'>
+          <form action="" method="get" id="chartInputForm">
+            <div class="col-md-5 form-group">  <!-- TODO figure out how to center this vertically the right way -->
               <label for="market1">Select Coin 1 (Red)</label>
-               <select class="form-control" id="exampleSelect1">
-									<option value="bitfinex:btcusd">Bitfinex</option>
-                  <option value="bitflyer:btcusd"  selected="selected">Bitflyer</option>
-                  <option value="bitsquare:btcusd">Bitsquare</option>
-                  <option value="bitstamp:btcusd">Bitstamp</option>
-                  <option value="btce:btcusd">BTCE</option>
-                  <option value="cexio:btcusd">Cexio</option>
-                  <option value="gdax:btcusd">GDAX</option>
-                  <option value="gemini:btcusd">Gemini</option>
-                  <option value="kraken:btcusd">Kraken</option>
-                  <option value="okcoin:btcusd">OkCoin</option>
-                  <option value="quadriga:btcusd">Quadriga</option>
-                  <option value="quoine:btcusd">Quoine</option></select>
-                </div>
+              <select class="form-control" id="exampleSelect1">
+                <option value="bitfinex:btcusd">Bitfinex</option>
+                <option value="bitflyer:btcusd" selected="selected">Bitflyer</option>
+                <option value="bitsquare:btcusd">Bitsquare</option>
+                <option value="bitstamp:btcusd">Bitstamp</option>
+                <option value="btce:btcusd">BTCE</option>
+                <option value="cexio:btcusd">Cexio</option>
+                <option value="gdax:btcusd">GDAX</option>
+                <option value="gemini:btcusd">Gemini</option>
+                <option value="kraken:btcusd">Kraken</option>
+                <option value="okcoin:btcusd">OkCoin</option>
+                <option value="quadriga:btcusd">Quadriga</option>
+                <option value="quoine:btcusd">Quoine</option>
+              </select>
+            </div>
 
-                <div class="col-md-5 form-group" >
+            <div class="col-md-5 form-group">
               <label for="market2">Select Coin 2 (Blue)</label>
               <br>
-               <select class="form-control" id="exampleSelect2">
-                  <option value="bitfinex:btcusd">Bitfinex</option>
-                  <option value="bitflyer:btcusd">Bitflyer</option>
-                  <option value="bitsquare:btcusd">Bitsquare</option>
-                  <option value="bitstamp:btcusd">Bitstamp</option>
-                  <option value="btce:btcusd"  selected="selected">BTCE</option>
-                  <option value="cexio:btcusd">Cexio</option>
-                  <option value="gdax:btcusd">GDAX</option>
-                  <option value="gemini:btcusd">Gemini</option>
-                  <option value="kraken:btcusd">Kraken</option>
-                  <option value="okcoin:btcusd">OkCoin</option>
-                  <option value="quadriga:btcusd">Quadriga</option>
-                  <option value="quoine:btcusd">Quoine</option></select>
-                </div>
-                <div>
-								<input type="button" name="button" id="chartButton" value="Update Chart" class ='col-md-5 btn-warning btn-lg' onclick="populateChart(this.form)"></div>
-							</form>
-						</div>
-					</div>
-					<div class="row">
-						<h2>Quick Market Comparison</h2>
-						<div class="table-responsive">
-							<table class="table table-striped table-sm">
-								<thead>
-									<tr>
-										<th>Market</th>
-										<th>Last Price</th>
-										<th>Comparison to average</th>
-									</tr>
-								</thead>
-								<tbody id="marketsTableBody">
-
-								</tbody>
-							</table>
-						</div>
-
-					</div>
-
-        </main>
+              <select class="form-control" id="exampleSelect2">
+                <option value="bitfinex:btcusd">Bitfinex</option>
+                <option value="bitflyer:btcusd">Bitflyer</option>
+                <option value="bitsquare:btcusd">Bitsquare</option>
+                <option value="bitstamp:btcusd">Bitstamp</option>
+                <option value="btce:btcusd" selected="selected">BTCE</option>
+                <option value="cexio:btcusd">Cexio</option>
+                <option value="gdax:btcusd">GDAX</option>
+                <option value="gemini:btcusd">Gemini</option>
+                <option value="kraken:btcusd">Kraken</option>
+                <option value="okcoin:btcusd">OkCoin</option>
+                <option value="quadriga:btcusd">Quadriga</option>
+                <option value="quoine:btcusd">Quoine</option>
+              </select>
+            </div>
+            <div>
+              <input type="button" name="button" id="chartButton" value="Update Chart"
+                     class='col-md-5 btn-warning btn-lg' onclick="populateChart(this.form)"></div>
+          </form>
+        </div>
       </div>
-    </div>
+      <div class="row">
+        <h2>Quick Market Comparison</h2>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+              <th>Market</th>
+              <th>Last Price</th>
+              <th>Comparison to average</th>
+            </tr>
+            </thead>
+            <tbody id="marketsTableBody">
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
 
 
+<!-- about us modal -->
 
- <!-- about us modal -->
-
-  <div class="modal fade" id="aboutusmodal" tabindex="-1" role="dialog" aria-labelledby="aboutModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="aboutusmodal" tabindex="-1" role="dialog" aria-labelledby="aboutModalCenterTitle"
+     aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -179,14 +182,15 @@
         </button>
       </div>
       <div class="modal-body">
-				<div class="modal-text">
+        <div class="modal-text">
           <p>Hello! We, PineappleTeamGroup, are excited to bring our newest creation to you!</p>
-					<p><i>Pineapple</i> helps you see what's going on with cryptocurrency! </p>
-          <p>We are four ITWS majors from RPI, this webpage is the final project for the ITWS4300 Class <i>Web Systems Science Development</i></p>
-				</div>
+          <p><i>Pineapple</i> helps you see what's going on with cryptocurrency! </p>
+          <p>We are four ITWS majors from RPI, this webpage is the final project for the ITWS4300 Class <i>Web Systems
+            Science Development</i></p>
+        </div>
         <div class="modal-image">
-					<img src="pineapple.jpg">
-				</div>
+          <img src="{% static "btcdata/pineapple.png" %}">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Back to Pineapple!</button>
@@ -198,7 +202,8 @@
 
 <!-- Coins MOdal -->
 
-<div class="modal fade" id="coinsmodal" tabindex="-1" role="dialog" aria-labelledby="coinsModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="coinsmodal" tabindex="-1" role="dialog" aria-labelledby="coinsModalCenterTitle"
+     aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -212,7 +217,7 @@
           <div class="col-md-4">
             img?
           </div>
-         <div class="col-md-4">Here's a bit of information about where we got our coins from</div>
+          <div class="col-md-4">Here's a bit of information about where we got our coins from</div>
         </div>
       </div>
       <div class="modal-footer">
@@ -224,317 +229,322 @@
 </div>
 
 
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- <script type = "text/javascript" src="{% static "btcdata/paDataPull.js" %} "></script> -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-		<!-- <script type = "text/javascript" src="{% static "btcdata/paDataPull.js" %} "></script> -->
+<script type="text/javascript">
 
-    <script type="text/javascript">
+  var jsonFileNames = ["parsedusdbtcdata1519320470.224996.json", "parsedusdbtcdata1519512115.416004.json", "parsedusdbtcdata1519151517.2418811.json", "parsedusdbtcdata1519151518.274397.json", "parsedusdbtcdata1519151537.124332.json", "parsedusdbtcdata1519151551.594238.json", "parsedusdbtcdata1519151912.206002.json", "parsedusdbtcdata1519152669.048627.json", "parsedusdbtcdata1519152881.957901.json", "parsedusdbtcdata1519152895.836216.json", "parsedusdbtcdata1519152939.631706.json", "parsedusdbtcdata1519152944.231408.json", "parsedusdbtcdata1519153002.767909.json", "parsedusdbtcdata1519153005.672537.json", "parsedusdbtcdata1519153008.2082071.json", "parsedusdbtcdata1519153019.840377.json", "parsedusdbtcdata1519153053.9101639.json", "parsedusdbtcdata1519153055.49937.json", "parsedusdbtcdata1519153136.231906.json", "parsedusdbtcdata1519153136.2894871.json", "parsedusdbtcdata1519175293.2648902.json", "parsedusdbtcdata1519175305.928298.json", "parsedusdbtcdata1519175441.817842.json", "parsedusdbtcdata1519175483.6735628.json"]; //array of all the historical json files of btc data, to be used to read json info for frontend display
 
-      var jsonFileNames = ["parsedusdbtcdata1519320470.224996.json","parsedusdbtcdata1519512115.416004.json","parsedusdbtcdata1519151517.2418811.json","parsedusdbtcdata1519151518.274397.json","parsedusdbtcdata1519151537.124332.json","parsedusdbtcdata1519151551.594238.json","parsedusdbtcdata1519151912.206002.json","parsedusdbtcdata1519152669.048627.json","parsedusdbtcdata1519152881.957901.json","parsedusdbtcdata1519152895.836216.json","parsedusdbtcdata1519152939.631706.json","parsedusdbtcdata1519152944.231408.json","parsedusdbtcdata1519153002.767909.json","parsedusdbtcdata1519153005.672537.json","parsedusdbtcdata1519153008.2082071.json","parsedusdbtcdata1519153019.840377.json","parsedusdbtcdata1519153053.9101639.json","parsedusdbtcdata1519153055.49937.json","parsedusdbtcdata1519153136.231906.json","parsedusdbtcdata1519153136.2894871.json","parsedusdbtcdata1519175293.2648902.json","parsedusdbtcdata1519175305.928298.json","parsedusdbtcdata1519175441.817842.json","parsedusdbtcdata1519175483.6735628.json"]; //array of all the historical json files of btc data, to be used to read json info for frontend display
-
-      var historicalJSON = "{{datas}}".replace(/&quot;/g,"");
-      historicalJSON =  historicalJSON.replace(/&#39;/g,"\"");
-      historicalJSON = JSON.parse(historicalJSON);
-      // alert(historicalJSON);
-      // var historicalJSON = [{
-      //   "time": 1519151517.2418811,
-      //   "bitfinex:btcusd": 11673,
-      //   "bitflyer:btcusd": 11665,
-      //   "bitsquare:btcusd": 11383.77,
-      //   "bitstamp:btcusd": 11671.25,
-      //   "btce:btcusd": 11631.01,
-      //   "cexio:btcusd": 11930.2,
-      //   "gdax:btcusd": 11684.14,
-      //   "gemini:btcusd": 11679.99,
-      //   "kraken:btcusd": 11688,
-      //   "okcoin:btcusd": 12354.36,
-      //   "quadriga:btcusd": 11600.01,
-      //   "quoine:btcusd": 11676
-      // },{"time": 1519151518.274397,
-      // 	 "bitfinex:btcusd": 11673,
-      // 	 "bitflyer:btcusd": 11665,
-      // 	 "bitsquare:btcusd": 11383.77,
-      // 	 "bitstamp:btcusd": 11671.25,
-      // 	 "btce:btcusd": 11631.01,
-      // 	 "cexio:btcusd": 11930.2,
-      // 	 "gdax:btcusd": 11684.14,
-      // 	 "gemini:btcusd": 11679.99,
-      // 	 "kraken:btcusd": 11688,
-      // 	 "okcoin:btcusd": 12354.36,
-      // 	 "quadriga:btcusd": 11600.01,
-      // 	 "quoine:btcusd": 11676
-      // 	},{"time": 1519151537.124332,
-      // 		 "bitfinex:btcusd": 11677,
-      // 		 "bitflyer:btcusd": 11665,
-      // 		 "bitsquare:btcusd": 11383.77,
-      // 		 "bitstamp:btcusd": 11678.7,
-      // 		 "btce:btcusd": 11658,
-      // 		 "cexio:btcusd": 11939.9,
-      // 		 "gdax:btcusd": 11684.14,
-      // 		 "gemini:btcusd": 11679.17,
-      // 		 "kraken:btcusd": 11685,
-      // 		 "okcoin:btcusd": 12354.36,
-      // 		 "quadriga:btcusd": 11600.01,
-      // 		 "quoine:btcusd": 11676},{
-      //   "time": 1519151551.594238,
-      //   "bitfinex:btcusd": 11674,
-      //   "bitflyer:btcusd": 11665,
-      //   "bitsquare:btcusd": 11383.77,
-      //   "bitstamp:btcusd": 11678.7,
-      //   "btce:btcusd": 11658,
-      //   "cexio:btcusd": 11939.9,
-      //   "gdax:btcusd": 11684.13,
-      //   "gemini:btcusd": 11677.21,
-      //   "kraken:btcusd": 11685,
-      //   "okcoin:btcusd": 12354.36,
-      //   "quadriga:btcusd": 11600.01,
-      //   "quoine:btcusd": 11676
-      // },{"time": 1519151912.206002,
-      // 	 "bitfinex:btcusd": 11678,
-      // 	 "bitflyer:btcusd": 11664.9,
-      // 	 "bitsquare:btcusd": 11383.77,
-      // 	 "bitstamp:btcusd": 11690,
-      // 	 "btce:btcusd": 11660,
-      // 	 "cexio:btcusd": 11922.7,
-      // 	 "gdax:btcusd": 11675.09,
-      // 	 "gemini:btcusd": 11684.99,
-      // 	 "kraken:btcusd": 11685.1,
-      // 	 "okcoin:btcusd": 12361.22,
-      // 	 "quadriga:btcusd": 11600.01,
-      // 	 "quoine:btcusd": 11676
-      // 	},{"time": 1519152669.048627,
-      // 		 "bitfinex:btcusd": 11676,
-      // 		 "bitflyer:btcusd": 11706.2,
-      // 		 "bitsquare:btcusd": 11383.77,
-      // 		 "bitstamp:btcusd": 11670.89,
-      // 		 "btce:btcusd": 11682.501,
-      // 		 "cexio:btcusd": 11942.9,
-      // 		 "gdax:btcusd": 11690,
-      // 		 "gemini:btcusd": 11680.98,
-      // 		 "kraken:btcusd": 11699.4,
-      // 		 "okcoin:btcusd": 12361.22,
-      // 		 "quadriga:btcusd": 11600.01,
-      // 		 "quoine:btcusd": 11686.56},{
-      //   "time": 1519152881.957901,
-      //   "bitfinex:btcusd": 11676,
-      //   "bitflyer:btcusd": 11678.35,
-      //   "bitsquare:btcusd": 11383.77,
-      //   "bitstamp:btcusd": 11665.83,
-      //   "btce:btcusd": 11704.35,
-      //   "cexio:btcusd": 11910,
-      //   "gdax:btcusd": 11665.26,
-      //   "gemini:btcusd": 11668.37,
-      //   "kraken:btcusd": 11672.1,
-      //   "okcoin:btcusd": 12453.16,
-      //   "quadriga:btcusd": 11600.01,
-      //   "quoine:btcusd": 11669.852
-      // },{
-      //   "time": 1519152895.836216,
-      //   "bitfinex:btcusd": 11673,
-      //   "bitflyer:btcusd": 11678.35,
-      //   "bitsquare:btcusd": 11383.77,
-      //   "bitstamp:btcusd": 11665.83,
-      //   "btce:btcusd": 11704.37,
-      //   "cexio:btcusd": 11916.6,
-      //   "gdax:btcusd": 11665.25,
-      //   "gemini:btcusd": 11674.09,
-      //   "kraken:btcusd": 11685,
-      //   "okcoin:btcusd": 12453.16,
-      //   "quadriga:btcusd": 11600.01,
-      //   "quoine:btcusd": 11674.525
-      // },{
-      //   "time": 1519152939.631706,
-      //   "bitfinex:btcusd": 11676,
-      //   "bitflyer:btcusd": 11676.95,
-      //   "bitsquare:btcusd": 11383.77,
-      //   "bitstamp:btcusd": 11663.79,
-      //   "btce:btcusd": 11704.37,
-      //   "cexio:btcusd": 11915,
-      //   "gdax:btcusd": 11673.8,
-      //   "gemini:btcusd": 11678.62,
-      //   "kraken:btcusd": 11677.6,
-      //   "okcoin:btcusd": 12453.16,
-      //   "quadriga:btcusd": 11600.01,
-      //   "quoine:btcusd": 11669.852
-      // },{"time": 1519152944.231408,
-      // 	 "bitfinex:btcusd": 11675,
-      // 	 "bitflyer:btcusd": 11676.95,
-      // 	 "bitsquare:btcusd": 11383.77,
-      // 	 "bitstamp:btcusd": 11663.79,
-      // 	 "btce:btcusd": 11704.37,
-      // 	 "cexio:btcusd": 11915,
-      // 	 "gdax:btcusd": 11673.8,
-      // 	 "gemini:btcusd": 11674.3,
-      // 	 "kraken:btcusd": 11679.8,
-      // 	 "okcoin:btcusd": 12453.16,
-      // 	 "quadriga:btcusd": 11600.01,
-      // 	 "quoine:btcusd": 11669.852}
-      // ];
-
+  var historicalJSON = "{{datas}}".replace(/&quot;/g, "");
+  historicalJSON = historicalJSON.replace(/&#39;/g, "\"");
+  historicalJSON = JSON.parse(historicalJSON);
+  // alert(historicalJSON);
+  // var historicalJSON = [{
+  //   "time": 1519151517.2418811,
+  //   "bitfinex:btcusd": 11673,
+  //   "bitflyer:btcusd": 11665,
+  //   "bitsquare:btcusd": 11383.77,
+  //   "bitstamp:btcusd": 11671.25,
+  //   "btce:btcusd": 11631.01,
+  //   "cexio:btcusd": 11930.2,
+  //   "gdax:btcusd": 11684.14,
+  //   "gemini:btcusd": 11679.99,
+  //   "kraken:btcusd": 11688,
+  //   "okcoin:btcusd": 12354.36,
+  //   "quadriga:btcusd": 11600.01,
+  //   "quoine:btcusd": 11676
+  // },{"time": 1519151518.274397,
+  // 	 "bitfinex:btcusd": 11673,
+  // 	 "bitflyer:btcusd": 11665,
+  // 	 "bitsquare:btcusd": 11383.77,
+  // 	 "bitstamp:btcusd": 11671.25,
+  // 	 "btce:btcusd": 11631.01,
+  // 	 "cexio:btcusd": 11930.2,
+  // 	 "gdax:btcusd": 11684.14,
+  // 	 "gemini:btcusd": 11679.99,
+  // 	 "kraken:btcusd": 11688,
+  // 	 "okcoin:btcusd": 12354.36,
+  // 	 "quadriga:btcusd": 11600.01,
+  // 	 "quoine:btcusd": 11676
+  // 	},{"time": 1519151537.124332,
+  // 		 "bitfinex:btcusd": 11677,
+  // 		 "bitflyer:btcusd": 11665,
+  // 		 "bitsquare:btcusd": 11383.77,
+  // 		 "bitstamp:btcusd": 11678.7,
+  // 		 "btce:btcusd": 11658,
+  // 		 "cexio:btcusd": 11939.9,
+  // 		 "gdax:btcusd": 11684.14,
+  // 		 "gemini:btcusd": 11679.17,
+  // 		 "kraken:btcusd": 11685,
+  // 		 "okcoin:btcusd": 12354.36,
+  // 		 "quadriga:btcusd": 11600.01,
+  // 		 "quoine:btcusd": 11676},{
+  //   "time": 1519151551.594238,
+  //   "bitfinex:btcusd": 11674,
+  //   "bitflyer:btcusd": 11665,
+  //   "bitsquare:btcusd": 11383.77,
+  //   "bitstamp:btcusd": 11678.7,
+  //   "btce:btcusd": 11658,
+  //   "cexio:btcusd": 11939.9,
+  //   "gdax:btcusd": 11684.13,
+  //   "gemini:btcusd": 11677.21,
+  //   "kraken:btcusd": 11685,
+  //   "okcoin:btcusd": 12354.36,
+  //   "quadriga:btcusd": 11600.01,
+  //   "quoine:btcusd": 11676
+  // },{"time": 1519151912.206002,
+  // 	 "bitfinex:btcusd": 11678,
+  // 	 "bitflyer:btcusd": 11664.9,
+  // 	 "bitsquare:btcusd": 11383.77,
+  // 	 "bitstamp:btcusd": 11690,
+  // 	 "btce:btcusd": 11660,
+  // 	 "cexio:btcusd": 11922.7,
+  // 	 "gdax:btcusd": 11675.09,
+  // 	 "gemini:btcusd": 11684.99,
+  // 	 "kraken:btcusd": 11685.1,
+  // 	 "okcoin:btcusd": 12361.22,
+  // 	 "quadriga:btcusd": 11600.01,
+  // 	 "quoine:btcusd": 11676
+  // 	},{"time": 1519152669.048627,
+  // 		 "bitfinex:btcusd": 11676,
+  // 		 "bitflyer:btcusd": 11706.2,
+  // 		 "bitsquare:btcusd": 11383.77,
+  // 		 "bitstamp:btcusd": 11670.89,
+  // 		 "btce:btcusd": 11682.501,
+  // 		 "cexio:btcusd": 11942.9,
+  // 		 "gdax:btcusd": 11690,
+  // 		 "gemini:btcusd": 11680.98,
+  // 		 "kraken:btcusd": 11699.4,
+  // 		 "okcoin:btcusd": 12361.22,
+  // 		 "quadriga:btcusd": 11600.01,
+  // 		 "quoine:btcusd": 11686.56},{
+  //   "time": 1519152881.957901,
+  //   "bitfinex:btcusd": 11676,
+  //   "bitflyer:btcusd": 11678.35,
+  //   "bitsquare:btcusd": 11383.77,
+  //   "bitstamp:btcusd": 11665.83,
+  //   "btce:btcusd": 11704.35,
+  //   "cexio:btcusd": 11910,
+  //   "gdax:btcusd": 11665.26,
+  //   "gemini:btcusd": 11668.37,
+  //   "kraken:btcusd": 11672.1,
+  //   "okcoin:btcusd": 12453.16,
+  //   "quadriga:btcusd": 11600.01,
+  //   "quoine:btcusd": 11669.852
+  // },{
+  //   "time": 1519152895.836216,
+  //   "bitfinex:btcusd": 11673,
+  //   "bitflyer:btcusd": 11678.35,
+  //   "bitsquare:btcusd": 11383.77,
+  //   "bitstamp:btcusd": 11665.83,
+  //   "btce:btcusd": 11704.37,
+  //   "cexio:btcusd": 11916.6,
+  //   "gdax:btcusd": 11665.25,
+  //   "gemini:btcusd": 11674.09,
+  //   "kraken:btcusd": 11685,
+  //   "okcoin:btcusd": 12453.16,
+  //   "quadriga:btcusd": 11600.01,
+  //   "quoine:btcusd": 11674.525
+  // },{
+  //   "time": 1519152939.631706,
+  //   "bitfinex:btcusd": 11676,
+  //   "bitflyer:btcusd": 11676.95,
+  //   "bitsquare:btcusd": 11383.77,
+  //   "bitstamp:btcusd": 11663.79,
+  //   "btce:btcusd": 11704.37,
+  //   "cexio:btcusd": 11915,
+  //   "gdax:btcusd": 11673.8,
+  //   "gemini:btcusd": 11678.62,
+  //   "kraken:btcusd": 11677.6,
+  //   "okcoin:btcusd": 12453.16,
+  //   "quadriga:btcusd": 11600.01,
+  //   "quoine:btcusd": 11669.852
+  // },{"time": 1519152944.231408,
+  // 	 "bitfinex:btcusd": 11675,
+  // 	 "bitflyer:btcusd": 11676.95,
+  // 	 "bitsquare:btcusd": 11383.77,
+  // 	 "bitstamp:btcusd": 11663.79,
+  // 	 "btce:btcusd": 11704.37,
+  // 	 "cexio:btcusd": 11915,
+  // 	 "gdax:btcusd": 11673.8,
+  // 	 "gemini:btcusd": 11674.3,
+  // 	 "kraken:btcusd": 11679.8,
+  // 	 "okcoin:btcusd": 12453.16,
+  // 	 "quadriga:btcusd": 11600.01,
+  // 	 "quoine:btcusd": 11669.852}
+  // ];
 
 
-      function aggregateFunction(){
-      	var data = {};
-      	var latestTime = 0;
-      	var averagePrice = 0;
-      	var totalPrice = 0;
-      	var marketCount = 0;
+  function aggregateFunction() {
+    var data = {};
+    var latestTime = 0;
+    var averagePrice = 0;
+    var totalPrice = 0;
+    var marketCount = 0;
 
-      	for (var i=0; i<historicalJSON.length; i++){
-      		if (historicalJSON[i].time > latestTime){
-      			data = historicalJSON[i];
-      			latestTime = historicalJSON[i].time;
-      		}
-      	}
-      	var marketsTable = document.getElementById("marketsTableBody");
-
-        var buttons = document.getElementById("buttons");
-
-      	console.log(data);
-      	dataObjects = Object.entries(data);
-      	for (var j=1; j<dataObjects.length; j++){
-      		totalPrice+=dataObjects[j][1];
-      		var newName = dataObjects[j][0];
-      		var loc = newName.search(":btcusd");
-      		newName = newName.slice(0,loc);
-      		dataObjects[j][0] = newName;
-      	}
-      	marketCount = (dataObjects.length) - 1;
-      	averagePrice = totalPrice/marketCount;
-      	console.log(averagePrice);
-
-      	for (var l= 1; l<dataObjects.length; l++){
-      		var difference = (dataObjects[l][1]/averagePrice) - 1.00;
-      		var compare = "";
-      		var compareID = ""
-
-      		if (difference > 0){
-      			compare = "above (+" + difference.toFixed(3)+")";
-      			compareID = "above";
-      		}
-      		else{
-      			compare = "below (" + difference.toFixed(3)+")";
-      			compareID = "below";
-      		}
-      		var newelement1 = document.createElement("tr");
-      		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
-      		marketsTable.appendChild(newelement1);
-
-          // var newelement2 = document.createElement("div");
-          // newelement2.innerHTML = "<div class='form-check'> <input class='form-check-input' type='checkbox' value='' id='"+String(dataObjects[l][0]).toUpperCase()+"'> <label class='form-check-label' for='" + String(dataObjects[l][0]).toUpperCase() +"'>" + String(dataObjects[l][0]).toUpperCase()  + "</label> </div>"
-          // buttons.append(newelement2);
-      		//console.log(newelement1);
-      	}
+    for (var i = 0; i < historicalJSON.length; i++) {
+      if (historicalJSON[i].time > latestTime) {
+        data = historicalJSON[i];
+        latestTime = historicalJSON[i].time;
       }
+    }
+    var marketsTable = document.getElementById("marketsTableBody");
 
-      function populateChart(form){
-      	var market1 = document.getElementById("exampleSelect1").value;
-      	var market2 = document.getElementById("exampleSelect2").value;
-      	var times = [];
-      	var market1Data = [];
-      	var market2Data = [];
-        //
-        // var    BITBAY     = document.getElementById("BITBAY").checked;
-        // var    BITFINEX   = document.getElementById("BITFINEX").checked;
-        // var    BITFLYER   = document.getElementById("BITFLYER").checked;
-        // var    BITSQUARE  = document.getElementById("BITSQUARE").checked;
-        // var    BITSTAMP   = document.getElementById("BITSTAMP").checked;
-        // var    BTCE       = document.getElementById("BTCE").checked;
-        // var    CEXIO      = document.getElementById("CEXIO").checked;
-        // var    GDAX       = document.getElementById("GDAX").checked;
-        // var    GEMINI     = document.getElementById("GEMINI").checked;
-        // var    KRAKEN     = document.getElementById("KRAKEN").checked;
-        // var    OKCOIN     = document.getElementById("OKCOIN").checked;
-        // var    QUADRIGA   = document.getElementById("QUADRIGA").checked;
-        // var    QUOINE     = document.getElementById("QUOINE").checked;
-        // alert(QUOINE);
+    var buttons = document.getElementById("buttons");
 
+    console.log(data);
+    dataObjects = Object.entries(data);
+    for (var j = 1; j < dataObjects.length; j++) {
+      totalPrice += dataObjects[j][1];
+      var newName = dataObjects[j][0];
+      var loc = newName.search(":btcusd");
+      newName = newName.slice(0, loc);
+      dataObjects[j][0] = newName;
+    }
+    marketCount = (dataObjects.length) - 1;
+    averagePrice = totalPrice / marketCount;
+    console.log(averagePrice);
 
-      	//var utcSeconds = 1234567890;
-      	//var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
-      	//d.setUTCSeconds(utcSeconds);
-      	//d is now a date (in my time zone) set to Fri Feb 13 2009 18:31:30 GMT-0500 (EST)
+    for (var l = 1; l < dataObjects.length; l++) {
+      var difference = (dataObjects[l][1] / averagePrice) - 1.00;
+      var compare = "";
+      var compareID = ""
 
-      	for (var i=0; i < historicalJSON.length; i++){
-      		var itime = historicalJSON[i].time;
-      		var market1point = historicalJSON[i][market1];
-      		var market2point = historicalJSON[i][market2];
-      		var date = new Date(0);
-      		date.setUTCSeconds(itime);
-      		var datestring = String(date.getHours())+":"+String(date.getMinutes());
-      		times.push(datestring);
-      		market1Data.push(market1point);
-      		market2Data.push(market2point);
-      	}
-      	console.log(market1Data);
-        $("#meChart").remove();
-        $("#myChart").append('<canvas class="my-4" id="meChart" width="900" height="380"></canvas>');
-        // var ctx = document.getElementById("chartreport").getContext("2d");
-      	var ctx = document.getElementById("meChart");
-
-            var myChart = new Chart(ctx, {
-              type: 'line',
-              data: {
-                labels: times,
-                datasets: [{
-                  data: market1Data,
-                  lineTension: 0,
-                  backgroundColor: 'transparent',
-                  borderColor: '#ff0000',
-                  borderWidth: 4,
-                  pointBackgroundColor: '#ff0000',
-                  fill: '-1',
-                  pointRadius: 1
-                },{
-                  data: market2Data,
-                  lineTension: 0,
-                  backgroundColor: 'green',
-                  borderColor: '#007bff',
-                  borderWidth: 4,
-                  pointBackgroundColor: '#007bff',
-                  fill: '-1',
-                  pointRadius: 1
-                }]
-              },
-              options: {
-                scales: {
-                  yAxes: [{
-                    ticks: {
-                      beginAtZero: false
-                    }
-                  }]
-                },
-                legend: {
-                  display: false,
-                }
-              }
-            });
+      if (difference > 0) {
+        compare = "above (+" + difference.toFixed(3) + ")";
+        compareID = "above";
       }
+      else {
+        compare = "below (" + difference.toFixed(3) + ")";
+        compareID = "below";
+      }
+      var newelement1 = document.createElement("tr");
+      newelement1.innerHTML = "<td>" + String(dataObjects[l][0]).toUpperCase() + "</td><td>$" + String(dataObjects[l][1]) + "</td><td " + "id='" + compareID + "'>" + compare + "</td>";
+      marketsTable.appendChild(newelement1);
+
+      // var newelement2 = document.createElement("div");
+      // newelement2.innerHTML = "<div class='form-check'> <input class='form-check-input' type='checkbox' value='' id='"+String(dataObjects[l][0]).toUpperCase()+"'> <label class='form-check-label' for='" + String(dataObjects[l][0]).toUpperCase() +"'>" + String(dataObjects[l][0]).toUpperCase()  + "</label> </div>"
+      // buttons.append(newelement2);
+      //console.log(newelement1);
+    }
+  }
+
+  function populateChart(form) {
+    var market1 = document.getElementById("exampleSelect1").value;
+    var market2 = document.getElementById("exampleSelect2").value;
+    var times = [];
+    var market1Data = [];
+    var market2Data = [];
+    //
+    // var    BITBAY     = document.getElementById("BITBAY").checked;
+    // var    BITFINEX   = document.getElementById("BITFINEX").checked;
+    // var    BITFLYER   = document.getElementById("BITFLYER").checked;
+    // var    BITSQUARE  = document.getElementById("BITSQUARE").checked;
+    // var    BITSTAMP   = document.getElementById("BITSTAMP").checked;
+    // var    BTCE       = document.getElementById("BTCE").checked;
+    // var    CEXIO      = document.getElementById("CEXIO").checked;
+    // var    GDAX       = document.getElementById("GDAX").checked;
+    // var    GEMINI     = document.getElementById("GEMINI").checked;
+    // var    KRAKEN     = document.getElementById("KRAKEN").checked;
+    // var    OKCOIN     = document.getElementById("OKCOIN").checked;
+    // var    QUADRIGA   = document.getElementById("QUADRIGA").checked;
+    // var    QUOINE     = document.getElementById("QUOINE").checked;
+    // alert(QUOINE);
 
 
-    </script>
+    //var utcSeconds = 1234567890;
+    //var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
+    //d.setUTCSeconds(utcSeconds);
+    //d is now a date (in my time zone) set to Fri Feb 13 2009 18:31:30 GMT-0500 (EST)
+
+    for (var i = 0; i < historicalJSON.length; i++) {
+      var itime = historicalJSON[i].time;
+      var market1point = historicalJSON[i][market1];
+      var market2point = historicalJSON[i][market2];
+      var date = new Date(0);
+      date.setUTCSeconds(itime);
+      var datestring = String(date.getHours()) + ":" + String(date.getMinutes());
+      times.push(datestring);
+      market1Data.push(market1point);
+      market2Data.push(market2point);
+    }
+    console.log(market1Data);
+    $("#meChart").remove();
+    $("#myChart").append('<canvas class="my-4" id="meChart" width="900" height="380"></canvas>');
+    // var ctx = document.getElementById("chartreport").getContext("2d");
+    var ctx = document.getElementById("meChart");
+
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: times,
+        datasets: [{
+          data: market1Data,
+          lineTension: 0,
+          backgroundColor: 'transparent',
+          borderColor: '#ff0000',
+          borderWidth: 4,
+          pointBackgroundColor: '#ff0000',
+          fill: '-1',
+          pointRadius: 1
+        }, {
+          data: market2Data,
+          lineTension: 0,
+          backgroundColor: 'green',
+          borderColor: '#007bff',
+          borderWidth: 4,
+          pointBackgroundColor: '#007bff',
+          fill: '-1',
+          pointRadius: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false
+            }
+          }]
+        },
+        legend: {
+          display: false,
+        }
+      }
+    });
+  }
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</script>
 
 
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-    <script>
-      feather.replace();
-    </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
 
 
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script>
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+  feather.replace();
+</script>
 
-    </script>
 
-  </body>
+<!-- Graphs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<script>
+
+</script>
+
+</body>
 </html>

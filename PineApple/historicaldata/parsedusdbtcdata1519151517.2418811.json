@@ -1,20 +1,20 @@
 {
-  'time': 1524709273.3985999,
+  'time': 1524709350.202809,
   'price': {
     'adabtc': {
       'binance:adabtc': 3.044e-05,
-      'bittrex:adabtc': 3.04e-05
+      'bittrex:adabtc': 3.05e-05
     },
     'adaeth': {
-      'binance:adaeth': 0.0004358,
+      'binance:adaeth': 0.00043669,
       'bittrex:adaeth': 0.00043655
     },
     'dausdt': {
-      'binance:adausdt': 0.26866,
+      'binance:adausdt': 0.26948,
       'bittrex:adausdt': 0.26736665
     },
     'adxbtc': {
-      'binance:adxbtc': 0.0001022,
+      'binance:adxbtc': 0.00010202,
       'bittrex:adxbtc': 0.00010262
     },
     'adxeth': {
@@ -22,31 +22,31 @@
       'bittrex:adxeth': 0.00145
     },
     'arkbtc': {
-      'binance:arkbtc': 0.0003457,
-      'bittrex:arkbtc': 0.00034721
+      'binance:arkbtc': 0.0003455,
+      'bittrex:arkbtc': 0.00034638
     },
     'batbtc': {
-      'binance:batbtc': 4.702e-05,
+      'binance:batbtc': 4.701e-05,
       'bitfinex:batbtc': 4.648e-05,
       'bittrex:batbtc': 4.682e-05
     },
     'bateth': {
-      'binance:bateth': 0.000672,
+      'binance:bateth': 0.00067299,
       'bitfinex:bateth': 0.0006704,
       'bittrex:bateth': 0.000661
     },
     'bccbtc': {
-      'binance:bccbtc': 0.148571,
+      'binance:bccbtc': 0.148997,
       'bitbay:bccbtc': 0.14621,
       'bitfinex:bccbtc': 0,
-      'bittrex:bccbtc': 0.14790002
+      'bittrex:bccbtc': 0.148
     },
     'bcceth': {
-      'binance:bcceth': 2.11865,
+      'binance:bcceth': 2.11926,
       'bittrex:bcceth': 2.1315017
     },
     'ccusdt': {
-      'binance:bccusdt': 1306.57,
+      'binance:bccusdt': 1313.98,
       'bittrex:bccusdt': 1314.3094
     },
     'bntbtc': {
@@ -58,25 +58,25 @@
       'bittrex:bnteth': 0.0068092
     },
     'tcusdt': {
-      'binance:btcusdt': 8811.98,
-      'binance:ltcusdt': 144.48,
-      'bittrex:btcusdt': 8849,
-      'bittrex:etcusdt': 18.6,
+      'binance:btcusdt': 8836.67,
+      'binance:ltcusdt': 144.79,
+      'bittrex:btcusdt': 8810,
+      'bittrex:etcusdt': 18.61,
       'bittrex:ltcusdt': 145.04753,
-      'hitbtc:btcusdt': 8914.06,
-      'hitbtc:ltcusdt': 146.004,
-      'okex:btcusdt': 8815.09,
-      'okex:etcusdt': 18.7034,
-      'okex:ltcusdt': 144.8483,
-      'poloniex:btcusdt': 8848.193,
-      'poloniex:etcusdt': 18.642666,
+      'hitbtc:btcusdt': 8924.06,
+      'hitbtc:ltcusdt': 146.212,
+      'okex:btcusdt': 8828.483,
+      'okex:etcusdt': 18.7183,
+      'okex:ltcusdt': 144.7519,
+      'poloniex:btcusdt': 8848.477,
+      'poloniex:etcusdt': 18.8308,
       'poloniex:ltcusdt': 144.86
     },
     'btgbtc': {
-      'binance:btgbtc': 0.00804,
+      'binance:btgbtc': 0.008052,
       'bitbay:btgbtc': 0.00757727,
       'bitfinex:btgbtc': 0.0080158,
-      'bittrex:btgbtc': 0.00799423,
+      'bittrex:btgbtc': 0.00799424,
       'cexio:btgbtc': 0.008132,
       'quadriga:btgbtc': 0.00904001
     },
@@ -86,27 +86,27 @@
     },
     'btsbtc': {
       'binance:btsbtc': 2.81e-05,
-      'poloniex:btsbtc': 2.799e-05
+      'poloniex:btsbtc': 2.8e-05
     },
     'oakbtc': {
-      'binance:cloakbtc': 0.0014164,
+      'binance:cloakbtc': 0.0014102,
       'bittrex:cloakbtc': 0.00142041
     },
     'ashbtc': {
-      'binance:dashbtc': 0.052328,
+      'binance:dashbtc': 0.052454,
       'bitbay:dashbtc': 0.05249374,
       'bitfinex:dashbtc': 0.05223,
-      'bittrex:dashbtc': 0.05226765,
+      'bittrex:dashbtc': 0.05242381,
       'cexio:dashbtc': 0.051855,
-      'kraken:dashbtc': 0.05246,
-      'poloniex:dashbtc': 0.05237823
+      'kraken:dashbtc': 0.0525,
+      'poloniex:dashbtc': 0.05237855
     },
     'asheth': {
       'binance:dasheth': 0.74687,
       'bittrex:dasheth': 0.74702746
     },
     'dntbtc': {
-      'binance:dntbtc': 1.061e-05,
+      'binance:dntbtc': 1.06e-05,
       'bittrex:dntbtc': 1.063e-05
     },
     'dnteth': {
@@ -114,23 +114,23 @@
       'bittrex:dnteth': 0.00015126
     },
     'edobtc': {
-      'binance:edobtc': 0.0002401,
+      'binance:edobtc': 0.00024,
       'bitfinex:edobtc': 0.00023952
     },
     'edoeth': {
-      'binance:edoeth': 0.003404,
+      'binance:edoeth': 0.003438,
       'bitfinex:edoeth': 0.0034682
     },
     'elfbtc': {
       'binance:elfbtc': 0.00011618,
-      'bitfinex:elfbtc': 0.00011604
+      'bitfinex:elfbtc': 0.00011607
     },
     'elfeth': {
-      'binance:elfeth': 0.00165577,
-      'bitfinex:elfeth': 0.0016544
+      'binance:elfeth': 0.0016578,
+      'bitfinex:elfeth': 0.0016556
     },
     'engbtc': {
-      'binance:engbtc': 0.00025636,
+      'binance:engbtc': 0.00025549,
       'bittrex:engbtc': 0.0002549
     },
     'engeth': {
@@ -138,61 +138,61 @@
       'bittrex:engeth': 0.00368227
     },
     'eosbtc': {
-      'binance:eosbtc': 0.0016509,
-      'bitfinex:eosbtc': 0.0016525,
+      'binance:eosbtc': 0.0016516,
+      'bitfinex:eosbtc': 0.0016537,
       'bittrex:neosbtc': 0.00037612,
-      'kraken:eosbtc': 0.0016584,
+      'kraken:eosbtc': 0.0016588,
       'poloniex:neosbtc': 0.00037002
     },
     'eoseth': {
-      'binance:eoseth': 0.023567,
-      'bitfinex:eoseth': 0.02367,
+      'binance:eoseth': 0.023616,
+      'bitfinex:eoseth': 0.023655,
       'kraken:eoseth': 0.023621
     },
     'etcbtc': {
-      'binance:etcbtc': 0.002118,
-      'bitfinex:etcbtc': 0.0021159,
+      'binance:etcbtc': 0.002117,
+      'bitfinex:etcbtc': 0.0021215,
       'bitsquare:etcbtc': 0.0021658,
       'bittrex:etcbtc': 0.00212021,
       'kraken:etcbtc': 0.002116,
-      'okex:etcbtc': 0.00211883,
-      'poloniex:etcbtc': 0.00211552,
+      'okex:etcbtc': 0.00211732,
+      'poloniex:etcbtc': 0.00212166,
       'qryptos:etcbtc': 0.00210869
     },
     'etceth': {
-      'binance:etceth': 0.030255,
+      'binance:etceth': 0.030185,
       'bittrex:etceth': 0.03046166,
       'kraken:etceth': 0.030275,
-      'okex:etceth': 0.03029623,
+      'okex:etceth': 0.03024666,
       'poloniex:etceth': 0.03001245
     },
     'ethbtc': {
-      'binance:ethbtc': 0.069885,
+      'binance:ethbtc': 0.069975,
       'bitbay:ethbtc': 0.06904241,
-      'bitfinex:ethbtc': 0.069911,
+      'bitfinex:ethbtc': 0.069959,
       'bitflyer:ethbtc': 0.07009,
       'bitsquare:ethbtc': 0.05941423,
       'bitstamp:ethbtc': 0.06999999,
-      'bittrex:ethbtc': 0.06987371,
+      'bittrex:ethbtc': 0.06993878,
       'btce:ethbtc': 0.06988,
       'cexio:ethbtc': 0.070069,
-      'gdax:ethbtc': 0.06991,
+      'gdax:ethbtc': 0.06987,
       'gemini:ethbtc': 0.07001,
-      'kraken:ethbtc': 0.06992,
+      'kraken:ethbtc': 0.06993,
       'luno:ethbtc': 0.0698,
-      'okex:ethbtc': 0.0699265,
+      'okex:ethbtc': 0.0701033,
       'poloniex:ethbtc': 0.06990025,
       'qryptos:ethbtc': 0.06974878,
       'quoine:ethbtc': 0.07040001
     },
     'thusdt': {
-      'binance:ethusdt': 616.3,
-      'bittrex:ethusdt': 615.131,
-      'okex:ethusdt': 616.0787,
-      'poloniex:ethusdt': 616.03
+      'binance:ethusdt': 618.26,
+      'bittrex:ethusdt': 618.1259,
+      'okex:ethusdt': 619.4572,
+      'poloniex:ethusdt': 619.7712
     },
     'funbtc': {
-      'binance:funbtc': 4.75e-06,
+      'binance:funbtc': 4.77e-06,
       'bitfinex:funbtc': 4.73e-06,
       'bittrex:funbtc': 7.19e-06
     },
@@ -206,7 +206,7 @@
       'poloniex:gasbtc': 0.00291124
     },
     'grsbtc': {
-      'binance:grsbtc': 0.00014992,
+      'binance:grsbtc': 0.00014852,
       'bittrex:grsbtc': 0.00014844
     },
     'icnbtc': {
@@ -214,26 +214,26 @@
       'kraken:icnbtc': 0.000149
     },
     'icneth': {
-      'binance:icneth': 0.0021274,
+      'binance:icneth': 0.0021386,
       'kraken:icneth': 0.002141
     },
     'icxbtc': {
-      'binance:icxbtc': 0.0004222
+      'binance:icxbtc': 0.0004218
     },
     'icxeth': {
-      'binance:icxeth': 0.00604
+      'binance:icxeth': 0.006035
     },
     'kmdbtc': {
-      'binance:kmdbtc': 0.0004001,
+      'binance:kmdbtc': 0.0004002,
       'bittrex:kmdbtc': 0.00040981
     },
     'inkbtc': {
-      'binance:linkbtc': 5.068e-05,
+      'binance:linkbtc': 5.084e-05,
       'bittrex:pinkbtc': 2.54e-06,
-      'poloniex:pinkbtc': 2.52e-06
+      'poloniex:pinkbtc': 2.56e-06
     },
     'inketh': {
-      'binance:linketh': 0.00072644
+      'binance:linketh': 0.0007242
     },
     'lrcbtc': {
       'binance:lrcbtc': 8.022e-05,
@@ -246,7 +246,7 @@
       'bittrex:lrceth': 0.0011475
     },
     'lskbtc': {
-      'binance:lskbtc': 0.0012309,
+      'binance:lskbtc': 0.0012326,
       'bitbay:lskbtc': 0.00116802,
       'bittrex:lskbtc': 0.0012273,
       'poloniex:lskbtc': 0.00123319
@@ -256,23 +256,23 @@
       'poloniex:lsketh': 0.01785079
     },
     'ltcbtc': {
-      'binance:ltcbtc': 0.016396,
+      'binance:ltcbtc': 0.016407,
       'bitbay:ltcbtc': 0.01632811,
-      'bitfinex:ltcbtc': 0.016425,
+      'bitfinex:ltcbtc': 0.016424,
       'bitsquare:ltcbtc': 0.01686987,
       'bitstamp:ltcbtc': 0.016419,
-      'bittrex:ltcbtc': 0.01642048,
+      'bittrex:ltcbtc': 0.01642042,
       'btce:ltcbtc': 0.01643,
       'cexio:ltcbtc': 0,
       'gdax:ltcbtc': 0.01642,
-      'kraken:ltcbtc': 0.01641,
-      'okex:ltcbtc': 0.01642616,
-      'poloniex:ltcbtc': 0.01642075,
+      'kraken:ltcbtc': 0.016416,
+      'okex:ltcbtc': 0.01641217,
+      'poloniex:ltcbtc': 0.01639043,
       'qryptos:ltcbtc': 0.015931,
       'quadriga:ltcbtc': 0.01634941
     },
     'ltceth': {
-      'binance:ltceth': 0.23404,
+      'binance:ltceth': 0.23485,
       'bittrex:ltceth': 0.23385075,
       'okex:ltceth': 0.23412105
     },
@@ -285,7 +285,7 @@
       'bittrex:manaeth': 0.00020581
     },
     'mcobtc': {
-      'binance:mcobtc': 0.001268,
+      'binance:mcobtc': 0.001266,
       'bittrex:mcobtc': 0.00126756
     },
     'mcoeth': {
@@ -293,7 +293,7 @@
       'bittrex:mcoeth': 0.01821161
     },
     'anobtc': {
-      'binance:nanobtc': 0.0007823
+      'binance:nanobtc': 0.0007819
     },
     'anoeth': {
       'binance:nanoeth': 0.011071
@@ -306,27 +306,27 @@
     'neobtc': {
       'binance:neobtc': 0.008188,
       'bitfinex:neobtc': 0.0081896,
-      'bittrex:neobtc': 0.00816587
+      'bittrex:neobtc': 0.0081459
     },
     'neoeth': {
-      'binance:neoeth': 0.117067,
+      'binance:neoeth': 0.1172,
       'bitfinex:neoeth': 0.11635,
-      'bittrex:neoeth': 0.11720636
+      'bittrex:neoeth': 0.11730862
     },
     'eousdt': {
-      'binance:neousdt': 72.151,
+      'binance:neousdt': 72.43,
       'bittrex:neousdt': 71.64692
     },
     'omgbtc': {
-      'binance:omgbtc': 0.001825,
+      'binance:omgbtc': 0.00183,
       'bitfinex:omgbtc': 0.001828,
-      'bittrex:omgbtc': 0.00182671,
-      'poloniex:omgbtc': 0.00182826
+      'bittrex:omgbtc': 0.00183891,
+      'poloniex:omgbtc': 0.00182193
     },
     'omgeth': {
-      'binance:omgeth': 0.026114,
+      'binance:omgeth': 0.026084,
       'bitfinex:omgeth': 0.02616,
-      'bittrex:omgeth': 0.02600213,
+      'bittrex:omgeth': 0.02601124,
       'poloniex:omgeth': 0.02611806
     },
     'ivxbtc': {
@@ -342,12 +342,12 @@
       'bittrex:powreth': 0.00082401
     },
     'tumbtc': {
-      'binance:qtumbtc': 0.002143,
+      'binance:qtumbtc': 0.002145,
       'bitfinex:qtumbtc': 0.0021499,
-      'bittrex:qtumbtc': 0.00214041
+      'bittrex:qtumbtc': 0.00214897
     },
     'tumeth': {
-      'binance:qtumeth': 0.030617,
+      'binance:qtumeth': 0.030649,
       'bitfinex:qtumeth': 0.030647,
       'bittrex:qtumeth': 0.03071527
     },
@@ -357,9 +357,9 @@
       'bittrex:rcnbtc': 1.446e-05
     },
     'rcneth': {
-      'binance:rcneth': 0.00020452,
+      'binance:rcneth': 0.00020607,
       'bitfinex:rcneth': 0.00020598,
-      'bittrex:rcneth': 0.00020497
+      'bittrex:rcneth': 0.00020663
     },
     'rdnbtc': {
       'binance:rdnbtc': 0.00021505,
@@ -370,15 +370,15 @@
       'bitfinex:rdneth': 0.0032083
     },
     'reqbtc': {
-      'binance:reqbtc': 2.6e-05,
+      'binance:reqbtc': 2.577e-05,
       'bitfinex:reqbtc': 2.518e-05
     },
     'reqeth': {
-      'binance:reqeth': 0.00037031,
+      'binance:reqeth': 0.00036939,
       'bitfinex:reqeth': 0.00036567
     },
     'rlcbtc': {
-      'binance:rlcbtc': 0.0001598,
+      'binance:rlcbtc': 0.0001593,
       'bitfinex:rlcbtc': 0.00016,
       'bittrex:rlcbtc': 0.00015964
     },
@@ -388,43 +388,43 @@
       'bittrex:rlceth': 0.00237919
     },
     'altbtc': {
-      'binance:saltbtc': 0.0003837,
+      'binance:saltbtc': 0.0003838,
       'bittrex:saltbtc': 0.00038078
     },
     'alteth': {
-      'binance:salteth': 0.005477,
+      'binance:salteth': 0.005479,
       'bittrex:salteth': 0.00546263
     },
     'sntbtc': {
-      'binance:sntbtc': 1.497e-05,
+      'binance:sntbtc': 1.495e-05,
       'bitfinex:sntbtc': 1.49e-05,
       'bittrex:sntbtc': 1.491e-05
     },
     'snteth': {
-      'binance:snteth': 0.00021358,
+      'binance:snteth': 0.00021419,
       'bitfinex:snteth': 0.00021302,
       'bittrex:snteth': 0.00021496
     },
     'eembtc': {
-      'binance:steembtc': 0.0004474,
+      'binance:steembtc': 0.0004476,
       'bittrex:steembtc': 0.00045002,
-      'poloniex:steembtc': 0.00034601
+      'poloniex:steembtc': 0.00034763
     },
     'eemeth': {
-      'binance:steemeth': 0.0064,
+      'binance:steemeth': 0.006394,
       'poloniex:steemeth': 0.00496709
     },
     'orjbtc': {
-      'binance:storjbtc': 0.00011812,
+      'binance:storjbtc': 0.00011829,
       'bittrex:storjbtc': 0.00011718,
       'poloniex:storjbtc': 0.00011867
     },
     'orjeth': {
-      'binance:storjeth': 0.0016843,
+      'binance:storjeth': 0.0016906,
       'bittrex:storjeth': 0.00170171
     },
     'ratbtc': {
-      'binance:stratbtc': 0.0006544,
+      'binance:stratbtc': 0.0006543,
       'bittrex:stratbtc': 0.00064989,
       'poloniex:stratbtc': 0.00065628
     },
@@ -433,7 +433,7 @@
       'bittrex:strateth': 0.00926019
     },
     'sysbtc': {
-      'binance:sysbtc': 5.431e-05,
+      'binance:sysbtc': 5.476e-05,
       'bittrex:sysbtc': 5.442e-05,
       'poloniex:sysbtc': 5.433e-05
     },
@@ -446,22 +446,22 @@
       'bitfinex:tnbeth': 7.49e-05
     },
     'trxbtc': {
-      'binance:trxbtc': 7.84e-06,
-      'bitfinex:trxbtc': 7.83e-06,
-      'bittrex:trxbtc': 7.77e-06
+      'binance:trxbtc': 7.85e-06,
+      'bitfinex:trxbtc': 7.86e-06,
+      'bittrex:trxbtc': 7.88e-06
     },
     'trxeth': {
-      'binance:trxeth': 0.00011199,
+      'binance:trxeth': 0.00011234,
       'bitfinex:trxeth': 0.00011172,
-      'bittrex:trxeth': 0.00011181
+      'bittrex:trxeth': 0.00011206
     },
     'viabtc': {
-      'binance:viabtc': 0.0002502,
+      'binance:viabtc': 0.0002506,
       'bittrex:viabtc': 0.0002485,
       'poloniex:viabtc': 0.00025121
     },
     'vesbtc': {
-      'binance:wavesbtc': 0.0005766,
+      'binance:wavesbtc': 0.0005767,
       'bittrex:wavesbtc': 0.00057531
     },
     'veseth': {
@@ -473,86 +473,86 @@
       'bittrex:wingsbtc': 6.163e-05
     },
     'ngseth': {
-      'binance:wingseth': 0.0008872,
+      'binance:wingseth': 0.000887,
       'bittrex:wingseth': 0.00088678
     },
     'xembtc': {
-      'binance:xembtc': 4.242e-05,
-      'bittrex:xembtc': 4.23e-05,
+      'binance:xembtc': 4.241e-05,
+      'bittrex:xembtc': 4.248e-05,
       'poloniex:xembtc': 4.242e-05
     },
     'xemeth': {
-      'binance:xemeth': 0.00060686,
+      'binance:xemeth': 0.00060601,
       'bittrex:xemeth': 0.00060851
     },
     'xlmbtc': {
-      'binance:xlmbtc': 3.905e-05,
-      'bittrex:xlmbtc': 3.898e-05,
-      'cexio:xlmbtc': 3.8e-05
+      'binance:xlmbtc': 3.904e-05,
+      'bittrex:xlmbtc': 3.889e-05,
+      'cexio:xlmbtc': 3.91e-05
     },
     'xlmeth': {
-      'binance:xlmeth': 0.00055812,
+      'binance:xlmeth': 0.00055776,
       'bittrex:xlmeth': 0.00055396
     },
     'xmrbtc': {
-      'binance:xmrbtc': 0.029887,
-      'bitfinex:xmrbtc': 0.029901,
-      'bittrex:xmrbtc': 0.02991535,
+      'binance:xmrbtc': 0.029824,
+      'bitfinex:xmrbtc': 0.029908,
+      'bittrex:xmrbtc': 0.02990498,
       'kraken:xmrbtc': 0.029886,
-      'poloniex:xmrbtc': 0.02991535,
+      'poloniex:xmrbtc': 0.02992983,
       'qryptos:xmrbtc': 0.02990418
     },
     'xmreth': {
-      'binance:xmreth': 0.42869,
+      'binance:xmreth': 0.42651,
       'bittrex:xmreth': 0.42880124
     },
     'xrpbtc': {
-      'binance:xrpbtc': 8.96e-05,
+      'binance:xrpbtc': 8.939e-05,
       'bitbay:xrpbtc': 9.194e-05,
-      'bitfinex:xrpbtc': 8.97e-05,
+      'bitfinex:xrpbtc': 8.96e-05,
       'bitstamp:xrpbtc': 8.95e-05,
-      'bittrex:xrpbtc': 8.968e-05,
+      'bittrex:xrpbtc': 8.998e-05,
       'cexio:xrpbtc': 8.968e-05,
       'kraken:xrpbtc': 8.958e-05,
-      'poloniex:xrpbtc': 8.943e-05,
+      'poloniex:xrpbtc': 8.947e-05,
       'qryptos:xrpbtc': 8.94e-05
     },
     'xrpeth': {
-      'binance:xrpeth': 0.00128,
-      'bittrex:xrpeth': 0.001281
+      'binance:xrpeth': 0.00127997,
+      'bittrex:xrpeth': 0.00128376
     },
     'xvgbtc': {
-      'binance:xvgbtc': 7.28e-06,
+      'binance:xvgbtc': 7.29e-06,
       'bittrex:xvgbtc': 7.3e-06
     },
     'xzcbtc': {
-      'binance:xzcbtc': 0.004596,
-      'bittrex:xzcbtc': 0.00461009
+      'binance:xzcbtc': 0.004599,
+      'bittrex:xzcbtc': 0.00455553
     },
     'zecbtc': {
-      'binance:zecbtc': 0.03233,
+      'binance:zecbtc': 0.032372,
       'bitfinex:zecbtc': 0.032165,
-      'bittrex:zecbtc': 0.03241999,
+      'bittrex:zecbtc': 0.03231068,
       'btce:zecbtc': 0.0323,
       'cexio:zecbtc': 0.032154,
       'kraken:zecbtc': 0.03219,
-      'poloniex:zecbtc': 0.03226,
+      'poloniex:zecbtc': 0.032315,
       'qryptos:zecbtc': 0.0319
     },
     'zeceth': {
-      'binance:zeceth': 0.46253,
+      'binance:zeceth': 0.46318,
       'bittrex:zeceth': 0.46,
       'poloniex:zeceth': 0.46417353
     },
     'zrxbtc': {
-      'binance:zrxbtc': 0.0001158,
+      'binance:zrxbtc': 0.00011577,
       'bitfinex:zrxbtc': 0.00011563,
-      'bittrex:zrxbtc': 0.00011619,
+      'bittrex:zrxbtc': 0.00011548,
       'poloniex:zrxbtc': 0.00011619
     },
     'zrxeth': {
       'binance:zrxeth': 0.00166086,
-      'bitfinex:zrxeth': 0.0016458,
+      'bitfinex:zrxeth': 0.0016539,
       'bittrex:zrxeth': 0.0016524,
       'poloniex:zrxeth': 0.00165649
     },
@@ -571,11 +571,11 @@
       'bitfinex:btceur': 7234.81,
       'bitflyer:btceur': 7292,
       'bitsquare:btceur': 7471.48,
-      'bitstamp:btceur': 7229.21,
+      'bitstamp:btceur': 7236.9,
       'btce:btceur': 7298.428,
       'cexio:btceur': 7243.2,
       'gdax:btceur': 7261.01,
-      'kraken:btceur': 7232.7,
+      'kraken:btceur': 7229.5,
       'quoine:btceur': 7105.8745
     },
     'btcpln': {
@@ -583,15 +583,15 @@
     },
     'btcusd': {
       'bitbay:btcusd': 8812.51,
-      'bitfinex:btcusd': 8816.2,
-      'bitflyer:btcusd': 8798.3,
+      'bitfinex:btcusd': 8833.4,
+      'bitflyer:btcusd': 8790.2,
       'bitsquare:btcusd': 8600.127,
-      'bitstamp:btcusd': 8816.39,
-      'btce:btcusd': 8880.521,
+      'bitstamp:btcusd': 8822.98,
+      'btce:btcusd': 8871,
       'cexio:btcusd': 8872.3,
-      'gdax:btcusd': 8817.01,
-      'gemini:btcusd': 8819.22,
-      'kraken:btcusd': 8819,
+      'gdax:btcusd': 8827.99,
+      'gemini:btcusd': 8829.09,
+      'kraken:btcusd': 8821.8,
       'okcoin:btcusd': 8954.84,
       'quadriga:btcusd': 8750.01,
       'quoine:btcusd': 8816.81
@@ -620,16 +620,16 @@
       'bitbay:dashusd': 464.6,
       'bitfinex:dashusd': 463.76,
       'cexio:dashusd': 465.19,
-      'kraken:dashusd': 464.3
+      'kraken:dashusd': 464.699
     },
     'etheur': {
       'bitbay:etheur': 502.06,
-      'bitfinex:etheur': 505.34,
-      'bitstamp:etheur': 505.43,
-      'btce:etheur': 509.97827,
+      'bitfinex:etheur': 505.71,
+      'bitstamp:etheur': 506.07,
+      'btce:etheur': 511.9696,
       'cexio:etheur': 506.91,
       'gdax:etheur': 507.3,
-      'kraken:etheur': 504.81,
+      'kraken:etheur': 506.08,
       'quoine:etheur': 504
     },
     'ethpln': {
@@ -637,13 +637,13 @@
     },
     'ethusd': {
       'bitbay:ethusd': 624.97,
-      'bitfinex:ethusd': 615.52,
-      'bitstamp:ethusd': 614.94,
-      'btce:ethusd': 621,
+      'bitfinex:ethusd': 618.55,
+      'bitstamp:ethusd': 617.99,
+      'btce:ethusd': 621.54083,
       'cexio:ethusd': 620,
-      'gdax:ethusd': 615.2,
-      'gemini:ethusd': 617.68,
-      'kraken:ethusd': 616.39,
+      'gdax:ethusd': 618.52,
+      'gemini:ethusd': 619,
+      'kraken:ethusd': 617.72,
       'quadriga:ethusd': 0,
       'quoine:ethusd': 610
     },
@@ -674,19 +674,19 @@
       'bitbay:ltceur': 118.09,
       'bitstamp:ltceur': 119.16,
       'gdax:ltceur': 119.1,
-      'kraken:ltceur': 118.87
+      'kraken:ltceur': 118.6
     },
     'ltcpln': {
       'bitbay:ltcpln': 508.07
     },
     'ltcusd': {
       'bitbay:ltcusd': 164.8,
-      'bitfinex:ltcusd': 144.87,
-      'bitstamp:ltcusd': 144.88,
-      'btce:ltcusd': 146.0395,
+      'bitfinex:ltcusd': 144.98,
+      'bitstamp:ltcusd': 144.99,
+      'btce:ltcusd': 146,
       'cexio:ltcusd': 0,
-      'gdax:ltcusd': 144.96,
-      'kraken:ltcusd': 144.8,
+      'gdax:ltcusd': 144.99,
+      'kraken:ltcusd': 144.79,
       'okcoin:ltcusd': 146.67
     },
     'xinbtc': {
@@ -696,17 +696,17 @@
       'bitbay:xrpeur': 0.71,
       'bitstamp:xrpeur': 0.64804,
       'cexio:xrpeur': 0.6494,
-      'kraken:xrpeur': 0.6484
+      'kraken:xrpeur': 0.64859
     },
     'xrppln': {
       'bitbay:xrppln': 2.72
     },
     'xrpusd': {
       'bitbay:xrpusd': 0.77,
-      'bitfinex:xrpusd': 0.79021,
-      'bitstamp:xrpusd': 0.79,
+      'bitfinex:xrpusd': 0.79128,
+      'bitstamp:xrpusd': 0.79042,
       'cexio:xrpusd': 0.7984,
-      'kraken:xrpusd': 0.7906
+      'kraken:xrpusd': 0.79015
     },
     'agibtc': {
       'bitfinex:agibtc': 2.199e-05
@@ -735,10 +735,10 @@
       'bitstamp:bchbtc': 0.14895,
       'btce:bchbtc': 0.1482,
       'cexio:bchbtc': 0.147011,
-      'gdax:bchbtc': 0.14821,
-      'kraken:bchbtc': 0.14885,
-      'okex:bchbtc': 0.14869034,
-      'poloniex:bchbtc': 0.14809,
+      'gdax:bchbtc': 0.14845,
+      'kraken:bchbtc': 0.14852,
+      'okex:bchbtc': 0.14913,
+      'poloniex:bchbtc': 0.14861102,
       'quadriga:bchbtc': 0.1461888
     },
     'bcheth': {
@@ -748,12 +748,12 @@
       'poloniex:bcheth': 2.1092684
     },
     'bchusd': {
-      'bitfinex:bchusd': 1306.9,
-      'bitstamp:bchusd': 1307.57,
-      'btce:bchusd': 1310.443,
+      'bitfinex:bchusd': 1313.2,
+      'bitstamp:bchusd': 1313.99,
+      'btce:bchusd': 1312.005,
       'cexio:bchusd': 1320.09,
-      'gdax:bchusd': 1310.91,
-      'kraken:bchusd': 1314.6,
+      'gdax:bchusd': 1314.66,
+      'kraken:bchusd': 1314.1,
       'quoine:bchusd': 1105
     },
     'bcubtc': {
@@ -770,9 +770,9 @@
     },
     'btcjpy': {
       'bitfinex:btcjpy': 967046.7,
-      'bitflyer:btcjpy': 964511,
+      'bitflyer:btcjpy': 965762,
       'kraken:btcjpy': 970689,
-      'quoine:btcjpy': 961372.44
+      'quoine:btcjpy': 962661.75
     },
     'atausd': {
       'bitfinex:datausd': 0
@@ -784,16 +784,16 @@
       'bitfinex:dateth': 0.000154
     },
     'datusd': {
-      'bitfinex:datusd': 0.095503
+      'bitfinex:datusd': 0.095003
     },
     'edousd': {
       'bitfinex:edousd': 2.1086
     },
     'elfusd': {
-      'bitfinex:elfusd': 1.0276
+      'bitfinex:elfusd': 1.0231
     },
     'eoseur': {
-      'bitfinex:eoseur': 11.967,
+      'bitfinex:eoseur': 11.974,
       'kraken:eoseur': 12.0159
     },
     'eosgbp': {
@@ -803,15 +803,15 @@
       'bitfinex:eosjpy': 1593
     },
     'eosusd': {
-      'bitfinex:eosusd': 14.589,
-      'kraken:eosusd': 14.6556
+      'bitfinex:eosusd': 14.63,
+      'kraken:eosusd': 14.676
     },
     'etcusd': {
-      'bitfinex:etcusd': 18.68,
-      'kraken:etcusd': 18.711
+      'bitfinex:etcusd': 18.742,
+      'kraken:etcusd': 18.723
     },
     'ethgbp': {
-      'bitfinex:ethgbp': 443.3,
+      'bitfinex:ethgbp': 441.84,
       'cexio:ethgbp': 445.05,
       'kraken:ethgbp': 453.03
     },
@@ -833,26 +833,26 @@
       'bitfinex:funusd': 0.041
     },
     'gntbtc': {
-      'bitfinex:gntbtc': 6.265e-05,
-      'bittrex:gntbtc': 6.334e-05,
-      'poloniex:gntbtc': 6.337e-05
+      'bitfinex:gntbtc': 6.305e-05,
+      'bittrex:gntbtc': 6.341e-05,
+      'poloniex:gntbtc': 6.272e-05
     },
     'gnteth': {
       'bitfinex:gnteth': 0.00091318,
-      'bittrex:gnteth': 0.0008964,
+      'bittrex:gnteth': 0.00090722,
       'poloniex:gnteth': 0.00089273
     },
     'gntusd': {
       'bitfinex:gntusd': 0.55201
     },
     'iotbtc': {
-      'bitfinex:iotbtc': 0.00020334
+      'bitfinex:iotbtc': 0.0002041
     },
     'ioteth': {
       'bitfinex:ioteth': 0.0029318
     },
     'ioteur': {
-      'bitfinex:ioteur': 1.4749
+      'bitfinex:ioteur': 1.4849
     },
     'iotgbp': {
       'bitfinex:iotgbp': 1.2943
@@ -861,7 +861,7 @@
       'bitfinex:iotjpy': 196.84479
     },
     'iotusd': {
-      'bitfinex:iotusd': 1.7994
+      'bitfinex:iotusd': 1.80867
     },
     'lrcusd': {
       'bitfinex:lrcusd': 0.71071
@@ -876,13 +876,13 @@
       'bitfinex:neojpy': 7908.3716
     },
     'neousd': {
-      'bitfinex:neousd': 72.33
+      'bitfinex:neousd': 72.331
     },
     'omgusd': {
-      'bitfinex:omgusd': 16.133
+      'bitfinex:omgusd': 16.135
     },
     'tumusd': {
-      'bitfinex:qtumusd': 18.996
+      'bitfinex:qtumusd': 19
     },
     'rcnusd': {
       'bitfinex:rcnusd': 0.11953
@@ -893,7 +893,7 @@
     'repbtc': {
       'bitfinex:repbtc': 0.0045024,
       'bittrex:repbtc': 0.0044571,
-      'kraken:repbtc': 0.004449,
+      'kraken:repbtc': 0.004455,
       'poloniex:repbtc': 0.00444038,
       'qryptos:repbtc': 0.00595109
     },
@@ -923,17 +923,17 @@
       'bitfinex:sanusd': 1.6951
     },
     'sntusd': {
-      'bitfinex:sntusd': 0.13192
+      'bitfinex:sntusd': 0.13194
     },
     'tnbusd': {
       'bitfinex:tnbusd': 0.046156
     },
     'trxusd': {
-      'bitfinex:trxusd': 0.06912
+      'bitfinex:trxusd': 0.0689
     },
     'waxbtc': {
       'bitfinex:waxbtc': 3.451e-05,
-      'bittrex:waxbtc': 3.411e-05
+      'bittrex:waxbtc': 3.401e-05
     },
     'waxeth': {
       'bitfinex:waxeth': 0.000514,
@@ -944,31 +944,31 @@
     },
     'xmrusd': {
       'bitfinex:xmrusd': 264.06,
-      'kraken:xmrusd': 263.6
+      'kraken:xmrusd': 264.31
     },
     'zecusd': {
-      'bitfinex:zecusd': 284.74,
-      'btce:zecusd': 285.785,
+      'bitfinex:zecusd': 284.65,
+      'btce:zecusd': 286.081,
       'cexio:zecusd': 286.2,
-      'kraken:zecusd': 285.43
+      'kraken:zecusd': 284.07
     },
     'zrxusd': {
       'bitfinex:zrxusd': 1.0492
     },
     'cfxjpy': {
-      'bitflyer:btcfxjpy': 1005600
+      'bitflyer:btcfxjpy': 1006598
     },
     'utures': {
       'bitflyer:btcjpy-biweekly-futures': 956141,
       'bitflyer:btcjpy-weekly-futures': 959460,
       'bitmex:adabtc-monthly-futures': 1.98e-05,
-      'bitmex:adabtc-quarterly-futures': 3.306e-05,
+      'bitmex:adabtc-quarterly-futures': 3.307e-05,
       'bitmex:bchbtc-monthly-futures': 0.10034,
-      'bitmex:bchbtc-quarterly-futures': 0.1565,
-      'bitmex:btcjpy-quarterly-futures': 8797.5,
-      'bitmex:btcusd-biquarterly-futures': 8851,
-      'bitmex:btcusd-perpetual-futures': 8791,
-      'bitmex:btcusd-quarterly-futures': 8797.5,
+      'bitmex:bchbtc-quarterly-futures': 0.1568,
+      'bitmex:btcjpy-quarterly-futures': 8802.5,
+      'bitmex:btcusd-biquarterly-futures': 8850.5,
+      'bitmex:btcusd-perpetual-futures': 8795.5,
+      'bitmex:btcusd-quarterly-futures': 8802.5,
       'bitmex:dashbtc-monthly-futures': 0.0467896,
       'bitmex:dashbtc-quarterly-futures': 0.0467896,
       'bitmex:etcbtc-monthly-futures': 0.002056,
@@ -990,20 +990,20 @@
       'bitmex:xtzbtc-quarterly-futures': 0,
       'bitmex:zecbtc-monthly-futures': 0.026617,
       'bitmex:zecbtc-quarterly-futures': 0.0268181,
-      'okcoin:btcusd-biweekly-futures': 8817.39,
-      'okcoin:btcusd-quarterly-futures': 8791.34,
-      'okcoin:btcusd-weekly-futures': 8823.94,
-      'okcoin:ltcusd-biweekly-futures': 147.6,
-      'okcoin:ltcusd-quarterly-futures': 152.169,
-      'okcoin:ltcusd-weekly-futures': 145.689
+      'okcoin:btcusd-biweekly-futures': 8823.17,
+      'okcoin:btcusd-quarterly-futures': 8797.98,
+      'okcoin:btcusd-weekly-futures': 8834.14,
+      'okcoin:ltcusd-biweekly-futures': 147.941,
+      'okcoin:ltcusd-quarterly-futures': 152.515,
+      'okcoin:ltcusd-weekly-futures': 145.952
     },
     'bchkrw': {
-      'bithumb:bchkrw': 1444000,
-      'coinone:bchkrw': 1449500
+      'bithumb:bchkrw': 1446000,
+      'coinone:bchkrw': 1444500
     },
     'btckrw': {
-      'bithumb:btckrw': 9741000,
-      'coinone:btckrw': 9747000
+      'bithumb:btckrw': 9744000,
+      'coinone:btckrw': 9742000
     },
     'btgkrw': {
       'bithumb:btgkrw': 78300,
@@ -1016,23 +1016,23 @@
       'bithumb:eoskrw': 16050
     },
     'etckrw': {
-      'bithumb:etckrw': 20580,
-      'coinone:etckrw': 20660
+      'bithumb:etckrw': 20650,
+      'coinone:etckrw': 20590
     },
     'ethkrw': {
-      'bithumb:ethkrw': 679000,
-      'coinone:ethkrw': 680500
+      'bithumb:ethkrw': 681000,
+      'coinone:ethkrw': 679500
     },
     'ltckrw': {
-      'bithumb:ltckrw': 159700,
-      'coinone:ltckrw': 160000
+      'bithumb:ltckrw': 159300,
+      'coinone:ltckrw': 160200
     },
     'xmrkrw': {
-      'bithumb:xmrkrw': 290800
+      'bithumb:xmrkrw': 292400
     },
     'xrpkrw': {
-      'bithumb:xrpkrw': 871,
-      'coinone:xrpkrw': 869
+      'bithumb:xrpkrw': 873,
+      'coinone:xrpkrw': 871
     },
     'zeckrw': {
       'bithumb:zeckrw': 312000
@@ -1042,16 +1042,16 @@
       'quoine:btcaud': 11556.909
     },
     'bcheur': {
-      'bitstamp:bcheur': 1077.75,
+      'bitstamp:bcheur': 1077.71,
       'cexio:bcheur': 1058.85,
       'gdax:bcheur': 1078.25,
-      'kraken:bcheur': 1076.6
+      'kraken:bcheur': 1074.8
     },
     'eurusd': {
-      'bitstamp:eurusd': 1.22043
+      'bitstamp:eurusd': 1.21649
     },
     'ampbtc': {
-      'bittrex:ampbtc': 3.077e-05,
+      'bittrex:ampbtc': 3.06e-05,
       'poloniex:ampbtc': 3.059e-05
     },
     'antbtc': {
@@ -1087,7 +1087,7 @@
     },
     'lambtc': {
       'bittrex:clambtc': 0.00052257,
-      'poloniex:clambtc': 0.00051441
+      'poloniex:clambtc': 0.00051745
     },
     'cvcbtc': {
       'bittrex:cvcbtc': 4.238e-05,
@@ -1099,10 +1099,10 @@
     },
     'shusdt': {
       'bittrex:dashusdt': 460.84692,
-      'poloniex:dashusdt': 459.87842
+      'poloniex:dashusdt': 462.96667
     },
     'dcrbtc': {
-      'bittrex:dcrbtc': 0.00870578,
+      'bittrex:dcrbtc': 0.00872412,
       'poloniex:dcrbtc': 0.00875
     },
     'dgbbtc': {
@@ -1140,11 +1140,11 @@
     },
     'ldcbtc': {
       'bittrex:fldcbtc': 2.32e-06,
-      'poloniex:fldcbtc': 2.27e-06
+      'poloniex:fldcbtc': 2.31e-06
     },
     'flobtc': {
       'bittrex:flobtc': 1.15e-05,
-      'poloniex:flobtc': 1.19e-05
+      'poloniex:flobtc': 1.193e-05
     },
     'ftcbtc': {
       'bittrex:ftcbtc': 2.534e-05
@@ -1177,45 +1177,45 @@
       'poloniex:lbcbtc': 3.041e-05
     },
     'mlnbtc': {
-      'bittrex:mlnbtc': 0.00749078,
+      'bittrex:mlnbtc': 0.00742551,
       'kraken:mlnbtc': 0.007545
     },
     'onabtc': {
-      'bittrex:monabtc': 0.00049477
+      'bittrex:monabtc': 0.0004945
     },
     'nxcbtc': {
       'bittrex:nxcbtc': 2.072e-05,
       'poloniex:nxcbtc': 2.093e-05
     },
     'nxsbtc': {
-      'bittrex:nxsbtc': 0.00022769
+      'bittrex:nxsbtc': 0.0002278
     },
     'nxtbtc': {
       'bittrex:nxtbtc': 2.075e-05,
       'poloniex:nxtbtc': 2.081e-05
     },
     'xtusdt': {
-      'bittrex:nxtusdt': 0.18365675,
+      'bittrex:nxtusdt': 0.18340002,
       'poloniex:nxtusdt': 0.1842
     },
     'mgusdt': {
-      'bittrex:omgusdt': 16.187943
+      'bittrex:omgusdt': 16.401
     },
     'mnibtc': {
       'bittrex:omnibtc': 0.00385701,
       'poloniex:omnibtc': 0.00387472
     },
     'artbtc': {
-      'bittrex:partbtc': 0.00184562
+      'bittrex:partbtc': 0.00184559
     },
     'paybtc': {
       'bittrex:paybtc': 0.00016089
     },
     'payeth': {
-      'bittrex:payeth': 0.00226338
+      'bittrex:payeth': 0.00226654
     },
     'olybtc': {
-      'bittrex:polybtc': 5.32e-05
+      'bittrex:polybtc': 5.318e-05
     },
     'olyeth': {
       'bittrex:polyeth': 0.00074804
@@ -1239,14 +1239,14 @@
       'poloniex:radsbtc': 0.00053488
     },
     'rddbtc': {
-      'bittrex:rddbtc': 8.4e-07
+      'bittrex:rddbtc': 8.5e-07
     },
     'sbdbtc': {
-      'bittrex:sbdbtc': 0.0003839,
+      'bittrex:sbdbtc': 0.0003833,
       'poloniex:sbdbtc': 0.00032152
     },
     ':scbtc': {
-      'bittrex:scbtc': 2.19e-06,
+      'bittrex:scbtc': 2.2e-06,
       'poloniex:scbtc': 2.18e-06
     },
     ':sceth': {
@@ -1286,7 +1286,7 @@
       'bittrex:upeth': 0.00032838
     },
     'veebtc': {
-      'bittrex:veebtc': 6.15e-06
+      'bittrex:veebtc': 6.2e-06
     },
     'veeeth': {
       'bittrex:veeeth': 8.86e-05
@@ -1302,7 +1302,7 @@
       'bittrex:vrmbtc': 0.00033702
     },
     'vtcbtc': {
-      'bittrex:vtcbtc': 0.00027933,
+      'bittrex:vtcbtc': 0.00027935,
       'poloniex:vtcbtc': 0.00028049
     },
     'xcpbtc': {
@@ -1310,14 +1310,14 @@
       'poloniex:xcpbtc': 0.00194688
     },
     'xdnbtc': {
-      'bittrex:xdnbtc': 1.39e-06
+      'bittrex:xdnbtc': 1.38e-06
     },
     'mrusdt': {
       'bittrex:xmrusdt': 263.737,
       'poloniex:xmrusdt': 263.61475
     },
     'rpusdt': {
-      'bittrex:xrpusdt': 0.79316705,
+      'bittrex:xrpusdt': 0.79594,
       'poloniex:xrpusdt': 0.79
     },
     'xvcbtc': {
@@ -1325,17 +1325,17 @@
       'poloniex:xvcbtc': 3.381e-05
     },
     'vgusdt': {
-      'bittrex:xvgusdt': 0.064465
+      'bittrex:xvgusdt': 0.0648199
     },
     'zclbtc': {
-      'bittrex:zclbtc': 0.002791
+      'bittrex:zclbtc': 0.00277977
     },
     'ecusdt': {
       'bittrex:zecusdt': 283.1981,
       'poloniex:zecusdt': 286.66647
     },
     'zenbtc': {
-      'bittrex:zenbtc': 0.00408343
+      'bittrex:zenbtc': 0.00407447
     },
     'bchltc': {
       'btce:bchltc': 9.031
@@ -1380,21 +1380,21 @@
       'kraken:zecgbp': 0
     },
     'iotkrw': {
-      'coinone:iotkrw': 9747000
+      'coinone:iotkrw': 9742000
     },
     'tumkrw': {
-      'coinone:qtumkrw': 20890
+      'coinone:qtumkrw': 20830
     },
     'btccad': {
       'kraken:btccad': 10801.4,
-      'quadriga:btccad': 11100
+      'quadriga:btccad': 11000.47
     },
     'etceur': {
       'kraken:etceur': 15.333
     },
     'ethcad': {
       'kraken:ethcad': 753.06,
-      'quadriga:ethcad': 774.81
+      'quadriga:ethcad': 780.99
     },
     'gnoeur': {
       'kraken:gnoeur': 78.8
@@ -1404,7 +1404,7 @@
     },
     'ltccad': {
       'kraken:ltccad': 0,
-      'quadriga:ltccad': 184.14
+      'quadriga:ltccad': 180.98
     },
     'mlneth': {
       'kraken:mlneth': 0.10822
@@ -1413,14 +1413,14 @@
       'kraken:repcad': 0
     },
     'repeur': {
-      'kraken:repeur': 32.307
+      'kraken:repeur': 32.028
     },
     'repjpy': {
       'kraken:repjpy': 0
     },
     'strbtc': {
       'kraken:strbtc': 3.901e-05,
-      'poloniex:strbtc': 3.901e-05
+      'poloniex:strbtc': 3.9e-05
     },
     'streur': {
       'kraken:streur': 0.282994
@@ -1429,7 +1429,7 @@
       'kraken:strusd': 0.342401
     },
     'xmreur': {
-      'kraken:xmreur': 216.5
+      'kraken:xmreur': 215.66
     },
     'xrpcad': {
       'kraken:xrpcad': 0.969
@@ -1451,7 +1451,7 @@
       'luno:btcmyr': 37195
     },
     'btcngn': {
-      'luno:btcngn': 3170007
+      'luno:btcngn': 3198271
     },
     'btczar': {
       'luno:btczar': 112627
@@ -1464,8 +1464,8 @@
       'okcoin:ltccny': 0
     },
     'chusdt': {
-      'okex:bchusdt': 1308.5754,
-      'poloniex:bchusdt': 1308.1168
+      'okex:bchusdt': 1314.4312,
+      'poloniex:bchusdt': 1309.4249
     },
     'bcnbtc': {
       'poloniex:bcnbtc': 5.7e-07
@@ -1573,7 +1573,7 @@
       'quoine:btcphp': 482960.4
     },
     'btcsgd': {
-      'quoine:btcsgd': 11685.877
+      'quoine:btcsgd': 11702.3125
     },
     'ethaud': {
       'quoine:ethaud': 689.4415
