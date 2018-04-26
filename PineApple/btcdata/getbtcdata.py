@@ -74,7 +74,7 @@ def save_btc():
         exchange_name = item[-6:]
         # If we find a pair, snag its last price
         price = parsed_json['result'][item]['price']['last']
-        if exchange_name not in exchanges:
+        if exchange_name not in exchanges["price"]:
             exchanges["price"][exchange_name] = {}
             exchanges["price"][exchange_name][item] = price
         else:
