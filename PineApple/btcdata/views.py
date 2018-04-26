@@ -60,4 +60,8 @@ def index(request):
     print("end")
     print(data_points)
 
+    if(request.GET and requests.GET["market"]):
+        print(request.GET)
+
+
     return render(request, 'index.html', {"datas": data_points})
