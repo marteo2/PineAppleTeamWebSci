@@ -139,3 +139,10 @@ CRONJOBS = (
     ('*/5 * * * *', 'django.core.management.call_command', ['get_btcdata'],
      {}, '>> /tmp/btcData.log 2>&1'),
 )
+
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'cmappcmkmarketing@gmail.com'
+EMAIL_HOST_PASSWORD = 'mitr2017'
+DEFAULT_FROM_EMAIL = 'PineAppleTeam <cmappcmkmarketing@gmail.com>'
