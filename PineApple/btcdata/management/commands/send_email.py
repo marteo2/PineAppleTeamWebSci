@@ -19,15 +19,18 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         content = render_to_string("email/index.html")
+        all_email = []
         for email in Email.objects.all():
-            msg = EmailMultiAlternatives("User Email", "wow",
-                                         'pineapplewebsci@yahoo.com', [email.email])
-            msg.attach_alternative(content, "text/html")
-            msg.mixed_subtype = 'related'
-            for f in ['img-01.png']:
-                fp = open(os.path.join(os.path.dirname(__file__), f), 'rb')
-                msg_img = MIMEImage(fp.read())
-                fp.close()
-                msg_img.add_header('Content-ID', '<{}>'.format(f))
-                msg.attach(msg_img)
-            msg.send()
+            all_email.append(email.email)
+        print(all_email)
+        msg = EmailMultiAlternatives("User Email", "wow",
+                                     'pineapplewebsci@yahoo.com', [email.email])
+        msg.attach_alternative(content, "text/html")
+        msg.mixed_subtype = 'related'
+        for f in ['img-01.png']:
+            fp = open(os.path.join(os.path.dirname(__file__), f), 'rb')
+            msg_img = MIMEImage(fp.read())
+            fp.close()
+            msg_img.add_header('Content-ID', '<{}>'.format(f))
+            msg.attach(msg_img)
+        msg.send()
