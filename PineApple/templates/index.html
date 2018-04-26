@@ -528,8 +528,14 @@
 
       	for (var i=0; i < historicalJSON.length; i++){
       		var itime = historicalJSON[i].time;
-      		var market1point = historicalJSON[i][market1];
-      		var market2point = historicalJSON[i][market2];
+          console.log(historicalJSON[i]);
+          var market1point = historicalJSON[i][market1];
+          var market2point = historicalJSON[i][market2];
+          if(historicalJSON[i]['price']){
+             market1point = historicalJSON[i]['price']['btcusd'][market1];
+        		 market2point = historicalJSON[i]['price']['btcusd'][market2];
+          }
+
       		var date = new Date(0);
       		date.setUTCSeconds(itime);
       		var datestring = String(date.getHours())+":"+String(date.getMinutes());
