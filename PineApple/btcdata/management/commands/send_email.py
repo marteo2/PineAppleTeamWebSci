@@ -24,7 +24,7 @@ class Command(BaseCommand):
             all_email.append(email.email)
         print(all_email)
         msg = EmailMultiAlternatives("User Email", "wow",
-                                     'pineapplewebsci@yahoo.com', [email.email])
+                                     'pineapplewebsci@yahoo.com', all_email)
         msg.attach_alternative(content, "text/html")
         msg.mixed_subtype = 'related'
         for f in ['img-01.png']:
