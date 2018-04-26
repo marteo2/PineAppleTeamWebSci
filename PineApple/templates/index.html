@@ -236,7 +236,7 @@
       function updatetopdiff(){
         topdiff = max-min;
         topdiff = topdiff.toFixed(3);
-        var fix= "<br><br><p style='font-size:40px'; 'color:green';>$"+topdiff+" </p><p>is the top market difference between "+maxNameJ+" and "+minName+"</p>";
+        var fix= "<br><br><p style='font-size:40px'; 'color:green';>$"+topdiff+" </p><p>is the top market difference between "+maxName+" and "+minName+"</p>";
         document.getElementById('diffdiv').innerHTML = fix;
 
       }
@@ -298,7 +298,8 @@
       	marketCount = (dataObjects.length);
       	averagePrice = totalPrice/marketCount;
       	console.log(averagePrice);
-
+        var minIndex = 0;
+        var maxIndex = 0;
       	for (var l= 0; l<dataObjects.length; l++){
       		var difference = (dataObjects[l][1]/averagePrice) - 1;
       		var compare = "";
@@ -315,10 +316,12 @@
 
           if(dataObjects[l][1] < min){
             min = dataObjects[l][1];
+            minIndex = l;
             minName = "<td> Minimum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
           }
           if (dataObjects[l][1] > max ){
             max = dataObjects[l][1];
+            maxIndex = l;
             maxName ="<td> Maximum Market: " +String(dataObjects[l][0]).toUpperCase() + "</td>";
             // maxNameJ = "<td> Maximum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
           }
@@ -346,6 +349,7 @@
         var newelement2 = document.createElement("tr");
         newelement2.innerHTML = minName + maxName + "<td " + "id='"+compareID + "'> $"+ (max - min) + "</td>";
         marketsTable.appendChild(newelement2);
+        dropdown1.selectedIndex = "1";
 
       }
 
