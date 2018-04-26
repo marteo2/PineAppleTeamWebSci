@@ -9,6 +9,8 @@
 
 
     <link rel="icon" href="{% static "btcdata/Bitcoin.jpg" %}" >
+		<link rel="stylesheet" href="{%static 'main.css' %}">
+		<link rel="stylesheet" href="main.css">
 
     <title>Pineapple Coin Project</title>
 
@@ -189,10 +191,15 @@
         </button>
       </div>
       <div class="modal-body">
+				<div class="modal-text">
           <p>Hello! We, PineappleTeamGroup, are excited to bring our newest creation to you!</p>
-          <br>
-          <p>Consisting of four ITWS majors from RPI, this webpage is the final project for the ITWS4300 Class <i>Web Systems Science Development</i></p>
-         <div class="col-md-4">Maybe put an image here idk</div>
+					<p><i>Pineapple</i> helps you keep track of cryptocurrency without hurting your brain!</p>
+          <p>We're four ITWS majors from RPI, this webpage is our final project for the ITWS4300 Class <i>Web Systems Science Development</i></p>
+				</div>
+				
+        <div class="modal-image">
+					<img src="{% static 'btcdata/pineappleSwag.jpg' %}">
+				</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Back to Pineapple!</button>
@@ -208,18 +215,16 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">About Us</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Coins</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="col-md-8">
-          <div class="col-md-4">
-            img?
-          </div>
-         <div class="col-md-4">Here's a bit of information about where we got our coins from</div>
-        </div>
+      <div class="modal-body modal-image-block">
+         <div class="modal-text-white">
+					 <p>Our coin data is pulled from the Cryptowatch API system. The coins are compared across various markets, such as Bitfinex, Cexio, and OkCoin.</p>
+					 <p>To view our full selection of comparable markets, use the dropdown menus to the right of the graph! </p>
+				</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Back to Pineapple!</button>
