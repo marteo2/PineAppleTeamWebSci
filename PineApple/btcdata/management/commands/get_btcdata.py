@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.core.management.base import BaseCommand
 from btcdata.getbtcdata import save_btc
 from btcdata.models import PriceData
+from btcdata.models import Email
 
 
 class Command(BaseCommand):
