@@ -2,30 +2,22 @@
 <!doctype html>
 <html lang="en">
   <head>
+  <!-- Stylesheets and basic headers -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Your solution for bitcoin market comparisons">
     <meta name="author" content="PineappleTeamGroup">
-
-
-    <link rel="icon" href="{% static 'btcdata/Bitcoin.jpg' %}" >
+    <link rel="icon" href="{% static 'btcdata/Bitcoin.jpg' %}" > 
     <link rel="stylesheet" href="{%static 'btcdata/main.css' %}"> 
     <link rel="stylesheet" href="main.css">
 
     <title>Pineapple Coin Project</title>
 
-    <!-- TODO
-    Get quick comparison for highest difference
-    Email setup
-    Fix formatting on about/coins pages
-    Etherium?
-
-
-     -->
 
 
   <!-- jQuery -->
 <script type="text/javascript">
+// unused function for a search bar that was not implemented, left should the decision be reversed
   function Findcoin(){
     var find = document.getElementById('search1').value;
     var val = document.getElementById(find);
@@ -46,7 +38,7 @@
   </head>
 
 
-
+<!-- The header -->
   <body onload="aggregateFunction(); populateChart(this.form); updatetopdiff();"> <!-- runs javascript functions on load to populate the chart and table-->
     <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0">
       <a class="navbar-brand img-responsive" href="#"><img src="{% static "btcdata/pineapple2.png" %}" style="height:130px"></a>
@@ -70,7 +62,7 @@
 
             <br><br><br>
 
-
+<!-- The sidebar -->
               <li class="nav-item">
                 <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
@@ -102,13 +94,13 @@
 
           </div>
         </nav>
-
+<!-- The main area with graph, buttons, and total difference report -->
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
-                <button class="btn-lg btn-warning">Get Email Alerts</button>
+                <button class="btn-lg btn-warning">Get Email Alerts</button> <!-- Placeholder for working button that would connect to email alerts -->
               </div>
             </div>
           </div>
@@ -119,7 +111,7 @@
 						</div>
 						<div class="col-md-4" align='center' >
 							<form action="" method="get" id="chartInputForm">
-              <div class="col-md-5 form-group" >  <!-- TODO figure out how to center this vertically the right way -->
+              <div class="col-md-5 form-group" >  
               <label for="market1" style="color:red">Select Coin Market 1 (Red)</label>
                <select class="form-control" id="exampleSelect1">
 							</select>
@@ -137,6 +129,7 @@
               <div id='diffdiv'>tbd later in functions</div>
 						</div>
 					</div>
+          <!-- The bottom information about all coins -->
 					<div class="row">
 						<h2>Quick Market Comparison</h2>
 						<div class="table-responsive">
@@ -231,13 +224,13 @@
       var historicalJSON = "{{datas}}".replace(/&quot;/g,"");
       historicalJSON =  historicalJSON.replace(/&#39;/g,"\"");
       historicalJSON = JSON.parse(historicalJSON);
-
+// Variables used between functions
       var topdiff = 0;
       var max = 0;
       var min = 999999999999;
       var maxNameJ = "";
       var minName = "";
-
+// Used to update difference, variables from global variables
       function updatetopdiff(){
         topdiff = max-min;
         topdiff = topdiff.toFixed(3);
@@ -251,7 +244,7 @@
       var totalPrice = 0;
       var marketCount = 0;
 
-
+// Get information to fill the dropdown menus
       for (var i=0; i<historicalJSON.length; i++){
         if (historicalJSON[i].time > latestTime){
           data = historicalJSON[i];
@@ -274,7 +267,7 @@
       buttons.value = "btcusd";
 
 
-
+// Go through and get all information relating to a specific coin
       function aggregateFunction(){
         totalPrice = 0;
         marketCount = 0;
@@ -358,7 +351,7 @@
         dropdown2.selectedIndex = minIndex;
 
       }
-
+// Put the information into the chart
       function populateChart(form){ //creates chartjs object and populates it with data
       	var market1 = document.getElementById("exampleSelect1").value;
       	var market2 = document.getElementById("exampleSelect2").value;
@@ -410,7 +403,7 @@
         $("#myChart").append('<canvas class="my-4" id="meChart" width="900" height="380"></canvas>');
         // var ctx = document.getElementById("chartreport").getContext("2d");
       	var ctx = document.getElementById("meChart");
-
+// Information regarding the chart
             var myChart = new Chart(ctx, {
               type: 'line',
               data: {
