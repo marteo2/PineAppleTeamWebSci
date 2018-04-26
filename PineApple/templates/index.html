@@ -117,36 +117,14 @@
               <div class="col-md-5 form-group" >  <!-- TODO figure out how to center this vertically the right way -->
               <label for="market1" style="color:red">Select Coin Market 1 (Red)</label>
                <select class="form-control" id="exampleSelect1">
-									<option value="bitfinex:btcusd">Bitfinex</option>
-                  <option value="bitflyer:btcusd"  selected="selected">Bitflyer</option>
-                  <option value="bitsquare:btcusd">Bitsquare</option>
-                  <option value="bitstamp:btcusd">Bitstamp</option>
-                  <option value="btce:btcusd">BTCE</option>
-                  <option value="cexio:btcusd">Cexio</option>
-                  <option value="gdax:btcusd">GDAX</option>
-                  <option value="gemini:btcusd">Gemini</option>
-                  <option value="kraken:btcusd">Kraken</option>
-                  <option value="okcoin:btcusd">OkCoin</option>
-                  <option value="quadriga:btcusd">Quadriga</option>
-                  <option value="quoine:btcusd">Quoine</option></select>
-                </div>
+							</select>
+               </div>
 
-                <div class="col-md-5 form-group" >
+               <div class="col-md-5 form-group" >
               <label for="market2" style="color:blue">Select Coin Market 2 (Blue)</label>
               <br>
                <select class="form-control" id="exampleSelect2">
-                  <option value="bitfinex:btcusd">Bitfinex</option>
-                  <option value="bitflyer:btcusd">Bitflyer</option>
-                  <option value="bitsquare:btcusd">Bitsquare</option>
-                  <option value="bitstamp:btcusd">Bitstamp</option>
-                  <option value="btce:btcusd"  selected="selected">BTCE</option>
-                  <option value="cexio:btcusd">Cexio</option>
-                  <option value="gdax:btcusd">GDAX</option>
-                  <option value="gemini:btcusd">Gemini</option>
-                  <option value="kraken:btcusd">Kraken</option>
-                  <option value="okcoin:btcusd">OkCoin</option>
-                  <option value="quadriga:btcusd">Quadriga</option>
-                  <option value="quoine:btcusd">Quoine</option></select>
+               </select>
                 </div>
                 <div>
 								<input type="button" name="button" id="chartButton" value="Update Chart" class ='col-md-5 btn-warning btn-lg' onclick="populateChart(this.form)"></div>
@@ -276,6 +254,8 @@
         }
       }
       var marketsTable = document.getElementById("marketsTableBody");
+			var dropdown1 = document.getElementById("exampleSelect1");
+			var dropdown2 = documnt.getElementById("exampleSelect2");
 
       var buttons = document.getElementById("sel1");
       // alert("here");
@@ -296,7 +276,8 @@
         min = 9999999999999;
         max = 0;
         marketsTable.innerHTML = "";
-
+				dropdown1.innerHTML = "";
+				dropdown2.innerHTML = "";
         // alert("Coin types: \n " + keys);
         // buttons.value = "ltcusd";
 
@@ -307,6 +288,8 @@
       	for (var j=0; j<dataObjects.length; j++){
       		totalPrice+=dataObjects[j][1];
       		var newName = dataObjects[j][0];
+					var oldName = dataObjects[j][0];
+					dataObjects[j].push(oldName);
           var hollder = ":"+coin_type;
       		var loc = newName.search(hollder);
       		newName = newName.slice(0,loc);
@@ -343,6 +326,12 @@
       		var newelement1 = document.createElement("tr");
       		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
       		marketsTable.appendChild(newelement1);
+					
+					var selectelement = document.createElement("select");
+					selectelement.value = String(dataObjects[l][2]);
+					selectelement.innerHTML = String(dataObjects[l][0]).toUpperCase();
+					dropdown1.appendChild(selectelement);
+					dropdown2.appendChild(selectelement);
           // var newelement2 = document.createElement("div");
           // newelement2.innerHTML = "<div class='form-check'> <input class='form-check-input' type='checkbox' value='' id='"+String(dataObjects[l][0]).toUpperCase()+"'> <label class='form-check-label' for='" + String(dataObjects[l][0]).toUpperCase() +"'>" + String(dataObjects[l][0]).toUpperCase()  + "</label> </div>"
           // buttons.append(newelement2);
