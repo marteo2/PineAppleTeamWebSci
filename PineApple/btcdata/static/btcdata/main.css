@@ -1,0 +1,20 @@
+
+/*modal styling*/
+div.modal-body{
+	display: flex;
+	justify-content: space-between;
+}
+div.modal-text{
+	width: 60%;
+	justify-content: center;
+}
+div.modal-image{
+	width: 40%;
+}
+div.modal-image img{
+	float: right;
+}
+div.modal-footer{
+	display: flex;
+	justify-content: center;
+}
