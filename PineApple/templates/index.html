@@ -405,6 +405,12 @@
       	var marketsTable = document.getElementById("marketsTableBody");
 
         var buttons = document.getElementById("buttons");
+        // alert("here");
+        keys = [];
+        for (var key in data.price){
+          keys.push(key);
+        }
+        // $("Coin types: \n " + keys);
 
       	console.log(data.price["btcusd"]);
       	dataObjects = Object.entries(data.price["btcusd"]);
