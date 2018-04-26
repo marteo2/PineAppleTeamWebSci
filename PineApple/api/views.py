@@ -1,16 +1,9 @@
-from django.shortcuts import render
-
 # Create your views here.
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from api.serializers import PriceSerializer
 from btcdata.getbtcdata import find_data_json
-
-from bson.json_util import dumps
-
-from btcdata.models import PriceData
 
 
 @api_view(['GET'])
