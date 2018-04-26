@@ -423,6 +423,11 @@
 
 
       function aggregateFunction(){
+        averagePrice = 0;
+        totalPrice = 0;
+        marketCount = 0;
+        min = 9999999999999;
+        max = 0;
         marketsTable.innerHTML = "";
 
         // alert("Coin types: \n " + keys);
@@ -445,7 +450,7 @@
       	console.log(averagePrice);
 
       	for (var l= 0; l<dataObjects.length; l++){
-      		var difference = (dataObjects[l][1]/averagePrice) - 1.00;
+      		var difference = (dataObjects[l][1]/averagePrice) - .5;
       		var compare = "";
       		var compareID = ""
 
@@ -475,6 +480,7 @@
           // newelement2.innerHTML = "<div class='form-check'> <input class='form-check-input' type='checkbox' value='' id='"+String(dataObjects[l][0]).toUpperCase()+"'> <label class='form-check-label' for='" + String(dataObjects[l][0]).toUpperCase() +"'>" + String(dataObjects[l][0]).toUpperCase()  + "</label> </div>"
           // buttons.append(newelement2);
       		//console.log(newelement1);
+          updatetopdiff();
       	}
         // newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
         var newelement2 = document.createElement("tr");
