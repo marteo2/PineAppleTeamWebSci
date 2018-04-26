@@ -394,7 +394,6 @@
 
   function updatetopdiff(){
     topdiff = max-min;
-    topdiff = num.tofixed(topdiff);
     var fix= "<br><br><p style='font-size:40px'; 'color:green';>"+topdiff+" </p><p>is the top market difference between "+maxName+" and "+minName+"</p>";
     document.getElementById('diffdiv').innerHTML = fix;
 
@@ -424,7 +423,7 @@
         for (var key in data.price){
           keys.push(key);
         }
-        alert("Coin types: \n " + keys);
+        //alert("Coin types: \n " + keys);
 
       	console.log(data.price["btcusd"]);
       	dataObjects = Object.entries(data.price["btcusd"]);
