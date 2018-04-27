@@ -231,6 +231,12 @@
       var maxNameJ = "";
       var minName = "";
 // Used to update difference, variables from global variables
+      var data = {};
+      var latestTime = 0;
+      var averagePrice = 0;
+      var totalPrice = 0;
+      var marketCount = 0;
+      //Function to update the top difference displalyed
       function updatetopdiff(){
         topdiff = max-min;
         topdiff = topdiff.toFixed(3);
@@ -245,30 +251,35 @@
       var marketCount = 0;
 
 // Get information to fill the dropdown menus
+      //Setup Elements in our page, only runs once.
       for (var i=0; i<historicalJSON.length; i++){
         if (historicalJSON[i].time > latestTime){
           data = historicalJSON[i];
           latestTime = historicalJSON[i].time;
         }
       }
+      //Find our elements in the HTML
       var marketsTable = document.getElementById("marketsTableBody");
 			var dropdown1 = document.getElementById("exampleSelect1");
 			var dropdown2 = document.getElementById("exampleSelect2");
-
       var buttons = document.getElementById("sel1");
       // alert("here");
       keys = [];
+      //Add a option for each currency pair.
       for (var key in data.price){
         keys.push(key);
         var optiona = document.createElement("option");
         optiona.innerHTML = "<option>" + key + "</option>"
         buttons.append(optiona);
       }
+      //Set the default currency pair to display to BTCUSD.
       buttons.value = "btcusd";
 
 
 // Go through and get all information relating to a specific coin
+      //Function to update the quick market comparison
       function aggregateFunction(){
+        //Reset counters and HTML
         totalPrice = 0;
         marketCount = 0;
         min = 9999999999999;
@@ -276,12 +287,10 @@
         marketsTable.innerHTML = "";
 				dropdown1.innerHTML = "";
 				dropdown2.innerHTML = "";
-        // alert("Coin types: \n " + keys);
-        // buttons.value = "ltcusd";
-
+        //Find coin pair
         var coin_type = buttons.value;
-
       	console.log(data.price[coin_type]);
+        //Parse through each market for that specific coin type.
       	dataObjects = Object.entries(data.price[coin_type]);
       	for (var j=0; j<dataObjects.length; j++){
       		totalPrice+=dataObjects[j][1];
@@ -298,11 +307,12 @@
       	console.log(averagePrice);
         var minIndex = 0;
         var maxIndex = 0;
+        //Go thru and add each market to be displayed in the quick market comparison
       	for (var l= 0; l<dataObjects.length; l++){
       		var difference = (dataObjects[l][1]/averagePrice) - 1;
       		var compare = "";
       		var compareID = ""
-
+          //Add percent % to average
       		if (difference > 0){
       			compare = "above (+" + difference.toFixed(3)+")%";
       			compareID = "above";
@@ -323,64 +333,46 @@
             maxName ="<td> Maximum Market: " +String(dataObjects[l][0]).toUpperCase() + "</td>";
             // maxNameJ = "<td> Maximum Market: "+String(dataObjects[l][0]).toUpperCase()+"</td>"
           }
-
+          //Create object to represent a market in our comparison table
       		var newelement1 = document.createElement("tr");
       		newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
-      		marketsTable.appendChild(newelement1);
+          //Add the market.
+          marketsTable.appendChild(newelement1);
 
+          //Add the market type to the coin selector dropdowns.
 					var selectelement = document.createElement("option");
           var selectelement2 = document.createElement("option");
 					selectelement.value = String(dataObjects[l][2]);
 					selectelement.innerHTML = String(dataObjects[l][0]).toUpperCase();
           selectelement2.value = String(dataObjects[l][2]);
 					selectelement2.innerHTML = String(dataObjects[l][0]).toUpperCase();
-
 					dropdown1.appendChild(selectelement2);
 					dropdown2.appendChild(selectelement);
-          // var newelement2 = document.createElement("div");
-          // newelement2.innerHTML = "<div class='form-check'> <input class='form-check-input' type='checkbox' value='' id='"+String(dataObjects[l][0]).toUpperCase()+"'> <label class='form-check-label' for='" + String(dataObjects[l][0]).toUpperCase() +"'>" + String(dataObjects[l][0]).toUpperCase()  + "</label> </div>"
-          // buttons.append(newelement2);
-      		//console.log(newelement1);
+          //Updates top diff to represent new currency pair
           updatetopdiff();
       	}
-        // newelement1.innerHTML = "<td>"+String(dataObjects[l][0]).toUpperCase()+"</td><td>$"+String(dataObjects[l][1]) + "</td><td " + "id='"+compareID + "'>"+ compare + "</td>";
+        //Show the max vs min diff
         var newelement2 = document.createElement("tr");
         newelement2.innerHTML = minName + maxName + "<td " + "id='"+compareID + "'> $"+ (max - min) + "</td>";
         marketsTable.appendChild(newelement2);
+        //Select the min and max markets to be displayed first on the graph.
         dropdown1.selectedIndex = maxIndex;
         dropdown2.selectedIndex = minIndex;
 
       }
-// Put the information into the chart
-      function populateChart(form){ //creates chartjs object and populates it with data
+      //Updates our graph with new coin pair data.
+      function populateChart(form){
       	var market1 = document.getElementById("exampleSelect1").value;
       	var market2 = document.getElementById("exampleSelect2").value;
       	var times = [];
       	var market1Data = [];
       	var market2Data = [];
-        //
-        // var    BITBAY     = document.getElementById("BITBAY").checked;
-        // var    BITFINEX   = document.getElementById("BITFINEX").checked;
-        // var    BITFLYER   = document.getElementById("BITFLYER").checked;
-        // var    BITSQUARE  = document.getElementById("BITSQUARE").checked;
-        // var    BITSTAMP   = document.getElementById("BITSTAMP").checked;
-        // var    BTCE       = document.getElementById("BTCE").checked;
-        // var    CEXIO      = document.getElementById("CEXIO").checked;
-        // var    GDAX       = document.getElementById("GDAX").checked;
-        // var    GEMINI     = document.getElementById("GEMINI").checked;
-        // var    KRAKEN     = document.getElementById("KRAKEN").checked;
-        // var    OKCOIN     = document.getElementById("OKCOIN").checked;
-        // var    QUADRIGA   = document.getElementById("QUADRIGA").checked;
-        // var    QUOINE     = document.getElementById("QUOINE").checked;
-        // alert(QUOINE);
-
-
       	//var utcSeconds = 1234567890;
       	//var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
       	//d.setUTCSeconds(utcSeconds);
       	//d is now a date (in my time zone) set to Fri Feb 13 2009 18:31:30 GMT-0500 (EST)
         var coin_type = buttons.value;
-
+        //Add the currency pair set from out set of currency pairs
       	for (var i=0; i < historicalJSON.length; i++){
       		var itime = historicalJSON[i].time;
           console.log(historicalJSON[i]);
@@ -393,17 +385,19 @@
       		var date = new Date(0);
       		date.setUTCSeconds(itime);
       		var datestring = String(date.getHours())+":"+String(date.getMinutes());
+          //Add data to arrays to be put on our graph
       		times.push(datestring);
       		market1Data.push(market1point);
       		market2Data.push(market2point);
 
       	}
       	console.log(market1Data);
+        //Remove the old graph and replace it with a new one
         $("#meChart").remove();
         $("#myChart").append('<canvas class="my-4" id="meChart" width="900" height="380"></canvas>');
-        // var ctx = document.getElementById("chartreport").getContext("2d");
+        // new graph
       	var ctx = document.getElementById("meChart");
-// Information regarding the chart
+
             var myChart = new Chart(ctx, {
               type: 'line',
               data: {
@@ -445,8 +439,6 @@
               }
             });
       }
-
-
     </script>
 
 
