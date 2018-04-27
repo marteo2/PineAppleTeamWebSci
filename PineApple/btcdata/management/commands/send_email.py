@@ -1,13 +1,9 @@
 import os
-
-from django.core.mail import EmailMessage, EmailMultiAlternatives
-from django.template.loader import get_template, render_to_string
-from django.utils import timezone
-
+from django.core.mail import EmailMultiAlternatives
 from django.core.management.base import BaseCommand
+from django.template.loader import render_to_string
 from email.mime.image import MIMEImage
 
-from btcdata.getbtcdata import save_btc
 from btcdata.models import Email
 
 
